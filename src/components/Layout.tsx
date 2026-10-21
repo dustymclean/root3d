@@ -29,7 +29,7 @@ export function Layout() {
       <header className="site-header">
         <div className="container nav">
           <Link to="/" className="brand" aria-label="Root3D Consulting home">
-            <img src={asset('logo.png')} alt="" width={36} height={36} />
+            <span className="brand-badge"><img src={asset('mark.png')} alt="" width={30} height={30} /></span>
             Root3D
           </Link>
           <button className="nav-toggle" aria-expanded={open} aria-controls="nav-menu" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
@@ -74,7 +74,10 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--white)', marginBottom: '0.5rem' }}>Root3D Consulting</p>
+            <div className="row" style={{ marginBottom: '0.5rem' }}>
+              <img src={asset('mark.png')} alt="" width={48} height={48} />
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--white)', margin: 0 }}>Root3D Consulting</p>
+            </div>
             <p>Licensing, compliance, and cultivation science from three owner-operators who still get their hands dirty.</p>
           </div>
           <div>

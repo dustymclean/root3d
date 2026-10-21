@@ -35,12 +35,8 @@ export function Home() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <div className="hero-stack" aria-label="The Root3D team">
-              {team.map((t) => (
-                <figure key={t.slug}>
-                  <img src={asset(t.photo)} alt={t.name} style={{ objectPosition: t.photoPosition ?? 'center' }} loading="eager" />
-                </figure>
-              ))}
+            <div className="hero-logo">
+              <img src={asset('logo-full.jpg')} alt="Root3D Consulting: hardening the cannabis supply chain from seed to sale. People, plants, solutions." width={900} height={900} />
             </div>
           </Reveal>
         </div>
