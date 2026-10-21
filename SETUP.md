@@ -6,16 +6,19 @@ Everything below is free to start. No secret keys ever go in this repository.
 
 1. Sign up at [supabase.com](https://supabase.com) and create a project (any region near Mississippi, for example `us-east-1`).
 2. Open **SQL Editor → New query**, paste all of `supabase/migrations/0001_init.sql`, and click **Run**.
-3. Open `supabase/migrations/0002_seed.sql`. At the top are the **three admin emails**:
+3. Paste all of `supabase/migrations/0002_seed.sql` into a new query and **Run**.
+4. Paste all of `supabase/migrations/0003_v2.sql` into a new query and **Run**. This adds Hunter, video/phone/on-site appointments, Grow Coach expertise tags, project boards with milestones, and read/unread messages.
+5. Paste all of `supabase/migrations/0004_team_logins.sql` into a new query and **Run**. This sets the admin logins:
 
-   ```sql
-   ('dustjackmcl@gmail.com', 'dusty-mclean'),
-   ('dusty_mclean@icloud.com', null),
-   ('sales@valleyoffire.co', 'joel-perkins')
-   ```
+   | Email | Linked calendar |
+   | --- | --- |
+   | dustjackmcl@gmail.com | Dusty |
+   | dusty_mclean@icloud.com | (admin only) |
+   | joel@pixies-pantry.com | Joel |
+   | danny@pixies-pantry.com | Danny |
+   | sleepy@pixies-pantry.com | Hunter |
 
-   Change them if needed (the second value links that login to a consultant's calendar), then paste the whole file into a new query and **Run**.
-4. Paste all of `supabase/migrations/0003_v2.sql` into a new query and **Run**. This adds video/phone/on-site appointments, Grow Coach expertise tags, project boards with milestones, and read/unread messages. (If you already ran 0001 and 0002 earlier, just run this one; it is safe to run more than once.)
+   If you already ran earlier files, just run the ones you have not run yet. Every file is safe to run more than once.
 
 That's the only account setup. Whoever signs up with one of those emails becomes an admin. Everyone else who signs up is a standard client. You can change the list later under **Portal → Users & admins**.
 
