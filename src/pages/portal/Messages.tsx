@@ -15,6 +15,10 @@ export function Messages() {
   const isAdmin = profile.role === 'admin';
   const look = useLookups();
   const threads = useAsync(() => q<Thread[]>(db().from('threads').select('*').order('updated_at', { ascending: false })), []);
+  const unread = useAsync(async () => {
+    const rows = await q<{ thread_id: string; unread: number }[]>(db().rpc('my_unread'));
+    return Object.fromEntries(rows.map((r) => [r.thread_id, r.unread])) as Record<string, number>;
+  }, [id]);
   const [composing, setComposing] = useState(false);
   const [filter, setFilter] = useState<'all' | 'message' | 'support'>('all');
 
@@ -39,7 +43,10 @@ export function Messages() {
             <Link key={t.id} to={`/portal/messages/${t.id}`} className={t.id === id ? 'active' : ''}>
               <div className="row between">
                 <strong className="small">{t.subject}</strong>
-                {t.kind === 'support' && <LifeBuoy size={14} />}
+                <span className="row" style={{ gap: 6 }}>
+                  {t.kind === 'support' && <LifeBuoy size={14} />}
+                  {t.id !== id && (unread.data?.[t.id] ?? 0) > 0 && <span className="badge" aria-label={`${unread.data![t.id]} unread`}>{unread.data![t.id]}</span>}
+                </span>
               </div>
               <div className="muted small">
                 {isAdmin ? personName(look.data, t.client_id) : t.consultant_slug ? look.data!.consultants[t.consultant_slug]?.name : 'Whole team'}
@@ -54,7 +61,7 @@ export function Messages() {
         {composing ? (
           <NewThread onDone={() => { setComposing(false); void threads.reload(); }} />
         ) : active ? (
-          <ThreadView thread={active} onStatus={() => void threads.reload()} />
+          <ThreadView thread={active} onStatus={() => void threads.reload()} onRead={() => void unread.reload()} />
         ) : (
           <Empty>Pick a conversation, or start a new one. Every Root3D partner can see your history, so you never need to repeat yourself.</Empty>
         )}
@@ -111,7 +118,7 @@ function NewThread({ onDone }: { onDone: () => void }) {
   );
 }
 
-function ThreadView({ thread, onStatus }: { thread: Thread; onStatus: () => void }) {
+function ThreadView({ thread, onStatus, onRead }: { thread: Thread; onStatus: () => void; onRead: () => void }) {
   const profile = useAuth((s) => s.profile)!;
   const look = useLookups();
   const msgs = useAsync(() => q<Message[]>(db().from('messages').select('*').eq('thread_id', thread.id).order('created_at')), [thread.id]);
@@ -133,7 +140,9 @@ function ThreadView({ thread, onStatus }: { thread: Thread; onStatus: () => void
 
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight });
-  }, [msgs.data]);
+    if (msgs.data) void db().rpc('mark_thread_read', { p_thread: thread.id }).then(() => onRead());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [msgs.data, thread.id]);
 
   const who = (id: string) => {
     if (id === profile.id) return 'You';

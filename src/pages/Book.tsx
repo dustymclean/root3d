@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarCheck, Download, Upload, Zap } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Download, MapPin, Phone, Upload, Video, Zap } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ErrorText, Field, Loading, Notice, PageHead, Success } from '../components/ui';
@@ -6,7 +6,10 @@ import { asset, useConsultants, useServices } from '../lib/data';
 import { dateTime, icsFor, money, timeOnly } from '../lib/format';
 import { q, supabase } from '../lib/supabase';
 import { openSlots, todayIn, weekdayOf } from '../lib/time';
-import type { Availability, Booking } from '../lib/types';
+import type { AppointmentMode, Availability, Booking } from '../lib/types';
+
+export const modeLabels: Record<AppointmentMode, string> = { virtual: 'Video', phone: 'Phone', onsite: 'On-site' };
+const modeIcons = { virtual: Video, phone: Phone, onsite: MapPin };
 import { useAuth } from '../store/auth';
 
 export function Book() {
@@ -22,6 +25,8 @@ export function Book() {
   const time = params.get('time');
   const [urgentOnly, setUrgentOnly] = useState(false);
   const [notes, setNotes] = useState('');
+  const [mode, setMode] = useState<AppointmentMode>('virtual');
+  const [location, setLocation] = useState('');
   const [hours, setHours] = useState<Availability[]>([]);
   const [slots, setSlots] = useState<Date[] | null>(null);
   const [busy, setBusy] = useState(false);
@@ -39,6 +44,10 @@ export function Book() {
   const list = (consultants.data ?? []).filter((c) => c.active && (!urgentOnly || c.is_available_today));
   const consultant = (consultants.data ?? []).find((c) => c.slug === slug);
   const tz = consultant?.timezone ?? 'America/Chicago';
+  const modes: AppointmentMode[] = consultant?.modes?.length ? consultant.modes : ['virtual', 'phone', 'onsite'];
+  useEffect(() => {
+    if (!modes.includes(mode)) setMode(modes[0]);
+  }, [modes, mode]);
 
   useEffect(() => {
     if (!supabase || !slug) return;
@@ -79,7 +88,7 @@ export function Book() {
     setBusy(true);
     setError(null);
     const { data, error } = await supabase.rpc('book_appointment', {
-      p_consultant: consultant.slug, p_service: service.id, p_start: time, p_notes: notes,
+      p_consultant: consultant.slug, p_service: service.id, p_start: time, p_notes: notes, p_mode: mode, p_location: mode === 'onsite' ? location : '',
     });
     setBusy(false);
     if (error) {
@@ -95,7 +104,7 @@ export function Book() {
       <section className="section">
         <div className="container" style={{ maxWidth: 680 }}>
           <Success>
-            <strong>You're booked.</strong> {service.name} with {consultant.name}, {dateTime(booked.starts_at)}.
+            <strong>You're booked.</strong> {service.name} with {consultant.name}, {dateTime(booked.starts_at)} ({modeLabels[booked.mode ?? 'virtual'].toLowerCase()}).
           </Success>
           <div className="card mt stack">
             <p>
@@ -193,7 +202,34 @@ export function Book() {
 
             {time && (
               <div className="booking-step">
-                <h3><span className="step-num">4</span> Anything we should know?</h3>
+                <h3><span className="step-num">4</span> How would you like to meet?</h3>
+                <div className="option-grid" role="radiogroup" aria-label="Appointment type">
+                  {modes.map((m) => {
+                    const I = modeIcons[m];
+                    return (
+                      <button key={m} role="radio" aria-checked={mode === m} className="option" aria-pressed={mode === m} onClick={() => setMode(m)}>
+                        <I size={20} />
+                        <div>
+                          <strong>{modeLabels[m]}</strong>
+                          <small>{m === 'virtual' ? 'Private video room in your portal' : m === 'phone' ? 'We call the number on your profile' : 'We come to your facility'}</small>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+                {mode === 'onsite' && (
+                  <div className="mt">
+                    <Field label="Facility address" hint="Travel costs for on-site visits are confirmed with you before the visit.">
+                      <input className="input" value={location} onChange={(e) => setLocation(e.target.value)} autoComplete="street-address" />
+                    </Field>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {time && (
+              <div className="booking-step">
+                <h3><span className="step-num">5</span> Anything we should know?</h3>
                 <Field label="Notes for your consultant (optional)">
                   <textarea className="textarea" value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Facility type, license status, what's going wrong…" />
                 </Field>
@@ -207,14 +243,15 @@ export function Book() {
               <dt>Service</dt><dd>{service?.name ?? '—'}</dd>
               <dt>Consultant</dt><dd>{consultant?.name ?? '—'}</dd>
               <dt>When</dt><dd>{time ? dateTime(time) : '—'}</dd>
+              <dt>Type</dt><dd>{modeLabels[mode]}</dd>
               <dt>Length</dt><dd>{service?.minutes ? `${service.minutes} min` : '—'}</dd>
               <dt>Price</dt><dd>{service ? (service.price_cents ? money(service.price_cents) : 'Free') : '—'}</dd>
             </dl>
             <ErrorText error={error} />
-            <button className="btn btn-primary" style={{ width: '100%' }} disabled={!time || busy || !supabase} onClick={confirm}>
+            <button className="btn btn-primary" style={{ width: '100%' }} disabled={!time || busy || !supabase || (mode === 'onsite' && location.trim().length < 5)} onClick={confirm}>
               <CalendarCheck size={18} /> {profile ? 'Confirm booking' : 'Sign in to confirm'} {!profile && <ArrowRight size={16} />}
             </button>
-            <p className="muted small mt">Free cancellation up to 24 hours before. Later cancellations and no-shows may be charged.</p>
+            <p className="muted small mt">Free cancellation up to 24 hours before. Later cancellations and no-shows may be charged. See the <Link to="/policies/cancellation">cancellation policy</Link>.</p>
           </aside>
         </div>
       </div>

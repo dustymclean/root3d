@@ -1,14 +1,13 @@
 -- Root3D seed data. Safe to re-run.
 
--- >>> THE ONLY THING TO EDIT: the three partner emails. <<<
+-- >>> Partner emails. 0004_team_logins.sql holds the current list for all four consultants. <<<
 -- Whoever signs up with these emails becomes an admin linked to their consultant profile.
 -- Everyone else who signs up is a standard client account.
 insert into public.admin_emails (email, consultant_slug) values
   ('dustjackmcl@gmail.com', 'dusty-mclean'),
   ('dusty_mclean@icloud.com', null),
-  ('sales@valleyoffire.co', 'joel-perkins')
-  -- To give Danny his own login linked to his calendar, add:
-  -- ,('danny@his-domain.com', 'danny-davis')
+  ('joel@pixies-pantry.com', 'joel-perkins'),
+  ('danny@pixies-pantry.com', 'danny-davis')
 on conflict (email) do update set consultant_slug = excluded.consultant_slug;
 
 insert into public.consultants (slug, name, title, photo, specialties, sort) values

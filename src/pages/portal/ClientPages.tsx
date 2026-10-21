@@ -133,7 +133,7 @@ export function InvoiceDetail() {
           {i.refund_note && <><dt>Refund</dt><dd>{i.refund_note}</dd></>}
         </dl>
       </div>
-      <p className="muted small">Root3D Consulting LLC · r3dconsulting.com</p>
+      <p className="muted small">Root3D Consulting · r3dconsulting.com</p>
       <div className="btn-row no-print">
         {i.status === 'open' && i.payment_url && (
           <a className="btn btn-primary" href={i.payment_url} target="_blank" rel="noopener noreferrer"><CreditCard size={18} /> Pay now</a>

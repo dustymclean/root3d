@@ -1,8 +1,10 @@
 import {
-  BarChart3, CalendarDays, ClipboardCheck, Clock, FileSignature, FolderOpen, Inbox, LayoutDashboard, LogOut, MessagesSquare,
+  BarChart3, CalendarDays, ClipboardCheck, Clock, FileSignature, FolderOpen, Inbox, KanbanSquare, LayoutDashboard, LogOut, MessagesSquare,
   Receipt, ScrollText, Settings2, Tag, UserCircle, Users,
 } from 'lucide-react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { db, q } from '../../lib/supabase';
+import { useAsync } from '../../lib/useAsync';
 import { useAuth } from '../../store/auth';
 
 const clientLinks = [
@@ -10,6 +12,7 @@ const clientLinks = [
   { to: '/portal/appointments', label: 'Appointments', icon: CalendarDays },
   { to: '/portal/messages', label: 'Messages & support', icon: MessagesSquare },
   { to: '/portal/files', label: 'Files', icon: FolderOpen },
+  { to: '/portal/projects', label: 'Projects', icon: KanbanSquare },
   { to: '/portal/plans', label: 'Action plans', icon: ClipboardCheck },
   { to: '/portal/invoices', label: 'Invoices', icon: Receipt },
   { to: '/portal/agreements', label: 'Agreements', icon: FileSignature },
@@ -32,6 +35,11 @@ export function PortalLayout() {
   const { profile, signOut } = useAuth();
   const navigate = useNavigate();
   const isAdmin = profile?.role === 'admin';
+  const { pathname } = useLocation();
+  const unread = useAsync(async () => {
+    const rows = await q<{ unread: number }[]>(db().rpc('my_unread'));
+    return rows.reduce((n, r) => n + r.unread, 0);
+  }, [pathname]);
   return (
     <section className="section" style={{ paddingTop: 40 }}>
       <div className="container portal">
@@ -43,6 +51,7 @@ export function PortalLayout() {
           {clientLinks.map((l) => (
             <NavLink key={l.to} to={l.to} end={l.end}>
               <l.icon size={18} /> {isAdmin && l.to === '/portal/appointments' ? 'All appointments' : l.label}
+              {l.to === '/portal/messages' && (unread.data ?? 0) > 0 && <span className="badge" aria-label={`${unread.data} unread`}>{unread.data}</span>}
             </NavLink>
           ))}
           {isAdmin && (
