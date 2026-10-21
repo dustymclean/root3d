@@ -8,6 +8,7 @@ import type { AuditRow, Availability, Consultant, ContactRequest, Invoice, Retai
 import { useAsync } from '../../../lib/useAsync';
 import { useAuth } from '../../../store/auth';
 import { personName, useLookups } from '../lookups';
+import { taxonomy } from '../../../data/growcoach';
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -35,7 +36,11 @@ export function Schedule() {
 }
 
 function ConsultantSettings({ c, onSaved }: { c: Consultant; onSaved: () => void }) {
-  const [f, setF] = useState({ is_available_today: c.is_available_today, buffer_minutes: c.buffer_minutes, min_notice_hours: c.min_notice_hours, timezone: c.timezone, active: c.active });
+  const [f, setF] = useState({
+    is_available_today: c.is_available_today, buffer_minutes: c.buffer_minutes, min_notice_hours: c.min_notice_hours, timezone: c.timezone, active: c.active,
+    verified: c.verified ?? false, expertise: c.expertise ?? [], modes: c.modes ?? ['virtual', 'phone', 'onsite'],
+  });
+  const toggleIn = <T extends string>(list: T[], v: T, on: boolean) => (on ? [...list, v] : list.filter((x) => x !== v));
   const [msg, setMsg] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   async function save(e: FormEvent) {
@@ -52,6 +57,21 @@ function ConsultantSettings({ c, onSaved }: { c: Consultant; onSaved: () => void
       <h3>{c.name}: booking rules</h3>
       <label className="check"><input type="checkbox" checked={f.is_available_today} onChange={(e) => setF({ ...f, is_available_today: e.target.checked })} /> Available today for urgent, same-day sessions</label>
       <label className="check"><input type="checkbox" checked={f.active} onChange={(e) => setF({ ...f, active: e.target.checked })} /> Accepting bookings</label>
+      <label className="check"><input type="checkbox" checked={f.verified} onChange={(e) => setF({ ...f, verified: e.target.checked })} /> Verified Grow Coach expert (manual verification complete)</label>
+      <fieldset className="fieldset">
+        <legend className="field-label">Appointment types offered</legend>
+        {(['virtual', 'phone', 'onsite'] as const).map((m) => (
+          <label key={m} className="check"><input type="checkbox" checked={f.modes.includes(m)} onChange={(e) => setF({ ...f, modes: toggleIn(f.modes, m, e.target.checked) })} /> {m === 'virtual' ? 'Video' : m === 'phone' ? 'Phone' : 'On-site'}</label>
+        ))}
+      </fieldset>
+      <fieldset className="fieldset">
+        <legend className="field-label">Grow Coach expertise</legend>
+        <div className="check-grid">
+          {taxonomy.map((t) => (
+            <label key={t} className="check"><input type="checkbox" checked={f.expertise.includes(t)} onChange={(e) => setF({ ...f, expertise: toggleIn(f.expertise, t, e.target.checked) })} /> {t}</label>
+          ))}
+        </div>
+      </fieldset>
       <div className="form-row">
         <Field label="Buffer between sessions (min)"><input className="input" type="number" min={0} max={240} value={f.buffer_minutes} onChange={(e) => setF({ ...f, buffer_minutes: Number(e.target.value) })} /></Field>
         <Field label="Minimum notice (hours)"><input className="input" type="number" min={0} max={336} value={f.min_notice_hours} onChange={(e) => setF({ ...f, min_notice_hours: Number(e.target.value) })} /></Field>

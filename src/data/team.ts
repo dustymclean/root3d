@@ -4,16 +4,26 @@ export type Claim = {
   needsReview?: boolean;
 };
 
+export type Specialty = { title: string; text: string; needsReview?: boolean };
+
 export type Consultant = {
   slug: string;
   name: string;
+  first: string;
   title: string;
+  headline: string;
   photo: string;
+  photoAlt: string;
   photoPosition?: string;
   summary: string;
+  story: Claim[];
   background: Claim[];
-  specialties: string[];
+  specialties: Specialty[];
+  categories: string[];
+  approach: string;
   focus: string;
+  /** Service-area slugs this consultant leads or supports (see data/areas.ts). */
+  areas: string[];
   bookable: boolean;
 };
 
@@ -21,77 +31,231 @@ export const team: Consultant[] = [
   {
     slug: 'joel-perkins',
     name: 'Joel Perkins',
+    first: 'Joel',
     title: 'Executive Consultant · Supply Chain Architect',
+    headline: 'Agricultural Scientist, Formulation Specialist & Systems Architect',
     photo: 'team/joel-perkins.jpg',
+    photoAlt: 'Headshot of Joel Perkins',
     summary:
-      'Blends formulation chemistry with high-volume operations to shorten grow cycles, protect margins, and strengthen compliance. Treats each facility like a live lab, testing compliant process tweaks that lift yield and customer pull.',
+      'Joel bridges agricultural biochemistry and large-scale operations. He designs nutrient programs and input strategies, vets suppliers, and structures the distribution and margin side of the business so the science pays for itself.',
+    story: [
+      {
+        text: 'Joel came to agriculture from an unusual direction. He started in the California entertainment industry as a concert promoter running multiple live events a week, and fronted the thrash band Six Pack of Doom. Running shows taught him logistics, crowds, and cash flow long before he ran a facility.',
+        needsReview: true,
+      },
+      {
+        text: 'He moved into medical cannabis managing the Sespe Creek Collective in California, which is described as serving roughly 10,000 patients. Concern about agricultural contaminants pushed him into microbiology, and he went on to build a biological, fermentation-based fertilizer line used by growers in Humboldt and in commercial berry production.',
+        needsReview: true,
+      },
+      {
+        text: 'His corporate agriculture experience includes serving as COO of Primordial Solutions and a division leadership role at Wilbur-Ellis, where he worked on botanical fertilizer lines and spoke on plant metabolism. In Nevada he worked in high-volume retail operations and helped restructure a distribution business into Valley of Fire Distribution. He is also the formulator behind Cowbell Cow Mag.',
+        needsReview: true,
+      },
+      {
+        text: 'Joel is currently described as Head of Operations at Lake Leaf Cultivation, a tribal cannabis enterprise of the Mille Lacs Band of Ojibwe in Minnesota. Public sources describe Lake Leaf as established in April 2024 with an integrated facility of about 50,000 square feet, more than 100 associates, wholesale relationships, and dispensaries in Onamia, Hinckley, and Isle.',
+        needsReview: true,
+      },
+    ],
     background: [
-      { text: 'Head of Operations, Lake Leaf Cultivation (Mille Lacs Band of Ojibwe, MN): 50,000 sq ft vertically integrated operation', needsReview: true },
-      { text: 'Founded a biological fermentation fertilizer line used by Humboldt growers and Driscoll’s', needsReview: true },
-      { text: 'Built Valley of Fire Distribution (Bofloral US)', needsReview: true },
-      { text: 'Six years as Division Head at Wilbur-Ellis', needsReview: true },
-      { text: 'COO, Primordial Solutions; operations work with Oasis Cannabis (NV)', needsReview: true },
-      { text: 'Ran Sespe Creek Collective, serving 10,000+ patients', needsReview: true },
-      { text: 'Creator of Cowbell Cow Mag', needsReview: true },
+      { text: 'Head of Operations, Lake Leaf Cultivation (Mille Lacs Band of Ojibwe, Minnesota)', needsReview: true },
+      { text: 'Founder, Valley of Fire Distribution', needsReview: true },
+      { text: 'Division leadership, Wilbur-Ellis (about six years)', needsReview: true },
+      { text: 'Chief Operating Officer, Primordial Solutions', needsReview: true },
+      { text: 'Founder of a biological fermentation fertilizer line', needsReview: true },
+      { text: 'Nevada retail operations, including Oasis Cannabis', needsReview: true },
+      { text: 'Manager, Sespe Creek Collective (California)', needsReview: true },
+      { text: 'Formulator, Cowbell Cow Mag', needsReview: true },
     ],
     specialties: [
-      'Potassium and calcium acetate nutrient technology',
-      'Fertigation and nutrient formulation',
-      'Low heavy-metal input sourcing',
-      'Genetics and distribution strategy',
-      'Margin and liquidity planning',
+      {
+        title: 'Acetate-based nutrient strategies',
+        text: 'Feed programs that use potassium and calcium acetate as carbon-accessible inputs. We trial changes on a test block and measure before rolling anything out, because results depend on cultivar and environment.',
+        needsReview: true,
+      },
+      {
+        title: 'Biological fertilizers & fermentation',
+        text: 'Microbial and fermentation-based inputs, how to brew and apply them consistently, and how to keep them from becoming a contamination source.',
+      },
+      {
+        title: 'Low heavy-metal input sourcing',
+        text: 'Supplier vetting, certificate-of-analysis review, and input documentation that reduce the risk of failed heavy-metal panels.',
+      },
+      {
+        title: 'Genetics & supplier evaluation',
+        text: 'Sourcing cultivars and inputs from suppliers who can back up what they sell, and building relationships that hold up under scrutiny.',
+      },
+      {
+        title: 'Distribution, margins & liquidity',
+        text: 'Wholesale agreements, margin strategy, and cash-flow planning for businesses that cannot rely on ordinary banking. Joel calls the liquidity side "Backpack Banking": practical payment paths and cash procedures for restricted markets.',
+      },
+      {
+        title: 'Operational scaling',
+        text: 'Turning a working room into a working facility: staffing, throughput, procurement, and the controls that keep quality from slipping as volume grows.',
+      },
     ],
+    categories: [
+      'Commercial agricultural science',
+      'Nutrient formulation',
+      'Facility strategy',
+      'Operational scaling',
+      'Product development',
+      'Genetics',
+      'Supplier evaluation',
+      'Business commercialization',
+    ],
+    approach: 'Treat every facility like a live lab. Change one variable, measure it honestly, and keep what works.',
     focus: 'Inputs, chemistry, and margins',
+    areas: ['agriculture-formulation', 'cultivation-processing', 'multi-state', 'dispensary-retail'],
     bookable: true,
   },
   {
     slug: 'danny-davis',
     name: 'Danny Davis',
+    first: 'Danny',
     title: 'Head Cultivator · Facility Engineer',
+    headline: 'Master Cultivator, Facility Operator & Technical Systems Consultant',
     photo: 'team/danny-davis.jpg',
+    photoAlt: 'Danny Davis inside an operating cultivation facility',
     photoPosition: 'center 20%',
     summary:
-      'Premium indoor cultivation lead combining environmental control, team leadership, and tech integration. Designs practical adjustments when conditions shift so the crop, and the inspectors, stay happy.',
+      'Danny is the owner and head cultivator of Manna Holdings LLC (Farming Manna), a veteran-owned Mississippi operation. He combines field-medic discipline, network security training, and hands-on cultivation to keep plants healthy, systems running, and teams sharp.',
+    story: [
+      {
+        text: 'Danny served as a U.S. Army combat medic and earned the Expert Field Medical Badge. He brings that background into the grow room as biosecurity: clean entry procedures, contamination control, and the habit of doing it right every time because shortcuts eventually show up in the plants.',
+      },
+      {
+        text: 'After the Army he moved into enterprise technology and earned Cisco CCNA Security. That is why his facility work includes the network: segmented systems, Cloudflare, isolated Linux virtual machines, proxies, and encrypted communications, so cultivation data and camera feeds are not left exposed.',
+      },
+      {
+        text: 'Today he owns and runs Farming Manna, a veteran-owned commercial operation in Mississippi with a clean inspection history. His genetics work has included a project in Barcelona documenting about 650 cultivars, and he designs custom cultivation hardware in Tinkercad when the off-the-shelf part does not fit.',
+      },
+      {
+        text: 'Danny believes cultivators should understand their operation, not just follow a checklist. He spends as much time on people as on plants, helping high-turnover crews shift from an employee mindset to an owner mindset, drawing on mentoring and focus techniques that include Hemi-Sync audio.',
+      },
+    ],
     background: [
-      { text: 'U.S. Army combat medic, Expert Field Medical Badge' },
+      { text: 'U.S. Army combat medic, Expert Field Medical Badge (EFMB)' },
       { text: 'Cisco CCNA Security' },
-      { text: 'Owner, Manna Holdings LLC (Farming Manna): veteran-owned Mississippi operator with clean inspections' },
-      { text: 'Genetics work in Barcelona across 650 cultivars' },
+      { text: 'Owner and head cultivator, Manna Holdings LLC (Farming Manna), veteran-owned, Mississippi' },
+      { text: 'Clean state inspection history at Farming Manna' },
+      { text: 'Genetics project in Barcelona documenting about 650 cultivars' },
+      { text: 'Linux, Cloudflare, and network security practice' },
+      { text: '3D design and hardware prototyping in Tinkercad' },
     ],
     specialties: [
-      'Irrigation and plumbing design',
-      'Tissue culture and bio-security',
-      'Facility security and network hardening',
-      'Rapid prototyping',
-      'Team culture and mentoring',
+      {
+        title: 'Irrigation & the 45-degree rule',
+        text: 'Plumbing laid out to cut friction loss, for example swapping hard 90-degree elbows for pairs of 45s, so pressure stays even across the room and pumps are not overworked.',
+      },
+      {
+        title: 'Plant health & IPM',
+        text: 'Diagnosing deficiencies, pests, and pathogens from the plant and the environment together, then building an integrated pest management routine the crew can keep up.',
+      },
+      {
+        title: 'Tissue culture & micropropagation',
+        text: 'Clean-stock programs, lab layout, media prep, and training, so your genetics are preserved and your mother rooms stop being a liability.',
+      },
+      {
+        title: 'Environmental controls & facility troubleshooting',
+        text: 'HVAC, dehumidification, airflow, and lighting reviewed as one system, with practical adjustments when conditions shift.',
+      },
+      {
+        title: 'Facility security & operational privacy',
+        text: 'Network segmentation, secure remote access, and communication habits that protect cultivation data, camera systems, and your intellectual property.',
+      },
+      {
+        title: 'Team culture & training',
+        text: 'Floor training, strain documentation, and leadership coaching that builds a crew who owns the outcome.',
+      },
     ],
+    categories: [
+      'Grow coaching',
+      'Commercial facility audits',
+      'Irrigation and environmental optimization',
+      'Plant diagnostics',
+      'Cultivation management',
+      'Tissue culture',
+      'Operational training',
+      'Infrastructure consulting',
+    ],
+    approach: 'Teach growers to understand their room, not just follow instructions. The best fix is the one your team can run without me.',
     focus: 'Canopy, plumbing, and training',
+    areas: ['facility-audits', 'cultivation-processing', 'grow-coach', 'technology-systems'],
     bookable: true,
   },
   {
     slug: 'dusty-mclean',
     name: 'Dusty McLean',
+    first: 'Dusty',
     title: 'Systems Architect · Compliance & OSINT',
+    headline: 'Technologist, OSINT Researcher & Business Systems Strategist',
     photo: 'team/dusty-mclean.jpg',
+    photoAlt: 'Dusty McLean, full-length portrait in a blue floral dress',
     photoPosition: 'center 10%',
     summary:
-      'Translates cannabis regulations into workable systems: filings, inspection-ready SOPs, seed-to-sale documentation, and the data pipelines that keep operators audit-ready without slowing them down.',
+      'Dusty translates complicated business, compliance, and technology problems into systems people can actually run. She builds the documentation, data pipelines, storefronts, and research that keep operators audit-ready without slowing them down.',
+    story: [
+      {
+        text: 'Dusty is an IT professional and researcher based in Mississippi, with an Associate of Science background in Information Technology Systems and Communication Systems. She is a commissioned Mississippi Notary Public and a USDA-licensed hemp producer, so the paperwork side of this industry is not abstract to her.',
+      },
+      {
+        text: 'She founded Pixie’s Pantry and Pixie’s Distribution, and is managing partner of Ole Brook Web Services. That work spans WordPress and WooCommerce builds, B2B wholesale portals, structured CSV and JSON product data, and automation that keeps catalogs, orders, and records in sync.',
+      },
+      {
+        text: 'Her research background includes OSINT and cybersecurity. She is a course author for OnlySecurity, writing curriculum on investigative methodology, digital privacy, and image analysis. For clients, that becomes regulatory intelligence, competitive research, and due diligence on partners and suppliers.',
+      },
+      {
+        text: 'Dusty also treats consumption and vaporization hardware with a Durable Medical Equipment mindset: material safety, airpath quality, and battery documentation rather than novelty marketing. She has built patient resource directories and product education for medical cannabis patients.',
+      },
+    ],
     background: [
-      { text: 'A.S., IT & Communication Systems' },
-      { text: 'Mississippi Notary Public' },
+      { text: 'A.S. background, Information Technology Systems and Communication Systems' },
+      { text: 'Commissioned Mississippi Notary Public' },
       { text: 'USDA-licensed hemp producer' },
-      { text: 'Managing partner, OBWS' },
+      { text: 'Managing partner, Ole Brook Web Services (OBWS)' },
       { text: 'Founder, Pixie’s Pantry and Pixie’s Distribution' },
-      { text: 'Author, OnlySecurity course' },
+      { text: 'Course author, OnlySecurity (OSINT, digital privacy, image analysis)' },
     ],
     specialties: [
-      'Licensing filings and SOP development',
-      'Seed-to-sale documentation systems',
-      'Sensor alerts and automation',
-      'B2B portals, storefronts, and data feeds',
-      'Total THC calculations and lab data review',
+      {
+        title: 'Compliance documentation & SOPs',
+        text: 'Inspection-ready SOPs, records, and checklists written from the actual rules, with owners and review dates so they stay current.',
+      },
+      {
+        title: 'Total THC & lab-data review',
+        text: 'Batch monitoring against statutory limits using Total THC = (THCA × 0.877) + Δ9-THC, with alerts before a number drifts into trouble.',
+      },
+      {
+        title: 'E-commerce & B2B systems',
+        text: 'WordPress and WooCommerce storefronts, wholesale portals, and structured product feeds that stay accurate across thousands of SKUs.',
+      },
+      {
+        title: 'Automation & sensor alerts',
+        text: 'Connecting environmental sensors, spreadsheets, and business tools so the right person hears about a problem while it is still small.',
+      },
+      {
+        title: 'OSINT & regulatory intelligence',
+        text: 'Source-backed research on rules, competitors, partners, and suppliers, delivered with citations you can check.',
+      },
+      {
+        title: 'Hardware safety & product education',
+        text: 'Material, airpath, and battery documentation for consumption hardware, plus clear product education for customers and patients.',
+      },
     ],
-    focus: 'Data, alerts, and storefronts',
+    categories: [
+      'Website and e-commerce architecture',
+      'Process automation',
+      'OSINT',
+      'Regulatory intelligence',
+      'Competitive research',
+      'Documentation',
+      'Commercialization',
+      'Digital systems',
+      'Strategic business development',
+    ],
+    approach: 'If it is not written down, it did not happen. Good systems make the right thing the easy thing.',
+    focus: 'Data, documentation, and storefronts',
+    areas: ['technology-systems', 'dispensary-retail', 'multi-state', 'facility-audits'],
     bookable: true,
   },
 ];

@@ -26,9 +26,14 @@ export type Consultant = {
   buffer_minutes: number;
   min_notice_hours: number;
   is_available_today: boolean;
+  expertise: string[];
+  verified: boolean;
+  modes: AppointmentMode[];
   active: boolean;
   sort: number;
 };
+
+export type AppointmentMode = 'virtual' | 'phone' | 'onsite';
 
 export type Service = {
   id: string;
@@ -63,6 +68,8 @@ export type Booking = {
   late_cancel: boolean;
   room: string;
   extended_minutes: number;
+  mode: AppointmentMode;
+  location: string;
   created_at: string;
 };
 
@@ -174,3 +181,38 @@ export type ContactRequest = {
   created_at: string;
 };
 export type AuditRow = { id: number; actor_id: string | null; action: string; entity: string; entity_id: string; at: string };
+
+export type ProjectStatus = 'active' | 'on_hold' | 'done';
+export type Project = {
+  id: string;
+  client_id: string;
+  title: string;
+  summary: string;
+  status: ProjectStatus;
+  consultants: string[];
+  record: Record<string, string>;
+  due_date: string | null;
+  created_at: string;
+  updated_at: string;
+};
+export type TaskStatus = 'todo' | 'doing' | 'review' | 'done';
+export type ProjectTask = {
+  id: string;
+  project_id: string;
+  title: string;
+  detail: string;
+  status: TaskStatus;
+  assignee: string | null;
+  due_date: string | null;
+  sort: number;
+  created_at: string;
+};
+export type Milestone = {
+  id: string;
+  project_id: string;
+  title: string;
+  deliverable: string;
+  due_date: string | null;
+  done_at: string | null;
+  created_at: string;
+};

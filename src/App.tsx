@@ -3,18 +3,23 @@ import { Route, Routes } from 'react-router-dom';
 import { RequireAuth } from './components/Guards';
 import { Layout } from './components/Layout';
 import { Book } from './pages/Book';
+import { About } from './pages/public/About';
 import { Contact } from './pages/public/Contact';
+import { GrowCoach } from './pages/public/GrowCoach';
+import { ArticlePage, CaseStudies, Faq, KnowledgeBase } from './pages/public/Knowledge';
+import { Resources, SopGenerator, ThcCalculator, Troubleshooter, VpdCalculator } from './pages/public/Tools';
 import { Home } from './pages/public/Home';
-import { NotFound, Privacy, Terms } from './pages/public/Legal';
+import { Accessibility, CancellationPolicy, NotFound, PaymentPolicy, Privacy, RefundPolicy, Terms } from './pages/public/Legal';
 import { Login, ResetPassword } from './pages/public/Login';
 import { Pricing } from './pages/public/Pricing';
-import { Services } from './pages/public/Services';
+import { AreaPage, Services } from './pages/public/Services';
 import { Team, TeamProfile } from './pages/public/Team';
 import { AppointmentDetail, Appointments } from './pages/portal/Appointments';
 import { Agreements, Files, InvoiceDetail, Invoices, Plans, ProfilePage } from './pages/portal/ClientPages';
 import { Messages } from './pages/portal/Messages';
 import { Overview } from './pages/portal/Overview';
 import { PortalLayout } from './pages/portal/PortalLayout';
+import { ProjectDetail, Projects } from './pages/portal/Projects';
 import { Session } from './pages/portal/Session';
 import { ClientDetail, Clients } from './pages/portal/admin/Clients';
 import { AuditAdmin, Billing, InboxAdmin, Schedule, ServicesAdmin, TimeTracking, UsersAdmin } from './pages/portal/admin/Manage';
@@ -31,7 +36,23 @@ export function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
+        <Route path="services/:slug" element={<AreaPage />} />
+        <Route path="grow-coach" element={<GrowCoach />} />
+        <Route path="case-studies" element={<CaseStudies />} />
+        <Route path="resources" element={<Resources />} />
+        <Route path="resources/sop-generator" element={<SopGenerator />} />
+        <Route path="resources/total-thc" element={<ThcCalculator />} />
+        <Route path="resources/vpd" element={<VpdCalculator />} />
+        <Route path="resources/troubleshooter" element={<Troubleshooter />} />
+        <Route path="knowledge-base" element={<KnowledgeBase />} />
+        <Route path="knowledge-base/:slug" element={<ArticlePage />} />
+        <Route path="faq" element={<Faq />} />
+        <Route path="accessibility" element={<Accessibility />} />
+        <Route path="policies/payment" element={<PaymentPolicy />} />
+        <Route path="policies/cancellation" element={<CancellationPolicy />} />
+        <Route path="policies/refunds" element={<RefundPolicy />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="team" element={<Team />} />
         <Route path="team/:slug" element={<TeamProfile />} />
@@ -50,6 +71,8 @@ export function App() {
           <Route path="messages" element={<Messages />} />
           <Route path="messages/:id" element={<Messages />} />
           <Route path="files" element={<Files />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="projects/:id" element={<ProjectDetail />} />
           <Route path="plans" element={<Plans />} />
           <Route path="invoices" element={<Invoices />} />
           <Route path="invoices/:id" element={<InvoiceDetail />} />

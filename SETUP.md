@@ -15,6 +15,7 @@ Everything below is free to start. No secret keys ever go in this repository.
    ```
 
    Change them if needed (the second value links that login to a consultant's calendar), then paste the whole file into a new query and **Run**.
+4. Paste all of `supabase/migrations/0003_v2.sql` into a new query and **Run**. This adds video/phone/on-site appointments, Grow Coach expertise tags, project boards with milestones, and read/unread messages. (If you already ran 0001 and 0002 earlier, just run this one; it is safe to run more than once.)
 
 That's the only account setup. Whoever signs up with one of those emails becomes an admin. Everyone else who signs up is a standard client. You can change the list later under **Portal → Users & admins**.
 

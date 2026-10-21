@@ -1,4 +1,4 @@
-import { CalendarClock, Download, Plus, Trash2, Video, XCircle } from 'lucide-react';
+import { CalendarClock, Download, MapPin, Phone, Plus, Trash2, Video, XCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ErrorText, Field, Loading, StatusPill, Success } from '../../components/ui';
@@ -56,7 +56,7 @@ export function AppointmentDetail() {
   const start = new Date(b.starts_at).getTime();
   const end = new Date(b.ends_at).getTime();
   const now = Date.now();
-  const canJoin = b.status === 'confirmed' && now > start - 15 * 60_000 && now < end + 30 * 60_000;
+  const canJoin = (b.mode ?? 'virtual') === 'virtual' && b.status === 'confirmed' && now > start - 15 * 60_000 && now < end + 30 * 60_000;
   const upcoming = b.status === 'confirmed' && start > now;
 
   async function rpc(name: string, args: Record<string, unknown>) {
@@ -84,6 +84,18 @@ export function AppointmentDetail() {
           </div>
           <StatusPill status={b.late_cancel ? 'late cancel' : b.status} />
         </div>
+        <p className="row small">
+          {b.mode === 'phone' ? <Phone size={16} /> : b.mode === 'onsite' ? <MapPin size={16} /> : <Video size={16} />}
+          <span>
+            {b.mode === 'phone'
+              ? isAdmin
+                ? `Phone call. Client number: ${look.data.profiles[b.client_id]?.phone || 'not on profile'}`
+                : 'Phone call. Your consultant will call the number on your profile.'
+              : b.mode === 'onsite'
+                ? `On-site visit at ${b.location}`
+                : 'Video session in your portal. The room opens 15 minutes before the start.'}
+          </span>
+        </p>
         {b.notes && <p><strong>Notes:</strong> {b.notes}</p>}
         <div className="btn-row">
           {canJoin && <Link to={`/portal/session/${b.id}`} className="btn btn-primary"><Video size={18} /> Join video session</Link>}
