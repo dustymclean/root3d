@@ -95,7 +95,7 @@ export function Home() {
           <div className="section-head">
             <p className="eyebrow">What we do</p>
             <h2>Seven practice areas, one team</h2>
-            <p className="lede">Hire us for one problem or the whole operation. Each area has a lead, and every engagement draws on all three partners when it needs to.</p>
+            <p className="lede">Hire us for one problem or the whole operation. Each area has a lead, and every engagement draws on the whole team when it needs to.</p>
           </div>
           <div className="grid grid-3">
             {areas.map((a, i) => (
@@ -124,10 +124,10 @@ export function Home() {
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Meet the consultants</p>
-            <h2>Three backgrounds. Three perspectives.</h2>
-            <p className="lede">One commitment to solving real problems. Book one partner, or bring all three to the table.</p>
+            <h2>Four backgrounds. Four perspectives.</h2>
+            <p className="lede">One commitment to solving real problems. Book one consultant, or bring the whole team to the table.</p>
           </div>
-          <div className="grid grid-3">
+          <div className="grid team-grid">
             {team.map((t, i) => (
               <Reveal key={t.slug} delay={i * 90}>
                 <Link to={`/team/${t.slug}`} className="card person-card">
@@ -152,17 +152,18 @@ export function Home() {
             <p className="eyebrow">How we work together</p>
             <h2>Inputs, canopy, and data on every job</h2>
           </div>
-          <div className="table-wrap card" style={{ padding: 0 }}>
-            <table className="table synergy">
-              <thead>
-                <tr><th scope="col">Engagement</th><th scope="col">Joel</th><th scope="col">Danny</th><th scope="col">Dusty</th></tr>
-              </thead>
-              <tbody>
-                {synergy.map((s) => (
-                  <tr key={s.area}><th scope="row">{s.area}</th><td>{s.joel}</td><td>{s.danny}</td><td>{s.dusty}</td></tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid grid-2">
+            {synergy.map((s) => (
+              <div key={s.area} className="card">
+                <h3>{s.area}</h3>
+                <dl className="synergy-dl">
+                  <dt>Joel</dt><dd>{s.joel}</dd>
+                  <dt>Danny</dt><dd>{s.danny}</dd>
+                  <dt>Dusty</dt><dd>{s.dusty}</dd>
+                  <dt>Hunter</dt><dd>{s.hunter}</dd>
+                </dl>
+              </div>
+            ))}
           </div>
         </div>
       </section>

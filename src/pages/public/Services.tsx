@@ -17,7 +17,7 @@ export function Services() {
       <section className="section">
         <div className="container">
           <PageHead eyebrow="Services" title="Seven practice areas, from the root zone to the register">
-            Individual consulting or combined engagements with all three specialists. Project-based audits and remediation
+            Individual consulting or combined engagements with the whole team. Project-based audits and remediation
             packages come with defined deliverables and an individual quote.
           </PageHead>
           <div className="grid grid-2">

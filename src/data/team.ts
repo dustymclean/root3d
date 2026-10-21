@@ -24,6 +24,8 @@ export type Consultant = {
   focus: string;
   /** Service-area slugs this consultant leads or supports (see data/areas.ts). */
   areas: string[];
+  /** Optional short muted clip shown on the profile. */
+  video?: string;
   bookable: boolean;
 };
 
@@ -256,6 +258,75 @@ export const team: Consultant[] = [
     approach: 'If it is not written down, it did not happen. Good systems make the right thing the easy thing.',
     focus: 'Data, documentation, and storefronts',
     areas: ['technology-systems', 'dispensary-retail', 'multi-state', 'facility-audits'],
+    bookable: true,
+  },
+  {
+    slug: 'hunter-porter',
+    name: 'Hunter Porter',
+    first: 'Hunter',
+    title: 'Regulatory Analyst · Systems & Devices',
+    headline: 'Regulatory Interpretation, Cultivation Methods & Device Systems',
+    photo: 'team/hunter-porter.jpg',
+    photoAlt: 'Hunter Porter in a navy jacket and cap, sitting outdoors in a park',
+    photoPosition: '55% 20%',
+    video: 'team/hunter-porter.mp4',
+    summary:
+      'Hunter reads the rules the way an engineer reads a schematic. He studied electrical technology, and he brings that same precision to regulations, mold problems, growing methods, and the devices that run a facility. He notices what others miss and does not stop until he has the answer.',
+    story: [
+      {
+        text: 'Hunter studied electrical technology, and it shows in how he approaches every problem: understand the whole system first, then find the part that is failing. He studies systems he may never touch, and the ones he does touch, he speaks their language.',
+      },
+      {
+        text: 'On the regulatory side, Hunter reads and interprets the law closely: what a rule actually requires, how it is applied, and what an operator has to do to follow it day to day. He is not an attorney; he helps clients understand and operationalize the rules, and works alongside counsel when legal advice is needed.',
+      },
+      {
+        text: 'In the grow, he knows molds and contamination, and he is fluent across multiple cultivation methods. That combination matters, because many mold problems start as environment, equipment, or procedure problems that only someone who understands all three will catch.',
+      },
+      {
+        text: 'Like Dusty, Hunter can find the answer to almost anything. He is thorough, gives his full heart to every project, and is often the person who spots the detail everyone else walked past.',
+      },
+    ],
+    background: [
+      { text: 'Studied Electrical Technology' },
+      { text: 'Regulatory reading and interpretation' },
+      { text: 'Mold identification and contamination prevention' },
+      { text: 'Experience across multiple growing methods' },
+      { text: 'Electrical systems and cultivation devices' },
+    ],
+    specialties: [
+      {
+        title: 'Reading & interpreting the law',
+        text: 'Plain-language breakdowns of what a regulation requires, where it is ambiguous, and how to build procedures that follow it. Research and interpretation, not legal advice.',
+      },
+      {
+        title: 'Mold & contamination',
+        text: 'Finding where mold comes from, whether it is airflow, humidity, equipment, or handling, and putting prevention in place before it reaches a lab test.',
+      },
+      {
+        title: 'Growing methods',
+        text: 'Practical knowledge across multiple cultivation methods, so advice fits the system you actually run.',
+      },
+      {
+        title: 'Devices & electrical systems',
+        text: 'Controllers, sensors, lighting, and the electrical side of a facility, reviewed by someone trained in electrical technology.',
+      },
+      {
+        title: 'Research & root-cause analysis',
+        text: 'Thorough investigation that keeps going until it finds the real cause, with the evidence written down.',
+      },
+    ],
+    categories: [
+      'Regulatory interpretation',
+      'Compliance procedures',
+      'Mold and contamination',
+      'Cultivation methods',
+      'Electrical systems and devices',
+      'Facility audits',
+      'Research and root-cause analysis',
+    ],
+    approach: 'Understand the whole system before you touch any part of it. The answer is usually in the detail nobody checked.',
+    focus: 'Law, molds, and devices',
+    areas: ['facility-audits', 'multi-state', 'cultivation-processing', 'technology-systems'],
     bookable: true,
   },
 ];

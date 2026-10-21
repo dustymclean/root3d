@@ -8,6 +8,7 @@ export const taxonomy = [
   'Commercial Hydro',
   'Tissue Culture',
   'IPM',
+  'Mold & Pathogens',
   'Irrigation',
   'Nutrient Formulation',
   'Genetics',
@@ -21,6 +22,7 @@ export const growCoachExpertise: Record<string, string[]> = {
   'joel-perkins': ['Commercial Hydro', 'Living Soil', 'Nutrient Formulation', 'Genetics'],
   'danny-davis': ['Commercial Hydro', 'Living Soil', 'Tissue Culture', 'IPM', 'Irrigation'],
   'dusty-mclean': ['Compliance', 'Lab Data', 'Automation'],
+  'hunter-porter': ['Compliance', 'Mold & Pathogens', 'Automation', 'Living Soil', 'Commercial Hydro'],
 };
 
 export const howItWorks = [

@@ -12,6 +12,17 @@ update public.consultants set expertise = array['Commercial Hydro', 'Living Soil
 update public.consultants set expertise = array['Commercial Hydro', 'Living Soil', 'Tissue Culture', 'IPM', 'Irrigation'] where slug = 'danny-davis' and expertise = '{}';
 update public.consultants set expertise = array['Compliance', 'Lab Data', 'Automation'] where slug = 'dusty-mclean' and expertise = '{}';
 
+-- Hunter Porter joins the team. To give him an admin login, add his email to admin_emails
+-- with consultant_slug 'hunter-porter' (Portal > Users & admins, or SQL).
+insert into public.consultants (slug, name, title, photo, specialties, sort) values
+  ('hunter-porter', 'Hunter Porter', 'Regulatory Analyst · Systems & Devices', 'team/hunter-porter.jpg',
+    array['Regulatory interpretation', 'Mold & contamination', 'Growing methods', 'Devices & electrical systems', 'Research & root-cause analysis'], 4)
+on conflict (slug) do nothing;
+insert into public.availability (consultant_slug, weekday, start_time, end_time)
+select 'hunter-porter', d, '09:00', '17:00' from generate_series(1, 5) d
+where not exists (select 1 from public.availability a where a.consultant_slug = 'hunter-porter');
+update public.consultants set expertise = array['Compliance', 'Mold & Pathogens', 'Automation', 'Living Soil', 'Commercial Hydro'] where slug = 'hunter-porter' and expertise = '{}';
+
 -- The Grow Coach package from the brief: one hour plus two 30-minute follow-ups.
 update public.services
 set name = 'Grow Coach Package',

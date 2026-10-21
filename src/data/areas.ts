@@ -37,7 +37,7 @@ export const areas: Area[] = [
       { title: 'Remediation plan', text: 'Each finding gets an owner, a fix, a cost estimate, and a re-check date.' },
     ],
     packages: ['mep-diagnostics', 'inventory-recon', 'tier-2'],
-    leads: ['danny-davis', 'dusty-mclean', 'joel-perkins'],
+    leads: ['danny-davis', 'dusty-mclean', 'hunter-porter', 'joel-perkins'],
     faqs: [
       { q: 'Do you guarantee we will pass?', a: 'No one honest can. We find what we can, fix what you approve, and document it. The decision belongs to the regulator.' },
       { q: 'Can you work around our production schedule?', a: 'Yes. Most audits are planned around harvests and room turns, and some work can happen remotely from photos and records.' },
@@ -65,7 +65,7 @@ export const areas: Area[] = [
       { title: 'Cultivation SOPs & training', text: 'Room-by-room procedures and hands-on training so the process survives staff changes.' },
     ],
     packages: ['standard', 'tc-lab', 'tier-2'],
-    leads: ['danny-davis', 'joel-perkins'],
+    leads: ['danny-davis', 'joel-perkins', 'hunter-porter'],
     faqs: [
       { q: 'Do you work with living soil and hydro?', a: 'Both. Our coaches work across commercial hydroponics, coco, living soil, and organic or KNF-style programs.' },
       { q: 'Will you take over our grow?', a: 'No. We advise, train, and help implement. Your team stays in control, and we make sure they understand why each change works.' },
@@ -145,7 +145,7 @@ export const areas: Area[] = [
       { title: 'OSINT & due diligence', text: 'Source-backed research reports on partners, suppliers, competitors, and regulations.' },
     ],
     packages: ['standard', 'tier-1'],
-    leads: ['dusty-mclean', 'danny-davis'],
+    leads: ['dusty-mclean', 'danny-davis', 'hunter-porter'],
     faqs: [
       { q: 'Do you only work with cannabis businesses?', a: 'No. Our systems work applies to any small business, and many of our tools came from agriculture and wholesale distribution.' },
     ],
@@ -170,7 +170,7 @@ export const areas: Area[] = [
       { title: 'Distribution strategy', text: 'Supply, wholesale, and margin planning across markets.' },
     ],
     packages: ['mso-gap', 'priority'],
-    leads: ['dusty-mclean', 'joel-perkins'],
+    leads: ['dusty-mclean', 'hunter-porter', 'joel-perkins'],
     faqs: [
       { q: 'Are you lawyers?', a: 'No. We research and operationalize the rules. For legal opinions and filings that require an attorney, we work alongside your counsel.' },
     ],

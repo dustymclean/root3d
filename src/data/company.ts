@@ -2,7 +2,7 @@
 
 export const tagline = 'Hardening the Cannabis Supply Chain from Seed to Sale.';
 export const coreMessage = ['Agriculture.', 'Science.', 'Technology.', 'Business.', 'Real-World Execution.'];
-export const positioning = 'Three backgrounds. Three perspectives. One commitment to solving real problems.';
+export const positioning = 'Four backgrounds. Four perspectives. One commitment to solving real problems.';
 export const pillars = ['People', 'Plants', 'Solutions'];
 
 export const mission =
@@ -14,7 +14,7 @@ export const philosophy =
 /** The thesis behind the team: failures cross disciplines, so the fix has to as well. */
 export const triadThesis = [
   'Operational failures in regulated agriculture rarely stay in one department. A restriction in an irrigation line changes how the plant feeds. That shows up in the lab results, which shows up in the compliance report, which shows up in retail margins.',
-  'Root3D was built around that chain. Joel works the inputs and the chemistry, Danny works the canopy and the infrastructure, and Dusty works the data, the documentation, and the storefront. Together we cover seed to sale, and we talk to each other so you do not have to translate between specialists.',
+  'Root3D was built around that chain. Joel works the inputs and the chemistry, Danny works the canopy and the infrastructure, Dusty works the data, the documentation, and the storefront, and Hunter works the rules, the molds, and the devices. Together we cover seed to sale, and we talk to each other so you do not have to translate between specialists.',
 ];
 
 /** Documentation philosophy: every engagement moves through these stages and is recorded as it goes. */
@@ -33,31 +33,35 @@ export const pipeline = [
 
 export type PipelineKey = (typeof pipeline)[number]['key'];
 
-/** How the three partners combine on common engagement types. */
+/** How the consultants combine on common engagement types. */
 export const synergy = [
   {
     area: 'Cultivation & canopy',
     joel: 'Designs the feed program and input chemistry, including acetate-based strategies.',
     danny: 'Runs canopy management, irrigation dynamics, and the daily room routine.',
     dusty: 'Builds batch logs, structured strain libraries, and the records inspectors ask for.',
+    hunter: 'Matches the approach to your growing method and watches for mold and contamination risk.',
   },
   {
     area: 'Facility engineering',
     joel: 'Reviews environmental chemistry and raw-input purity, including heavy-metal risk.',
     danny: 'Re-engineers plumbing and irrigation, and prototypes hardware in 3D.',
     dusty: 'Connects sensor data to alerts and automated workflows so problems surface early.',
+    hunter: 'Reviews controllers, sensors, lighting, and the electrical side of the build.',
   },
   {
     area: 'Commercialization & retail',
     joel: 'Structures wholesale and distribution agreements and margin strategy.',
     danny: 'Trains retail and floor staff on cultivar characteristics and product knowledge.',
     dusty: 'Engineers storefronts, B2B portals, product feeds, and transaction records.',
+    hunter: 'Checks product, labeling, and sales procedures against what the rules actually say.',
   },
   {
     area: 'Compliance & risk',
     joel: 'Vets suppliers and input documentation for contamination risk.',
     danny: 'Brings biosecurity discipline and facility network and physical security practice.',
     dusty: 'Researches the rules, writes the SOPs, and runs the Total THC and lab-data math.',
+    hunter: 'Reads and interprets the regulations line by line and turns them into procedures.',
   },
 ];
 

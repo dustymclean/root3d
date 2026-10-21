@@ -20,10 +20,11 @@ export function Team() {
         <div className="container">
           <PageHead eyebrow="Meet the consultants" title={positioning}>
             Joel handles inputs, chemistry, and margins. Danny owns the canopy, infrastructure, and training. Dusty runs
-            data, documentation, and storefronts. Hire one of us or all three. Your history is shared, so you never repeat
+            data, documentation, and storefronts. Hunter reads the rules and knows molds and devices. Hire one of us or the
+            whole team. Your history is shared, so you never repeat
             yourself.
           </PageHead>
-          <div className="grid grid-3">
+          <div className="grid team-grid">
             {team.map((t, i) => (
               <Reveal key={t.slug} delay={i * 90}>
                 <Link to={`/team/${t.slug}`} className="card person-card">
@@ -48,19 +49,20 @@ export function Team() {
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">Working together</p>
-            <h2>One engagement, three specialists</h2>
+            <h2>One engagement, four specialists</h2>
           </div>
-          <div className="table-wrap card" style={{ padding: 0 }}>
-            <table className="table synergy">
-              <thead>
-                <tr><th scope="col">Engagement</th><th scope="col">Joel</th><th scope="col">Danny</th><th scope="col">Dusty</th></tr>
-              </thead>
-              <tbody>
-                {synergy.map((s) => (
-                  <tr key={s.area}><th scope="row">{s.area}</th><td>{s.joel}</td><td>{s.danny}</td><td>{s.dusty}</td></tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid grid-2">
+            {synergy.map((s) => (
+              <div key={s.area} className="card">
+                <h3>{s.area}</h3>
+                <dl className="synergy-dl">
+                  <dt>Joel</dt><dd>{s.joel}</dd>
+                  <dt>Danny</dt><dd>{s.danny}</dd>
+                  <dt>Dusty</dt><dd>{s.dusty}</dd>
+                  <dt>Hunter</dt><dd>{s.hunter}</dd>
+                </dl>
+              </div>
+            ))}
           </div>
           <div className="btn-row mt">
             <Link to="/book" className="btn btn-primary"><CalendarCheck size={18} /> Book a session</Link>
@@ -100,6 +102,12 @@ export function TeamProfile() {
                   <Link to={`/contact?topic=${encodeURIComponent('Question for ' + c.name)}`} className="btn btn-ghost">Ask a question</Link>
                 </div>
               </div>
+              {c.video && (
+                <figure className="profile-video">
+                  <video src={asset(c.video)} muted loop playsInline autoPlay controls preload="metadata" aria-label={`Short clip of ${c.name}`} />
+                  <figcaption>Meet {c.first}</figcaption>
+                </figure>
+              )}
             </div>
             <div>
               <p className="eyebrow">{c.focus}</p>
@@ -159,7 +167,7 @@ export function TeamProfile() {
 
               <h2 style={{ fontSize: '1.4rem', marginTop: '2rem' }}>Works with</h2>
               <p className="muted">
-                {c.first} regularly pairs with {others.map((o) => <Link key={o.slug} to={`/team/${o.slug}`}>{o.name}</Link>).reduce<ReactNode[]>((acc, el, i) => (i ? [...acc, ' and ', el] : [el]), [])} on combined engagements.
+                {c.first} regularly pairs with {others.map((o) => <Link key={o.slug} to={`/team/${o.slug}`}>{o.name}</Link>).reduce<ReactNode[]>((acc, el, i, all) => (i === 0 ? [el] : [...acc, i === all.length - 1 ? ', and ' : ', ', el]), [])} on combined engagements.
               </p>
             </div>
           </div>

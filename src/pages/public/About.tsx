@@ -32,7 +32,7 @@ export function About() {
             <h2>{positioning}</h2>
             {triadThesis.map((p) => <p key={p} className="lede">{p}</p>)}
           </div>
-          <div className="grid grid-3">
+          <div className="grid team-grid">
             {team.map((t, i) => (
               <Reveal key={t.slug} delay={i * 90}>
                 <Link to={`/team/${t.slug}`} className="card person-card">
@@ -66,6 +66,7 @@ export function About() {
                   <dt>Joel</dt><dd>{s.joel}</dd>
                   <dt>Danny</dt><dd>{s.danny}</dd>
                   <dt>Dusty</dt><dd>{s.dusty}</dd>
+                  <dt>Hunter</dt><dd>{s.hunter}</dd>
                 </dl>
               </div>
             ))}

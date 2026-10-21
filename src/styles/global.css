@@ -2037,3 +2037,35 @@ a.chip:hover {
   text-decoration: line-through;
   color: var(--text-muted);
 }
+.profile-video {
+  margin: 1rem 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #000;
+}
+.profile-video figcaption {
+  color: var(--emerald-100);
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
+}
+.profile-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.team-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1000px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

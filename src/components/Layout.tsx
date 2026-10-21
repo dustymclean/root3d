@@ -15,7 +15,7 @@ const links: NavItem[] = [
     label: 'About',
     children: [
       { to: '/about', label: 'About Root3D', note: 'Mission, philosophy, and how we work' },
-      { to: '/team', label: 'Meet the Consultants', note: 'Three backgrounds, one team' },
+      { to: '/team', label: 'Meet the Consultants', note: 'Four backgrounds, one team' },
       ...team.map((t) => ({ to: `/team/${t.slug}`, label: t.name, note: t.focus })),
       { to: '/case-studies', label: 'Case Studies', note: 'How an engagement runs' },
     ],

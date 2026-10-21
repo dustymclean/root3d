@@ -4,7 +4,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
   {
     title: 'Working with Root3D',
     items: [
-      { q: 'Who are you?', a: 'Root3D is three owner-operators: Joel Perkins (inputs, chemistry, and margins), Danny Davis (canopy, infrastructure, and training), and Dusty McLean (data, documentation, and storefronts). You can hire one of us or all three.' },
+      { q: 'Who are you?', a: 'Root3D is four consultants: Joel Perkins (inputs, chemistry, and margins), Danny Davis (canopy, infrastructure, and training), Dusty McLean (data, documentation, and storefronts), and Hunter Porter (regulations, molds, and devices). You can hire one of us or the whole team.' },
       { q: 'Do you grow, sell, or transport cannabis?', a: 'No. Root3D provides educational and advisory services. We do not handle cannabis for clients.' },
       { q: 'Do you work outside Mississippi?', a: 'Yes. Most of our work can be done remotely, and we travel for on-site audits and builds. State-specific guidance is researched for each engagement.' },
       { q: 'Do you guarantee results?', a: 'No. We will not promise regulatory outcomes or yield numbers. We promise to diagnose carefully, recommend honestly, help you implement, and document everything.' },
