@@ -54,7 +54,7 @@ export function AdminOverview() {
           {byMonth.map((x) => (
             <div key={x.m} style={{ display: 'grid', gap: 4, alignContent: 'end', height: '100%' }} title={money(x.cents)}>
               <span className="small muted" style={{ textAlign: 'center' }}>{x.cents ? money(x.cents) : ''}</span>
-              <div style={{ height: `${(x.cents / max) * 120}px`, minHeight: 2, background: 'var(--emerald-600)', borderRadius: '6px 6px 0 0' }} />
+              <div style={{ height: `${(x.cents / max) * 120}px`, minHeight: 2, background: 'var(--gold)', borderRadius: '6px 6px 0 0' }} />
               <span className="small muted" style={{ textAlign: 'center' }}>{new Date(x.m + '-15').toLocaleDateString('en-US', { month: 'short' })}</span>
             </div>
           ))}

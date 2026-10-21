@@ -112,7 +112,7 @@ export function TeamProfile() {
             <div>
               <p className="eyebrow">{c.focus}</p>
               <h1>{c.name}</h1>
-              <p className="role" style={{ color: 'var(--emerald-600)', fontWeight: 600 }}>{c.headline}</p>
+              <p className="role" style={{ color: 'var(--gold)', fontWeight: 600 }}>{c.headline}</p>
               <p className="muted small">{c.title}</p>
               <p className="lede">{c.summary}</p>
               <blockquote className="approach"><Quote size={18} /> {c.approach}</blockquote>

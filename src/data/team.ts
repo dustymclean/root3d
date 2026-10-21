@@ -42,37 +42,37 @@ export const team: Consultant[] = [
       'Joel bridges agricultural biochemistry and large-scale operations. He designs nutrient programs and input strategies, vets suppliers, and structures the distribution and margin side of the business so the science pays for itself.',
     story: [
       {
-        text: 'Joel came to agriculture from an unusual direction. He started in the California entertainment industry as a concert promoter running multiple live events a week, and fronted the thrash band Six Pack of Doom. Running shows taught him logistics, crowds, and cash flow long before he ran a facility.',
-        needsReview: true,
+        text: 'Joel came to agriculture from an unusual direction. He started in the California entertainment industry as a concert promoter running multiple live events every week, and was the lead vocalist and lyricist for the thrash metal band Six Pack of Doom. Running shows taught him logistics, crowds, and cash flow long before he ran a facility.',
       },
       {
-        text: 'He moved into medical cannabis managing the Sespe Creek Collective in California, which is described as serving roughly 10,000 patients. Concern about agricultural contaminants pushed him into microbiology, and he went on to build a biological, fermentation-based fertilizer line used by growers in Humboldt and in commercial berry production.',
-        needsReview: true,
+        text: 'He moved into medical cannabis as manager of the Sespe Creek Collective in California, growing it into one of the state’s leading medical hubs, serving more than 10,000 registered patients, including oncology patients and wounded combat veterans.',
       },
       {
-        text: 'His corporate agriculture experience includes serving as COO of Primordial Solutions and a division leadership role at Wilbur-Ellis, where he worked on botanical fertilizer lines and spoke on plant metabolism. In Nevada he worked in high-volume retail operations and helped restructure a distribution business into Valley of Fire Distribution. He is also the formulator behind Cowbell Cow Mag.',
-        needsReview: true,
+        text: 'Concern about agricultural contaminants like glyphosate pushed him into microbiology. He founded and ran a biological, fermentation-based fertilizer line that became a staple in the Humboldt market and was adopted by Driscoll’s growers for commercial berry production.',
       },
       {
-        text: 'Joel is currently described as Head of Operations at Lake Leaf Cultivation, a tribal cannabis enterprise of the Mille Lacs Band of Ojibwe in Minnesota. Public sources describe Lake Leaf as established in April 2024 with an integrated facility of about 50,000 square feet, more than 100 associates, wholesale relationships, and dispensaries in Onamia, Hinckley, and Isle.',
-        needsReview: true,
+        text: 'After serving as Chief Operating Officer of Primordial Solutions, Joel spent six years as a Division Head at Wilbur-Ellis, where he formulated botanical fertilizer lines and traveled internationally as a keynote speaker on plant metabolism. In Nevada he managed 24-hour, high-volume retail operations at Oasis Cannabis and led the restructuring of Bofloral’s US division into Valley of Fire Distribution. He is the formulator of Cowbell Cow Mag, an acetate-based calcium and magnesium supplement.',
+      },
+      {
+        text: 'Today Joel is Head of Operations at Lake Leaf Cultivation, the tribal cannabis enterprise of the Mille Lacs Band of Ojibwe in Minnesota: a vertically integrated, 50,000-square-foot cultivation, manufacturing, and processing operation opened in April 2024, with more than 100 team members, wholesale relationships, and dispensaries in Onamia, Hinckley, and Isle.',
       },
     ],
     background: [
-      { text: 'Head of Operations, Lake Leaf Cultivation (Mille Lacs Band of Ojibwe, Minnesota)', needsReview: true },
-      { text: 'Founder, Valley of Fire Distribution', needsReview: true },
-      { text: 'Division leadership, Wilbur-Ellis (about six years)', needsReview: true },
-      { text: 'Chief Operating Officer, Primordial Solutions', needsReview: true },
-      { text: 'Founder of a biological fermentation fertilizer line', needsReview: true },
-      { text: 'Nevada retail operations, including Oasis Cannabis', needsReview: true },
-      { text: 'Manager, Sespe Creek Collective (California)', needsReview: true },
-      { text: 'Formulator, Cowbell Cow Mag', needsReview: true },
+      { text: 'Head of Operations, Lake Leaf Cultivation (Mille Lacs Band of Ojibwe, Minnesota)' },
+      { text: 'Founder, Valley of Fire Distribution (restructured from Bofloral’s US division)' },
+      { text: 'Division Head, Wilbur-Ellis (six years)' },
+      { text: 'Chief Operating Officer, Primordial Solutions' },
+      { text: 'Founder, biological fermentation fertilizer line (Humboldt; Driscoll’s berry growers)' },
+      { text: 'Retail operations, Oasis Cannabis (Nevada)' },
+      { text: 'Manager, Sespe Creek Collective (California, 10,000+ registered patients)' },
+      { text: 'Formulator, Cowbell Cow Mag' },
+      { text: 'Product development, Habitarium' },
+      { text: 'International keynote speaker on plant metabolism' },
     ],
     specialties: [
       {
         title: 'Acetate-based nutrient strategies',
-        text: 'Feed programs that use potassium and calcium acetate as carbon-accessible inputs. We trial changes on a test block and measure before rolling anything out, because results depend on cultivar and environment.',
-        needsReview: true,
+        text: 'Joel pioneered commercial use of potassium and calcium acetate, which give the plant carbon in its most accessible form as a direct Acetyl-CoA precursor, to support metabolism, resin, and terpene production. We trial it on a test block and measure before rolling it out, because results depend on cultivar and environment.',
       },
       {
         title: 'Biological fertilizers & fermentation',
