@@ -1,0 +1,32 @@
+import type { Service } from '../lib/types';
+
+/** Consulting lanes shown on the home and services pages. Icon names map to Lucide icons in components/Icon. */
+export const serviceLanes = [
+  { icon: 'FileCheck2', title: 'Licensing & applications', text: 'We pick the license path that fits your plan, read the state rules line by line, and assemble an application reviewers can score quickly.' },
+  { icon: 'ShieldCheck', title: 'Compliance systems & audits', text: 'Rules become checklists, logs, and owners. We run mock inspections so the real one is routine.' },
+  { icon: 'Workflow', title: 'SOPs & operational readiness', text: 'Intake, inventory, sanitation, security, and records written as procedures your staff will actually follow.' },
+  { icon: 'GraduationCap', title: 'Training & advisory', text: 'Leadership and floor training, plus someone to call when a regulation or an inspector surprises you.' },
+  { icon: 'Sprout', title: 'Cultivation strategy', text: 'Canopy planning and room SOPs from clone to cure, so every run behaves like the last good one.' },
+  { icon: 'Droplets', title: 'Fertigation & irrigation', text: 'Feed programs tuned to your cultivars and environment, and plumbing designed to deliver them evenly.' },
+  { icon: 'FlaskConical', title: 'Nutrients & inputs', text: 'Stage-specific nutrition, acetate-based uptake strategies, and low heavy-metal suppliers with paperwork to match.' },
+  { icon: 'Dna', title: 'Genetics & tissue culture', text: 'Cultivar selection, clean-stock programs, and tissue culture labs that protect your genetics.' },
+] as const;
+
+/**
+ * Shown when the backend isn't configured yet. Mirrors supabase/migrations/0002_seed.sql.
+ * Live pricing comes from the services table, which admins edit in the portal.
+ */
+export const fallbackServices: Service[] = [
+  { id: 'discovery', name: 'Discovery Call', description: 'A free 15-minute peer conversation to see where you are and whether we fit.', kind: 'session', minutes: 15, price_cents: 0, response_time: 'Book any open slot', features: ['No cost, no pressure', 'Talk with an owner, not a sales rep', 'Leave with a clear next step'], bookable: true, is_draft: true, active: true, highlight: false, sort: 0 },
+  { id: 'home-grow', name: 'Home Grow Quick Call', description: 'A fast, focused answer for home growers.', kind: 'session', minutes: 15, price_cents: 2000, response_time: 'Book any open slot', features: ['One question, one consultant', 'Upload photos before the call', 'Written takeaway after'], bookable: true, is_draft: true, active: true, highlight: false, sort: 1 },
+  { id: 'standard', name: 'Standard Hour', description: 'No contract. Bring a single issue and leave with a plan.', kind: 'session', minutes: 60, price_cents: 10000, response_time: 'Up to 12 hr, no SLA', features: ['Licensing, compliance, or cultivation', 'Document and SOP review', 'Action plan with at least 3 steps'], bookable: true, is_draft: true, active: true, highlight: false, sort: 2 },
+  { id: 'grow-coach', name: 'Grow Coach Video Session', description: 'Live video coaching with a pre-call inbox for photos, labs, and logs.', kind: 'session', minutes: 60, price_cents: 10000, response_time: 'Video session', features: ['Pre-call inbox for photos, labs, logs', 'Macro view for close inspection', 'Optional +15 min for $25'], bookable: true, is_draft: true, active: true, highlight: false, sort: 3 },
+  { id: 'grow-coach-3', name: 'Grow Coach 3-Pack', description: 'Three Grow Coach sessions at a package rate.', kind: 'package', minutes: 60, price_cents: 30000, response_time: 'Video sessions', features: ['Three 60-minute sessions', 'Same consultant each time', 'Shared action plan history'], bookable: false, is_draft: true, active: true, highlight: false, sort: 4 },
+  { id: 'tier-1', name: 'Tier 1', description: 'A compliance safety net with predictable support.', kind: 'retainer', minutes: null, price_cents: 100000, response_time: 'Response under 6 hr', features: ['Monthly compliance check', 'Dedicated line', 'SOP maintenance as rules change', 'Renewal and deadline tracking'], bookable: false, is_draft: true, active: true, highlight: false, sort: 10 },
+  { id: 'tier-2', name: 'Tier 2', description: 'For teams moving fast who need hands-on help.', kind: 'retainer', minutes: null, price_cents: 150000, response_time: 'Response under 3 hr', features: ['Bi-weekly audits', 'On-site help', 'Fertigation and nutrient planning', 'Priority task queue'], bookable: false, is_draft: true, active: true, highlight: true, sort: 11 },
+  { id: 'priority', name: 'Priority', description: 'Woven into your operation for teams that cannot wait.', kind: 'retainer', minutes: null, price_cents: 200000, response_time: 'Response under 1 hr', features: ['Emergency escalation', 'Direct executive access', 'Ongoing monitoring', 'Specialist routing'], bookable: false, is_draft: true, active: true, highlight: false, sort: 12 },
+  { id: 'mep-diagnostics', name: 'MEP Diagnostics', description: 'Mechanical, electrical, and plumbing review before inspectors find it.', kind: 'fixed', minutes: null, price_cents: 0, response_time: 'Fixed fee, quoted', features: [], bookable: false, is_draft: true, active: true, highlight: false, sort: 20 },
+  { id: 'tc-lab', name: 'Tissue Culture Lab Build', description: 'Lab design plus media-prep training for your team.', kind: 'fixed', minutes: null, price_cents: 0, response_time: 'Fixed fee, quoted', features: [], bookable: false, is_draft: true, active: true, highlight: false, sort: 21 },
+  { id: 'inventory-recon', name: 'Inventory Reconciliation', description: 'Physical counts reconciled against Metrc or BioTrack.', kind: 'fixed', minutes: null, price_cents: 0, response_time: 'Fixed fee, quoted', features: [], bookable: false, is_draft: true, active: true, highlight: false, sort: 22 },
+  { id: 'mso-gap', name: 'Multi-State Gap Analysis', description: 'Cross-market compliance review for multi-state operators.', kind: 'fixed', minutes: null, price_cents: 0, response_time: 'Fixed fee, quoted', features: [], bookable: false, is_draft: true, active: true, highlight: false, sort: 23 },
+];
