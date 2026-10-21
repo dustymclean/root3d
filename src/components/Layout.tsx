@@ -86,8 +86,11 @@ export function Layout() {
       <header className="site-header">
         <div className="container nav">
           <Link to="/" className="brand" aria-label="Root3D Consulting home">
-            <span className="brand-badge"><img src={asset('mark.png')} alt="" width={30} height={30} /></span>
-            Root3D
+            <img className="brand-mark" src={asset('mark.png')} alt="" width={40} height={40} />
+            <span className="brand-word">
+              <span className="brand-name">ROOT3D</span>
+              <span className="brand-sub">Consulting</span>
+            </span>
           </Link>
           <button className="nav-toggle" aria-expanded={open} aria-controls="nav-menu" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
             {open ? <X size={22} /> : <Menu size={22} />}
@@ -138,15 +141,19 @@ function Footer() {
   );
   return (
     <footer className="site-footer">
+      <img className="footer-watermark" src={asset('mark.png')} alt="" aria-hidden="true" />
       <div className="container">
         <div className="footer-grid">
           <div>
-            <div className="row" style={{ marginBottom: '0.5rem' }}>
-              <img src={asset('mark.png')} alt="" width={48} height={48} />
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--white)', margin: 0 }}>Root3D Consulting</p>
-            </div>
+            <Link to="/" className="brand footer-brand" aria-label="Root3D Consulting home">
+              <img className="brand-mark" src={asset('mark.png')} alt="" width={56} height={56} />
+              <span className="brand-word">
+                <span className="brand-name">ROOT3D</span>
+                <span className="brand-sub">Consulting</span>
+              </span>
+            </Link>
             <p>{tagline}</p>
-            <p className="footer-pillars">{pillars.join(' • ')}</p>
+            <p className="footer-pillars">{pillars.join('  ✦  ')}</p>
           </div>
           {col('Services', [
             ...areas.map((a) => ({ to: `/services/${a.slug}`, label: a.title })),

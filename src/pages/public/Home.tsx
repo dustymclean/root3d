@@ -6,7 +6,7 @@ import { CtaBand, Pipeline } from '../../components/blocks';
 import { Icon } from '../../components/Icon';
 import { Reveal } from '../../components/Reveal';
 import { areas } from '../../data/areas';
-import { audiences, coreMessage, mission, pillars, positioning, synergy, triadThesis } from '../../data/company';
+import { audiences, coreMessage, mission, synergy, triadThesis } from '../../data/company';
 import { sessionFeatures } from '../../data/growcoach';
 import { team } from '../../data/team';
 import { asset, useServices } from '../../lib/data';
@@ -20,6 +20,13 @@ const tools = [
   { to: '/knowledge-base', icon: BookOpen, title: 'Compliance Vault', text: 'Source-backed guides on Total THC, seed-to-sale, hemp, IPM, irrigation, and more.' },
 ];
 
+const disciplines = [
+  { title: 'Cultivation & inputs', text: 'Canopy, genetics, IPM, and the feed going into the root zone.' },
+  { title: 'Facilities & engineering', text: 'HVAC, irrigation, electrical, and the rooms that hold it all.' },
+  { title: 'Compliance & law', text: 'Reading the rules, mapping them to your floor, and proving it.' },
+  { title: 'Technology & data', text: 'Records, tracking, sensors, and systems that keep it straight.' },
+];
+
 export function Home() {
   const { data } = useServices();
   const price = (id: string) => data?.find((s) => s.id === id)?.price_cents;
@@ -27,30 +34,48 @@ export function Home() {
   return (
     <>
       <section className="hero">
-        <div className="container hero-grid">
+        <div className="hero-aura" aria-hidden="true" />
+        <div className="container hero-stage">
           <Reveal>
-            <p className="eyebrow">{pillars.join(' · ')}</p>
-            <h1>
-              Hardening the cannabis supply chain <em>from seed to sale.</em>
+            <h1 className="hero-mark">
+              <img
+                className="logo-art"
+                src={asset('logo-full.jpg')}
+                alt="Root3D Consulting. Hardening the cannabis supply chain from seed to sale. People, plants, solutions."
+                width={900}
+                height={900}
+                fetchPriority="high"
+              />
             </h1>
-            <p className="lede">{positioning} Root3D combines commercial cultivation, agricultural science, facility engineering, compliance, and technology so the fix works in the room, on paper, and on the balance sheet.</p>
-            <div className="btn-row">
-              <Link to="/book?service=discovery" className="btn btn-primary">
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="hero-statement">
+              Cultivation science, facility engineering, compliance, and technology, from four specialists who
+              work <em>the same problem together.</em>
+            </p>
+            <div className="btn-row center">
+              <Link to="/book?service=discovery" className="btn btn-primary btn-lg">
                 Book a free discovery call <ArrowRight size={18} />
               </Link>
-              <Link to="/services" className="btn btn-ghost">Explore services</Link>
+              <Link to="/services" className="btn btn-ghost btn-lg">Explore services</Link>
             </div>
-            <div className="trust-row">
-              <span><ShieldCheck size={18} /> Inspection-ready documentation</span>
-              <span><Video size={18} /> Video, phone, or on-site</span>
-              <span><FileText size={18} /> A written action plan every session</span>
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="hero-logo">
-              <img src={asset('logo-full.jpg')} alt="Root3D Consulting: hardening the cannabis supply chain from seed to sale. People, plants, solutions." width={900} height={900} />
+            <div className="trust-row center">
+              <span><ShieldCheck size={16} /> Inspection-ready documentation</span>
+              <span><Video size={16} /> Video, phone, or on-site</span>
+              <span><FileText size={16} /> A written action plan every session</span>
             </div>
           </Reveal>
+        </div>
+        <div className="container">
+          <ol className="discipline-strip">
+            {disciplines.map((d, i) => (
+              <li key={d.title}>
+                <span className="num">{String(i + 1).padStart(2, '0')}</span>
+                <strong>{d.title}</strong>
+                <span>{d.text}</span>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

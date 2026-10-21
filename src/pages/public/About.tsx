@@ -10,7 +10,7 @@ import { asset } from '../../lib/data';
 export function About() {
   return (
     <>
-      <section className="section">
+      <section className="section page-hero">
         <div className="container split">
           <div>
             <p className="eyebrow">About Root3D</p>
@@ -19,8 +19,8 @@ export function About() {
             <p>{philosophy}</p>
             <p className="core-line">{coreMessage.join(' ')}</p>
           </div>
-          <div className="hero-logo">
-            <img src={asset('logo-full.jpg')} alt="Root3D Consulting logo" width={900} height={900} />
+          <div className="logo-stage">
+            <img className="logo-art" src={asset('logo-full.jpg')} alt="Root3D Consulting logo" width={900} height={900} />
           </div>
         </div>
       </section>
