@@ -110,7 +110,7 @@ export function GrowCoach() {
                     <div className="row">
                       <img className="avatar" src={asset(c.photo)} alt="" style={{ objectPosition: bio?.photoPosition ?? 'center' }} />
                       <div>
-                        <h3 style={{ margin: 0 }}>{c.name} {c.verified && <BadgeCheck size={16} aria-label="Verified expert" color="var(--emerald-600)" />}</h3>
+                        <h3 style={{ margin: 0 }}>{c.name} {c.verified && <BadgeCheck size={16} aria-label="Verified expert" color="var(--gold)" />}</h3>
                         <span className="small muted">{bio?.focus ?? c.title}</span>
                       </div>
                     </div>
