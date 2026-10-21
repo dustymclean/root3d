@@ -22,8 +22,8 @@ That's the only account setup. Whoever signs up with one of those emails becomes
 
 In Supabase, go to **Authentication → URL Configuration**:
 
-- **Site URL:** `https://r3dconsulting.com` (or `https://dustymclean.github.io/root3d` until the domain is connected)
-- **Redirect URLs:** add `https://r3dconsulting.com/**` and `https://dustymclean.github.io/root3d/**`
+- **Site URL:** `https://r3dconsulting.com`
+- **Redirect URLs:** add `https://r3dconsulting.com/**` and `https://www.r3dconsulting.com/**`
 
 ## 3. Connect the site to the database
 
@@ -37,16 +37,27 @@ In GitHub, go to the repo's **Settings → Secrets and variables → Actions →
 | `VITE_SUPABASE_ANON_KEY` | your anon public key |
 | `VITE_CONTACT_EMAIL` | optional, defaults to `contact@r3dconsulting.com` |
 
-## 4. Turn on GitHub Pages
+## 4. Turn on GitHub Pages at r3dconsulting.com
 
-1. Repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-2. Push to `main` (or run the **Deploy to GitHub Pages** workflow by hand). The site appears at `https://dustymclean.github.io/root3d/`.
+The site is built for `https://r3dconsulting.com` (see `public/CNAME`).
 
-### Custom domain (r3dconsulting.com)
+1. Repo **Settings → Pages → Build and deployment → Source:** choose **GitHub Actions**.
+2. Same page, **Custom domain:** enter `r3dconsulting.com` and save.
+3. At your domain's DNS provider, add:
 
-1. **Settings → Pages → Custom domain:** `r3dconsulting.com`, then tick **Enforce HTTPS** once it's issued.
-2. At your DNS provider, add `A` records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a `CNAME` for `www` pointing to `dustymclean.github.io`.
-3. Add a repository variable `BASE_PATH` with the value `/` and re-run the deploy workflow.
+   | Type | Name | Value |
+   | --- | --- | --- |
+   | A | `@` | `185.199.108.153` |
+   | A | `@` | `185.199.109.153` |
+   | A | `@` | `185.199.110.153` |
+   | A | `@` | `185.199.111.153` |
+   | CNAME | `www` | `dustymclean.github.io` |
+
+   Remove any other `A`, `AAAA`, or `CNAME` records on `@` and `www` first (for example old hosting records).
+4. Once GitHub shows the DNS check passing (minutes to a few hours), tick **Enforce HTTPS**.
+5. Merge to `main` (or run the **Deploy to GitHub Pages** workflow by hand) to publish.
+
+Optional: verify the domain under your GitHub account's **Settings → Pages → Verified domains** so no one else can claim it.
 
 ## 5. Sign in
 

@@ -28,8 +28,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Set the repository variable BASE_PATH to "/" once the custom domain is live.
-          BASE_PATH: ${{ vars.BASE_PATH || '/root3d/' }}
+          # Served from the custom domain r3dconsulting.com. Set BASE_PATH to "/root3d/" only to serve from dustymclean.github.io/root3d.
+          BASE_PATH: ${{ vars.BASE_PATH || '/' }}
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
           VITE_JITSI_DOMAIN: ${{ vars.VITE_JITSI_DOMAIN }}
