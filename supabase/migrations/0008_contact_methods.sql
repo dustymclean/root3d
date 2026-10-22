@@ -57,7 +57,7 @@ begin
   if p_mode in ('discord', 'signal') and length(trim(coalesce(p_location, ''))) < 2 then
     raise exception 'Add your username so your consultant can reach you';
   end if;
-  if p_location ~ '\d{3}\D{0,3}\d{3}\D{0,3}\d{4}' then
+  if p_mode <> 'onsite' and p_location ~ '\d{3}\D{0,3}\d{3}\D{0,3}\d{4}' then
     raise exception 'Please use a username, not a phone number';
   end if;
   p_end := p_start + make_interval(mins => s.minutes);
