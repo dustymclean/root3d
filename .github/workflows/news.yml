@@ -8,6 +8,10 @@ on:
       lookback_days:
         description: Days of history to pull
         default: '10'
+      reset:
+        description: Rebuild the feed from scratch (after changing filters)
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,6 +33,7 @@ jobs:
         env:
           DISCORD_NEWS_WEBHOOK: ${{ secrets.DISCORD_NEWS_WEBHOOK }}
           LOOKBACK_DAYS: ${{ inputs.lookback_days || '10' }}
+          RESET: ${{ inputs.reset && '1' || '' }}
         run: node scripts/news/update.mjs
       - name: Commit and redeploy if anything changed
         env:
