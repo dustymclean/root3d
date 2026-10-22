@@ -1,12 +1,13 @@
-import { CalendarClock, Clock, Download, ExternalLink, Link2, Plus, Trash2, XCircle } from 'lucide-react';
+import { CalendarClock, Clock, Download, ExternalLink, FileText, Link2, Plus, Trash2, XCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { DirectContact } from '../../components/DirectContact';
 import { ErrorText, Field, Loading, StatusPill, Success } from '../../components/ui';
 import { modeBlurbs, modeIcons, modeLabels } from '../../lib/contact';
 import { dateTime, icsFor, timeOnly } from '../../lib/format';
 import { db, q } from '../../lib/supabase';
 import { openSlots, todayIn, weekdayOf } from '../../lib/time';
-import type { ActionPlan, Availability, Booking, Consultant, FileRow, MeetingLink, PlanStep } from '../../lib/types';
+import type { ActionPlan, Availability, Booking, BookingLink, Consultant, FileRow, MeetingLink, PlanStep } from '../../lib/types';
 import { useAsync } from '../../lib/useAsync';
 import { useAuth } from '../../store/auth';
 import { personName, useLookups } from './lookups';
@@ -45,11 +46,17 @@ export function AppointmentDetail() {
   const booking = useAsync(() => q<Booking>(db().from('bookings').select('*').eq('id', id).single()), [id]);
   const files = useAsync(() => q<FileRow[]>(db().from('files').select('*').eq('booking_id', id).order('created_at')), [id]);
   const plan = useAsync(() => q<ActionPlan | null>(db().from('action_plans').select('*').eq('booking_id', id).maybeSingle()), [id]);
+  const link = useAsync(() => q<BookingLink | null>(db().from('booking_links').select('*').eq('booking_id', id).maybeSingle()), [id]);
+  const paid = useAsync(async () => {
+    const { data } = await db().rpc('booking_is_paid', { p_booking: id });
+    return data === true;
+  }, [id]);
   const [error, setError] = useState<string | null>(null);
   const [mode, setMode] = useState<'none' | 'reschedule' | 'cancel'>('none');
   const [reason, setReason] = useState('');
 
   if (booking.loading || !look.data) return <Loading />;
+  const meetingUrl = link.data?.url ?? '';
   if (!booking.data) return <ErrorText error={booking.error ?? 'Not found'} />;
   const b = booking.data;
   const c = look.data.consultants[b.consultant_slug];
@@ -97,14 +104,21 @@ export function AppointmentDetail() {
                 : modeBlurbs[b.mode]}
           </span>
         </p>
-        {b.status === 'confirmed' && b.mode !== 'onsite' && !b.meeting_link && !isAdmin && (
-          <p className="muted small">Your consultant will post the {modeLabels[b.mode]} link here before the call.</p>
+        {b.status === 'confirmed' && b.mode !== 'onsite' && !meetingUrl && !isAdmin && (
+          <p className="muted small">
+            {paid.data === false
+              ? `Your ${modeLabels[b.mode]} link appears here once this session's invoice is paid.`
+              : `Your consultant will post the ${modeLabels[b.mode]} link here before the call.`}
+          </p>
         )}
         {live && <SessionClock start={start} end={end} />}
         {b.notes && <p><strong>Notes:</strong> {b.notes}</p>}
         <div className="btn-row">
-          {b.meeting_link && b.status === 'confirmed' && (
-            <a className="btn btn-primary" href={b.meeting_link} target="_blank" rel="noopener noreferrer"><ExternalLink size={18} /> Open {modeLabels[b.mode]}</a>
+          {meetingUrl && b.status === 'confirmed' && (
+            <a className="btn btn-primary" href={meetingUrl} target="_blank" rel="noopener noreferrer"><ExternalLink size={18} /> Open {modeLabels[b.mode]}</a>
+          )}
+          {(b.status === 'completed' || plan.data) && (
+            <Link className="btn btn-ghost" to={`/portal/appointments/${b.id}/report`}><FileText size={18} /> Session report</Link>
           )}
           {upcoming && <button className="btn btn-ghost" onClick={() => setMode('reschedule')}><CalendarClock size={18} /> Reschedule</button>}
           {upcoming && <button className="btn btn-ghost" onClick={() => setMode('cancel')}><XCircle size={18} /> Cancel</button>}
@@ -129,7 +143,10 @@ export function AppointmentDetail() {
           <Reschedule consultant={c} minutes={s.minutes + b.extended_minutes} onPick={(iso) => void rpc('reschedule_booking', { p_booking: b.id, p_start: iso })} onClose={() => setMode('none')} />
         )}
         <ErrorText error={error} />
-        {isAdmin && b.status === 'confirmed' && b.mode !== 'onsite' && <MeetingLinkEditor booking={b} onSaved={() => void booking.reload()} />}
+        {!isAdmin && c && <div className="mt"><DirectContact slug={c.slug} first={c.name.split(' ')[0]} compact /></div>}
+        {isAdmin && b.status === 'confirmed' && b.mode !== 'onsite' && (
+          <MeetingLinkEditor booking={b} current={meetingUrl} paid={paid.data !== false} onSaved={() => void link.reload()} />
+        )}
       </div>
 
       <div className="card">
@@ -290,9 +307,9 @@ function SessionClock({ start, end }: { start: number; end: number }) {
 }
 
 /** Admins attach the Zoom, Discord, or Signal link for this booking. Clients only ever see their own booking's link. */
-function MeetingLinkEditor({ booking, onSaved }: { booking: Booking; onSaved: () => void }) {
+function MeetingLinkEditor({ booking, current, paid, onSaved }: { booking: Booking; current: string; paid: boolean; onSaved: () => void }) {
   const presets = useAsync(() => q<MeetingLink[]>(db().from('meeting_links').select('*').order('sort')), []);
-  const [url, setUrl] = useState(booking.meeting_link);
+  const [url, setUrl] = useState(current);
   const [msg, setMsg] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const matching = (presets.data ?? []).filter((p) => p.method === booking.mode);
@@ -301,10 +318,12 @@ function MeetingLinkEditor({ booking, onSaved }: { booking: Booking; onSaved: ()
     setErr(null);
     setMsg(null);
     if (value && !/^https:\/\//.test(value)) return setErr('Links must start with https://');
-    const { error } = await db().from('bookings').update({ meeting_link: value.trim() }).eq('id', booking.id);
+    const { error } = value.trim()
+      ? await db().from('booking_links').upsert({ booking_id: booking.id, url: value.trim(), updated_at: new Date().toISOString() })
+      : await db().from('booking_links').delete().eq('booking_id', booking.id);
     if (error) setErr(error.message);
     else {
-      setMsg(value ? 'Link shared with the client.' : 'Link removed.');
+      setMsg(value ? (paid ? 'Link shared with the client.' : 'Link saved. The client sees it once the invoice is paid.') : 'Link removed.');
       onSaved();
     }
   }
@@ -319,12 +338,13 @@ function MeetingLinkEditor({ booking, onSaved }: { booking: Booking; onSaved: ()
           ))}
         </div>
       )}
-      <Field label="Or paste a link" hint="Only this client can see it, in their appointment page.">
+      {!paid && <p className="error-text small">This session's invoice is not paid yet. The client will not see the link until it is marked paid in Billing.</p>}
+      <Field label="Or paste a link" hint="Only this client can see it, in their appointment page, and only once the session is paid.">
         <input className="input" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://" />
       </Field>
       <div className="btn-row">
         <button className="btn btn-primary btn-sm" onClick={() => void save(url)}>Share link</button>
-        {booking.meeting_link && <button className="btn btn-ghost btn-sm" onClick={() => { setUrl(''); void save(''); }}>Remove</button>}
+        {current && <button className="btn btn-ghost btn-sm" onClick={() => { setUrl(''); void save(''); }}>Remove</button>}
       </div>
       {msg && <Success>{msg}</Success>}
       <ErrorText error={err} />

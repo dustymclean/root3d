@@ -2801,3 +2801,53 @@ details.faq summary::marker {
     color: #000;
   }
 }
+
+/* Booking question ideas */
+button.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  font-size: 0.86rem;
+}
+button.chip:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--heading);
+}
+button.chip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Printable session and project reports */
+.report h3 {
+  margin-top: 1rem;
+}
+.report .disclaimer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+@media print {
+  .report {
+    border: 0;
+    box-shadow: none;
+    background: #fff;
+    color: #000;
+    padding: 0;
+  }
+  .report h1,
+  .report h2,
+  .report h3,
+  .report th,
+  .report .eyebrow,
+  .report .disclaimer {
+    color: #000;
+  }
+  .report table,
+  .report section {
+    break-inside: avoid;
+  }
+}
