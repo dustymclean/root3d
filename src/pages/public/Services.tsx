@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Leaf, Wrench } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Wrench } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Breadcrumb, CtaBand, TeamChips } from '../../components/blocks';
 import { Icon } from '../../components/Icon';
@@ -33,16 +33,6 @@ export function Services() {
                 </Link>
               </Reveal>
             ))}
-            <Reveal delay={80}>
-              <Link to="/grow-coach" className="card hover area-row feature">
-                <div className="icon-chip" style={{ flex: 'none' }}><Leaf size={20} /></div>
-                <div>
-                  <h3>Grow Coach Connection</h3>
-                  <p>Live coaching for home growers, hobbyists, and commercial cultivators.</p>
-                  <span className="more">Find a coach <ArrowRight size={14} /></span>
-                </div>
-              </Link>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -195,7 +185,6 @@ export function AreaPage() {
           <h2 style={{ fontSize: '1.4rem' }}>Other practice areas</h2>
           <div className="chips">
             {others.map((o) => <Link key={o.slug} to={`/services/${o.slug}`} className="chip">{o.title}</Link>)}
-            <Link to="/grow-coach" className="chip">Grow Coach Connection</Link>
           </div>
         </div>
       </section>

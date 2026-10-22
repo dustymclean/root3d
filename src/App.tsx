@@ -5,7 +5,6 @@ import { Layout } from './components/Layout';
 import { Book } from './pages/Book';
 import { About } from './pages/public/About';
 import { Contact } from './pages/public/Contact';
-import { GrowCoach } from './pages/public/GrowCoach';
 import { ArticlePage, CaseStudies, Faq, KnowledgeBase } from './pages/public/Knowledge';
 import { Resources, SopGenerator, ThcCalculator, Troubleshooter, VpdCalculator } from './pages/public/Tools';
 import { Home } from './pages/public/Home';
@@ -38,7 +37,6 @@ export function App() {
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="services/:slug" element={<AreaPage />} />
-        <Route path="grow-coach" element={<GrowCoach />} />
         <Route path="case-studies" element={<CaseStudies />} />
         <Route path="resources" element={<Resources />} />
         <Route path="resources/sop-generator" element={<SopGenerator />} />

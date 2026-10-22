@@ -171,7 +171,7 @@ export const team: Consultant[] = [
       },
     ],
     categories: [
-      'Grow coaching',
+      'Cultivation coaching',
       'Commercial facility audits',
       'Irrigation and environmental optimization',
       'Plant diagnostics',
@@ -182,7 +182,7 @@ export const team: Consultant[] = [
     ],
     approach: 'Teach growers to understand their room, not just follow instructions. The best fix is the one your team can run without me.',
     focus: 'Canopy, plumbing, and training',
-    areas: ['facility-audits', 'cultivation-processing', 'grow-coach', 'technology-systems'],
+    areas: ['facility-audits', 'cultivation-processing', 'technology-systems'],
     bookable: true,
   },
   {

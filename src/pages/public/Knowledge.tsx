@@ -86,7 +86,7 @@ export function KnowledgeBase() {
           {query && shown.length === 0 && (
             <Notice>
               Nothing matched yet. Try different words, run the <Link to="/resources/troubleshooter">plant troubleshooter</Link>, or{' '}
-              <Link to="/book?service=home-grow">book a 15-minute call</Link> and ask a person.
+              <Link to="/book?service=discovery">book a free 15-minute call</Link> and ask a person.
             </Notice>
           )}
           <Disclaimer />
@@ -136,7 +136,6 @@ export function ArticlePage() {
             <p className="muted">Compliance-sensitive questions deserve a review against your exact situation.</p>
             <div className="btn-row">
               <Link to="/book?service=discovery" className="btn btn-primary">Free discovery call</Link>
-              <Link to="/book?service=home-grow" className="btn btn-ghost">15-minute quick call</Link>
             </div>
           </div>
           {related.length > 0 && (

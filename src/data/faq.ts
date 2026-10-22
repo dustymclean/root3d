@@ -23,15 +23,6 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
     ],
   },
   {
-    title: 'Grow Coach Connection',
-    items: [
-      { q: 'Is Grow Coach only for commercial growers?', a: 'No. It is built for home growers and hobbyists as well as commercial cultivators.' },
-      { q: 'How do you see my plants up close?', a: 'Upload sharp macro photos of trichomes, stomata, and pests to your pre-call inbox. A live camera feed cannot add detail the lens did not capture, so good uploads matter most.' },
-      { q: 'Can I extend a session?', a: 'Yes. At 50 minutes you will be offered 15 more minutes for $25 (draft pricing).' },
-      { q: 'What is in the Grow Coach Package?', a: 'A one-hour consultation and two 30-minute follow-ups with the same coach, for $300 (draft pricing).' },
-    ],
-  },
-  {
     title: 'Pricing & payment',
     items: [
       { q: 'Is pricing final?', a: 'Not yet. Prices marked as draft are pending final approval by the partners and may change.' },

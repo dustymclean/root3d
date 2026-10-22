@@ -26,7 +26,6 @@ const links: NavItem[] = [
     children: [
       { to: '/services', label: 'All services', note: 'Practice areas and fixed-fee projects' },
       ...areas.map((a) => ({ to: `/services/${a.slug}`, label: a.title })),
-      { to: '/grow-coach', label: 'Grow Coach Connection', note: 'Live video coaching' },
     ],
   },
   { to: '/pricing', label: 'Pricing' },
@@ -157,7 +156,6 @@ function Footer() {
           </div>
           {col('Services', [
             ...areas.map((a) => ({ to: `/services/${a.slug}`, label: a.title })),
-            { to: '/grow-coach', label: 'Grow Coach Connection' },
             { to: '/pricing', label: 'Pricing' },
           ])}
           {col('Company', [

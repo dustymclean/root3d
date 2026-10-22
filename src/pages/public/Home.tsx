@@ -1,5 +1,5 @@
 import {
-  ArrowRight, BookOpen, Calculator, ClipboardList, FileText, Leaf, ShieldCheck, Stethoscope, Thermometer, Video,
+  ArrowRight, BookOpen, Calculator, ClipboardList, FileText, ShieldCheck, Stethoscope, Thermometer, Video,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CtaBand, Pipeline } from '../../components/blocks';
@@ -7,7 +7,6 @@ import { Icon } from '../../components/Icon';
 import { Reveal } from '../../components/Reveal';
 import { areas } from '../../data/areas';
 import { audiences, coreMessage, mission, synergy, triadThesis } from '../../data/company';
-import { sessionFeatures } from '../../data/growcoach';
 import { team } from '../../data/team';
 import { asset, useServices } from '../../lib/data';
 import { money } from '../../lib/format';
@@ -133,14 +132,6 @@ export function Home() {
                 </Link>
               </Reveal>
             ))}
-            <Reveal delay={140}>
-              <Link to="/grow-coach" className="card hover area-card feature">
-                <div className="icon-chip"><Leaf size={20} /></div>
-                <h3>Grow Coach Connection</h3>
-                <p className="small">Live coaching for home growers and commercial cultivators, with a pre-call inbox, close-up photo review, and a written action plan.</p>
-                <span className="more">Meet a coach <ArrowRight size={14} /></span>
-              </Link>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -189,30 +180,6 @@ export function Home() {
                 </dl>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section dark">
-        <div className="container">
-          <div className="split">
-            <div>
-              <p className="eyebrow">Grow Coach Connection</p>
-              <h2>A real cultivator, looking at your plants, today.</h2>
-              <p>Upload photos and logs, meet on Zoom, Discord, or Signal, and leave with an action plan of at least three steps. Same-day coaches are flagged so you can get help when it matters.</p>
-              <div className="btn-row mt">
-                <Link to="/grow-coach" className="btn btn-gold">Find a coach <ArrowRight size={16} /></Link>
-                <Link to="/book?service=home-grow" className="btn btn-outline-light">Quick 15-minute call</Link>
-              </div>
-            </div>
-            <ul className="feature-list">
-              {sessionFeatures.slice(0, 6).map((f) => (
-                <li key={f.title}>
-                  <Icon name={f.icon} size={18} />
-                  <div><strong>{f.title}</strong><span>{f.text}</span></div>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
@@ -266,7 +233,7 @@ export function Home() {
             <div className="card price-teaser">
               <h3>Sessions</h3>
               <p className="price">{money(price('standard') ?? 10000)}<span className="cadence"> / hour</span></p>
-              <p className="muted small">No contract. Home Grow quick calls from {money(price('home-grow') ?? 2000)}. Grow Coach package {money(price('grow-coach-3') ?? 30000)}.</p>
+              <p className="muted small">No contract. Bring a single issue and leave with a plan.</p>
             </div>
             <div className="card price-teaser">
               <h3>Retainers</h3>

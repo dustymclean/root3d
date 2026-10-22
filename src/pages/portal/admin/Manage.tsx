@@ -8,7 +8,6 @@ import type { AuditRow, Availability, Consultant, ContactRequest, Invoice, Retai
 import { useAsync } from '../../../lib/useAsync';
 import { useAuth } from '../../../store/auth';
 import { personName, useLookups } from '../lookups';
-import { taxonomy } from '../../../data/growcoach';
 import { contactModes, modeLabels } from '../../../lib/contact';
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -58,20 +57,11 @@ function ConsultantSettings({ c, onSaved }: { c: Consultant; onSaved: () => void
       <h3>{c.name}: booking rules</h3>
       <label className="check"><input type="checkbox" checked={f.is_available_today} onChange={(e) => setF({ ...f, is_available_today: e.target.checked })} /> Available today for urgent, same-day sessions</label>
       <label className="check"><input type="checkbox" checked={f.active} onChange={(e) => setF({ ...f, active: e.target.checked })} /> Accepting bookings</label>
-      <label className="check"><input type="checkbox" checked={f.verified} onChange={(e) => setF({ ...f, verified: e.target.checked })} /> Verified Grow Coach expert (manual verification complete)</label>
       <fieldset className="fieldset">
         <legend className="field-label">Ways clients can connect</legend>
         {contactModes.map((m) => (
           <label key={m} className="check"><input type="checkbox" checked={f.modes.includes(m)} onChange={(e) => setF({ ...f, modes: toggleIn(f.modes, m, e.target.checked) })} /> {modeLabels[m]}</label>
         ))}
-      </fieldset>
-      <fieldset className="fieldset">
-        <legend className="field-label">Grow Coach expertise</legend>
-        <div className="check-grid">
-          {taxonomy.map((t) => (
-            <label key={t} className="check"><input type="checkbox" checked={f.expertise.includes(t)} onChange={(e) => setF({ ...f, expertise: toggleIn(f.expertise, t, e.target.checked) })} /> {t}</label>
-          ))}
-        </div>
       </fieldset>
       <div className="form-row">
         <Field label="Buffer between sessions (min)"><input className="input" type="number" min={0} max={240} value={f.buffer_minutes} onChange={(e) => setF({ ...f, buffer_minutes: Number(e.target.value) })} /></Field>
