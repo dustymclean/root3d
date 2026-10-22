@@ -44,7 +44,9 @@ async function federalRegister(q) {
   for (const t of q.types ?? []) p.append('conditions[type][]', t);
   for (const f of ['title', 'html_url', 'publication_date', 'abstract', 'type', 'agencies', 'document_number']) p.append('fields[]', f);
   const json = JSON.parse(await get(`https://www.federalregister.gov/api/v1/documents.json?${p}`, 'application/json'));
-  return (json.results ?? []).map((d) => ({
+  const match = q.match ? new RegExp(q.match, 'i') : null;
+  const skip = q.exclude ? new RegExp(q.exclude, 'i') : null;
+  return (json.results ?? []).filter((d) => (!match || match.test(`${d.title} ${d.abstract ?? ''}`)) && !(skip && skip.test(d.title))).map((d) => ({
     id: `fr-${d.document_number}`,
     title: d.title,
     url: d.html_url,
@@ -85,10 +87,11 @@ const jobs = [
   ...sources.rss.map((s) => [s.name, () => rss(s)]),
 ];
 
+const exclude = sources.exclude ? new RegExp(sources.exclude, 'i') : null;
 const fresh = [];
 for (const [name, run] of jobs) {
   try {
-    const got = await run();
+    const got = (await run()).filter((i) => !(exclude && exclude.test(i.title)));
     fresh.push(...got);
     log.push(`ok    ${name}: ${got.length}`);
   } catch (e) {
@@ -97,7 +100,8 @@ for (const [name, run] of jobs) {
 }
 
 let existing = [];
-try {
+// RESET=1 rebuilds the feed from the lookback window, for example after tightening the filters.
+if (!process.env.RESET) try {
   existing = JSON.parse(await readFile(FEED_JSON, 'utf8')).items ?? [];
 } catch {
   /* first run */
