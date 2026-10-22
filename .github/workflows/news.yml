@@ -1,0 +1,46 @@
+name: Daily industry news
+
+on:
+  schedule:
+    - cron: '17 11 * * *' # every day, 6:17 AM Central (standard time)
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: Days of history to pull
+        default: '10'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pull official sources
+        env:
+          DISCORD_NEWS_WEBHOOK: ${{ secrets.DISCORD_NEWS_WEBHOOK }}
+          LOOKBACK_DAYS: ${{ inputs.lookback_days || '10' }}
+        run: node scripts/news/update.mjs
+      - name: Commit and redeploy if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- public/news; then
+            echo "No new items."
+            exit 0
+          fi
+          git config user.name "root3d-news-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/news
+          git commit -m "News feed update $(date -u +%F)"
+          git push
+          gh workflow run deploy.yml --ref main

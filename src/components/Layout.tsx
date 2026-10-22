@@ -35,6 +35,7 @@ const links: NavItem[] = [
     children: [
       { to: '/resources', label: 'All resources' },
       { to: '/knowledge-base', label: 'Knowledge Base', note: 'The Compliance Vault' },
+      { to: '/news', label: 'Industry Watch', note: 'Daily official updates' },
       { to: '/resources/sop-generator', label: 'SOP Generator' },
       { to: '/resources/total-thc', label: 'Total THC calculator' },
       { to: '/resources/vpd', label: 'VPD calculator' },
