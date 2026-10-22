@@ -10,7 +10,7 @@ import { findConsultant } from '../../data/team';
 import { asset, useConsultants, useServices } from '../../lib/data';
 import { money } from '../../lib/format';
 
-/** A drawn trichome field that demonstrates the 2.5x Macro Mode zoom used in video rooms. */
+/** A drawn trichome field showing why sharp close-ups matter more than zooming a live feed. */
 function MacroDemo() {
   const [on, setOn] = useState(false);
   const heads = Array.from({ length: 34 }, (_, i) => ({ x: (i * 37) % 300 + 10, y: ((i * 53) % 170) + 20, h: 14 + ((i * 7) % 16), amber: i % 5 === 0 }));
@@ -28,8 +28,8 @@ function MacroDemo() {
         </svg>
       </div>
       <div className="row between" style={{ marginTop: '0.75rem' }}>
-        <p className="small muted" style={{ margin: 0 }}>Macro Mode: 2.5× digital zoom for trichomes, stomata, and pests.</p>
-        <button className="btn btn-ghost btn-sm" aria-pressed={on} onClick={() => setOn(!on)}>{on ? 'Zoom out' : 'Try 2.5×'}</button>
+        <p className="small muted" style={{ margin: 0 }}>Close-ups like this, uploaded before the call, show trichomes, stomata, and pests far better than a live camera.</p>
+        <button className="btn btn-ghost btn-sm" aria-pressed={on} onClick={() => setOn(!on)}>{on ? 'Zoom out' : 'Zoom in'}</button>
       </div>
     </div>
   );
@@ -65,8 +65,8 @@ export function GrowCoach() {
             <p className="eyebrow">Grow Coach Connection</p>
             <h1>Show us your plants. <em>Get a plan.</em></h1>
             <p className="lede">
-              Live video coaching for home growers, hobbyists, and commercial cultivators. Upload photos before the call, meet
-              in a private room, zoom in with Macro Mode, and leave with a written action plan.
+              Live coaching for home growers, hobbyists, and commercial cultivators. Upload photos before the call, meet on
+              Zoom, Discord, or Signal, and leave with a written action plan.
             </p>
             <div className="btn-row">
               <Link to="/book?service=home-grow" className="btn btn-primary">15-minute quick call <ArrowRight size={16} /></Link>

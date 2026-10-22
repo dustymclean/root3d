@@ -16,7 +16,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
     title: 'Booking & sessions',
     items: [
       { q: 'How do I start?', a: 'Book a free 15-minute discovery call. It is a peer conversation, not a sales pitch. If we are not the right fit, we will tell you.' },
-      { q: 'Can I meet by phone or in person?', a: 'Yes. When you book you can choose video, phone, or an on-site visit, depending on what the consultant offers for that service.' },
+      { q: 'How do we meet?', a: 'On Zoom, Discord, or Signal, your choice when you book. Your consultant posts the link in your portal before the call. We never ask for or share phone numbers. Facility audits can also be done on site.' },
       { q: 'How do I reschedule or cancel?', a: 'From your portal, up to 24 hours before the session. See the cancellation policy for details.' },
       { q: 'What happens after a session?', a: 'Your consultant writes an action plan with at least three concrete steps. It appears in your portal, and you can download it.' },
       { q: 'What should I upload before a call?', a: 'Sharp, well-lit photos and video, recent lab results, environmental logs, feed charts, schematics, and any SOPs you want reviewed.' },
@@ -26,7 +26,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
     title: 'Grow Coach Connection',
     items: [
       { q: 'Is Grow Coach only for commercial growers?', a: 'No. It is built for home growers and hobbyists as well as commercial cultivators.' },
-      { q: 'What is Macro Mode?', a: 'A 2.5× digital zoom on the video feed for looking at trichomes, stomata, and pests. Zoom cannot add detail the camera did not capture, so we also ask for high-resolution photos.' },
+      { q: 'How do you see my plants up close?', a: 'Upload sharp macro photos of trichomes, stomata, and pests to your pre-call inbox. A live camera feed cannot add detail the lens did not capture, so good uploads matter most.' },
       { q: 'Can I extend a session?', a: 'Yes. At 50 minutes you will be offered 15 more minutes for $25 (draft pricing).' },
       { q: 'What is in the Grow Coach Package?', a: 'A one-hour consultation and two 30-minute follow-ups with the same coach, for $300 (draft pricing).' },
     ],
@@ -44,7 +44,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
     title: 'Privacy & files',
     items: [
       { q: 'Who can see my files?', a: 'You and the Root3D partners. Files are stored privately and opened through expiring links. The database enforces this on every request.' },
-      { q: 'Will you share my information?', a: 'No. We never sell data, and we only share what a service provider needs to do its job, such as sending an email or hosting a video call.' },
+      { q: 'Will you share my information?', a: 'No. We never sell data, and we only share what a service provider needs to do its job, such as sending an email or hosting a call.' },
     ],
   },
   {

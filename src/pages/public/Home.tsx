@@ -61,7 +61,7 @@ export function Home() {
             </div>
             <div className="trust-row center">
               <span><ShieldCheck size={16} /> Inspection-ready documentation</span>
-              <span><Video size={16} /> Video, phone, or on-site</span>
+              <span><Video size={16} /> Zoom, Discord, or Signal</span>
               <span><FileText size={16} /> A written action plan every session</span>
             </div>
           </Reveal>
@@ -137,7 +137,7 @@ export function Home() {
               <Link to="/grow-coach" className="card hover area-card feature">
                 <div className="icon-chip"><Leaf size={20} /></div>
                 <h3>Grow Coach Connection</h3>
-                <p className="small">Live video coaching for home growers and commercial cultivators, with Macro Mode, a pre-call inbox, and a written action plan.</p>
+                <p className="small">Live coaching for home growers and commercial cultivators, with a pre-call inbox, close-up photo review, and a written action plan.</p>
                 <span className="more">Meet a coach <ArrowRight size={14} /></span>
               </Link>
             </Reveal>
@@ -199,7 +199,7 @@ export function Home() {
             <div>
               <p className="eyebrow">Grow Coach Connection</p>
               <h2>A real cultivator, looking at your plants, today.</h2>
-              <p>Upload photos and logs, meet in a private video room, zoom in with Macro Mode, and leave with an action plan of at least three steps. Same-day coaches are flagged so you can get help when it matters.</p>
+              <p>Upload photos and logs, meet on Zoom, Discord, or Signal, and leave with an action plan of at least three steps. Same-day coaches are flagged so you can get help when it matters.</p>
               <div className="btn-row mt">
                 <Link to="/grow-coach" className="btn btn-gold">Find a coach <ArrowRight size={16} /></Link>
                 <Link to="/book?service=home-grow" className="btn btn-outline-light">Quick 15-minute call</Link>

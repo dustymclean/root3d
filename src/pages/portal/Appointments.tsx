@@ -1,11 +1,12 @@
-import { CalendarClock, Download, MapPin, Phone, Plus, Trash2, Video, XCircle } from 'lucide-react';
+import { CalendarClock, Clock, Download, ExternalLink, Link2, Plus, Trash2, XCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ErrorText, Field, Loading, StatusPill, Success } from '../../components/ui';
+import { modeBlurbs, modeIcons, modeLabels } from '../../lib/contact';
 import { dateTime, icsFor, timeOnly } from '../../lib/format';
 import { db, q } from '../../lib/supabase';
 import { openSlots, todayIn, weekdayOf } from '../../lib/time';
-import type { ActionPlan, Availability, Booking, Consultant, FileRow, PlanStep } from '../../lib/types';
+import type { ActionPlan, Availability, Booking, Consultant, FileRow, MeetingLink, PlanStep } from '../../lib/types';
 import { useAsync } from '../../lib/useAsync';
 import { useAuth } from '../../store/auth';
 import { personName, useLookups } from './lookups';
@@ -56,7 +57,8 @@ export function AppointmentDetail() {
   const start = new Date(b.starts_at).getTime();
   const end = new Date(b.ends_at).getTime();
   const now = Date.now();
-  const canJoin = (b.mode ?? 'virtual') === 'virtual' && b.status === 'confirmed' && now > start - 15 * 60_000 && now < end + 30 * 60_000;
+  const live = b.status === 'confirmed' && now > start - 15 * 60_000 && now < end + 30 * 60_000;
+  const ModeIcon = modeIcons[b.mode] ?? Link2;
   const upcoming = b.status === 'confirmed' && start > now;
 
   async function rpc(name: string, args: Record<string, unknown>) {
@@ -85,20 +87,25 @@ export function AppointmentDetail() {
           <StatusPill status={b.late_cancel ? 'late cancel' : b.status} />
         </div>
         <p className="row small">
-          {b.mode === 'phone' ? <Phone size={16} /> : b.mode === 'onsite' ? <MapPin size={16} /> : <Video size={16} />}
+          <ModeIcon size={16} />
           <span>
-            {b.mode === 'phone'
-              ? isAdmin
-                ? `Phone call. Client number: ${look.data.profiles[b.client_id]?.phone || 'not on profile'}`
-                : 'Phone call. Your consultant will call the number on your profile.'
-              : b.mode === 'onsite'
-                ? `On-site visit at ${b.location}`
-                : 'Video session in your portal. The room opens 15 minutes before the start.'}
+            <strong>{modeLabels[b.mode] ?? b.mode}.</strong>{' '}
+            {b.mode === 'onsite'
+              ? `On-site visit at ${b.location}`
+              : b.location
+                ? `${isAdmin ? 'Client' : 'Your'} ${modeLabels[b.mode]} username: ${b.location}`
+                : modeBlurbs[b.mode]}
           </span>
         </p>
+        {b.status === 'confirmed' && b.mode !== 'onsite' && !b.meeting_link && !isAdmin && (
+          <p className="muted small">Your consultant will post the {modeLabels[b.mode]} link here before the call.</p>
+        )}
+        {live && <SessionClock start={start} end={end} />}
         {b.notes && <p><strong>Notes:</strong> {b.notes}</p>}
         <div className="btn-row">
-          {canJoin && <Link to={`/portal/session/${b.id}`} className="btn btn-primary"><Video size={18} /> Join video session</Link>}
+          {b.meeting_link && b.status === 'confirmed' && (
+            <a className="btn btn-primary" href={b.meeting_link} target="_blank" rel="noopener noreferrer"><ExternalLink size={18} /> Open {modeLabels[b.mode]}</a>
+          )}
           {upcoming && <button className="btn btn-ghost" onClick={() => setMode('reschedule')}><CalendarClock size={18} /> Reschedule</button>}
           {upcoming && <button className="btn btn-ghost" onClick={() => setMode('cancel')}><XCircle size={18} /> Cancel</button>}
           <a className="btn btn-ghost" download="root3d-session.ics" href={icsFor({ id: b.id, title: `${s?.name} with ${c?.name}`, start: b.starts_at, end: b.ends_at })}>
@@ -122,6 +129,7 @@ export function AppointmentDetail() {
           <Reschedule consultant={c} minutes={s.minutes + b.extended_minutes} onPick={(iso) => void rpc('reschedule_booking', { p_booking: b.id, p_start: iso })} onClose={() => setMode('none')} />
         )}
         <ErrorText error={error} />
+        {isAdmin && b.status === 'confirmed' && b.mode !== 'onsite' && <MeetingLinkEditor booking={b} onSaved={() => void booking.reload()} />}
       </div>
 
       <div className="card">
@@ -260,6 +268,66 @@ function PlanEditor({ booking, plan, onSaved }: { booking: Booking; plan: Action
         <button className="btn btn-ghost" onClick={() => void save(false)}>Save plan</button>
         {booking.status === 'confirmed' && <button className="btn btn-primary" onClick={() => void save(true)}>Save and close session</button>}
       </div>
+    </div>
+  );
+}
+
+/** Shows how much of the booked time is left, so the consultant can wrap up on time. */
+function SessionClock({ start, end }: { start: number; end: number }) {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  const left = end - now;
+  const fmt = (ms: number) => `${Math.floor(ms / 60000)}:${String(Math.floor((ms % 60000) / 1000)).padStart(2, '0')}`;
+  const text = now < start ? `Starts in ${fmt(start - now)}` : left > 0 ? `${fmt(left)} left · ends at ${timeOnly(new Date(end))}` : `Time is up (ended at ${timeOnly(new Date(end))})`;
+  return (
+    <p className={`row small ${left <= 0 ? 'error-text' : ''}`} aria-live="polite">
+      <Clock size={16} /> <strong className="timer">{text}</strong>
+    </p>
+  );
+}
+
+/** Admins attach the Zoom, Discord, or Signal link for this booking. Clients only ever see their own booking's link. */
+function MeetingLinkEditor({ booking, onSaved }: { booking: Booking; onSaved: () => void }) {
+  const presets = useAsync(() => q<MeetingLink[]>(db().from('meeting_links').select('*').order('sort')), []);
+  const [url, setUrl] = useState(booking.meeting_link);
+  const [msg, setMsg] = useState<string | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const matching = (presets.data ?? []).filter((p) => p.method === booking.mode);
+
+  async function save(value: string) {
+    setErr(null);
+    setMsg(null);
+    if (value && !/^https:\/\//.test(value)) return setErr('Links must start with https://');
+    const { error } = await db().from('bookings').update({ meeting_link: value.trim() }).eq('id', booking.id);
+    if (error) setErr(error.message);
+    else {
+      setMsg(value ? 'Link shared with the client.' : 'Link removed.');
+      onSaved();
+    }
+  }
+
+  return (
+    <div className="stack mt">
+      <h3 style={{ margin: 0 }}>{modeLabels[booking.mode]} link for this client</h3>
+      {matching.length > 0 && (
+        <div className="btn-row">
+          {matching.map((p) => (
+            <button key={p.id} className="btn btn-ghost btn-sm" onClick={() => { setUrl(p.url); void save(p.url); }}>Use {p.label}</button>
+          ))}
+        </div>
+      )}
+      <Field label="Or paste a link" hint="Only this client can see it, in their appointment page.">
+        <input className="input" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://" />
+      </Field>
+      <div className="btn-row">
+        <button className="btn btn-primary btn-sm" onClick={() => void save(url)}>Share link</button>
+        {booking.meeting_link && <button className="btn btn-ghost btn-sm" onClick={() => { setUrl(''); void save(''); }}>Remove</button>}
+      </div>
+      {msg && <Success>{msg}</Success>}
+      <ErrorText error={err} />
     </div>
   );
 }

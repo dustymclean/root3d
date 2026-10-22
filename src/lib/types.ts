@@ -33,7 +33,7 @@ export type Consultant = {
   sort: number;
 };
 
-export type AppointmentMode = 'virtual' | 'phone' | 'onsite';
+export type AppointmentMode = 'zoom' | 'discord' | 'signal' | 'onsite';
 
 export type Service = {
   id: string;
@@ -69,7 +69,10 @@ export type Booking = {
   room: string;
   extended_minutes: number;
   mode: AppointmentMode;
+  /** Facility address for on-site visits, or the client's Discord/Signal username. */
   location: string;
+  /** The Zoom, Discord, or Signal link the consultant shares for this booking. */
+  meeting_link: string;
   created_at: string;
 };
 
@@ -216,3 +219,5 @@ export type Milestone = {
   done_at: string | null;
   created_at: string;
 };
+
+export type MeetingLink = { id: string; label: string; method: 'zoom' | 'discord' | 'signal'; url: string; sort: number };

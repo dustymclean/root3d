@@ -95,7 +95,7 @@ export function TeamProfile() {
               </div>
               <div className="card mt">
                 <h3 style={{ fontSize: '1.05rem' }}>Book {c.first}</h3>
-                <p className="muted small">Video, phone, or on-site. Free 15-minute discovery calls available.</p>
+                <p className="muted small">Zoom, Discord, or Signal. Free 15-minute discovery calls available.</p>
                 <div className="stack">
                   <Link to={`/book?consultant=${c.slug}&service=discovery`} className="btn btn-primary"><CalendarCheck size={18} /> Free discovery call</Link>
                   <Link to={`/book?consultant=${c.slug}`} className="btn btn-ghost">All session types</Link>

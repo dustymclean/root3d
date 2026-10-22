@@ -9,13 +9,13 @@ export function Privacy() {
         <h1>Privacy policy</h1>
         <p className="muted">Last updated October 2026. This policy is a plain-language draft pending legal review.</p>
         <h2>What we collect</h2>
-        <p>Your name, email, phone, company details, intake answers, booking history, messages, files you upload, and billing records. We collect only what we need to deliver consulting services.</p>
+        <p>Your name, email, company details, intake answers, booking history, messages, files you upload, and billing records. We collect only what we need to deliver consulting services.</p>
         <h2>How we use it</h2>
         <p>To schedule and run sessions, share your history among Root3D consultants so you never repeat yourself, send reminders and invoices, and meet legal and tax obligations. We never sell your data.</p>
         <h2>Who can see it</h2>
         <p>Only you and the Root3D partners. Files are stored privately and are reachable only through signed, expiring links. Our database enforces these rules on every request.</p>
         <h2>Service providers</h2>
-        <p>We use a hosted database and file store, a video meeting provider for live sessions, and a payment processor for card payments. Each receives only what it needs to do its job.</p>
+        <p>We use a hosted database and file store, meeting services (Zoom, Discord, or Signal) for live sessions, and a payment processor for card payments. Each receives only what it needs to do its job.</p>
         <h2>Your choices</h2>
         <p>You can update your profile at any time and ask us to export or delete your account by <Link to="/contact">contacting us</Link>. Some billing records must be kept for tax purposes.</p>
       </div>
@@ -89,10 +89,10 @@ export function Accessibility() {
         <li>Text alternatives for photos and descriptive labels on controls</li>
         <li>Color contrast chosen to meet AA, and no information conveyed by color alone</li>
         <li>Animations reduced automatically when your device asks for reduced motion</li>
-        <li>Phone and on-site appointments for anyone who prefers not to use video</li>
+        <li>A choice of Zoom, Discord, or Signal, including voice-only and text chat, plus on-site visits for facility work</li>
       </ul>
-      <h2>Video sessions</h2>
-      <p>Video rooms are provided by a third-party service. If you need captions, an interpreter, or another format, tell us when you book and we will arrange it or offer a phone session.</p>
+      <h2>Live sessions</h2>
+      <p>Sessions run on Zoom, Discord, or Signal, which are third-party services with their own terms. If you need captions, an interpreter, or another format, tell us when you book and we will arrange it or hold the session by text chat.</p>
       <h2>Tell us about a barrier</h2>
       <p>If something does not work for you, <Link to="/contact?topic=Accessibility">contact us</Link>. We will reply within two business days and, while we fix it, help you complete what you were trying to do another way.</p>
     </Policy>

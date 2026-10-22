@@ -20,7 +20,6 @@ import { Messages } from './pages/portal/Messages';
 import { Overview } from './pages/portal/Overview';
 import { PortalLayout } from './pages/portal/PortalLayout';
 import { ProjectDetail, Projects } from './pages/portal/Projects';
-import { Session } from './pages/portal/Session';
 import { ClientDetail, Clients } from './pages/portal/admin/Clients';
 import { AuditAdmin, Billing, InboxAdmin, Schedule, ServicesAdmin, TimeTracking, UsersAdmin } from './pages/portal/admin/Manage';
 import { AdminOverview } from './pages/portal/admin/Overview';
@@ -67,7 +66,6 @@ export function App() {
           <Route index element={<Overview />} />
           <Route path="appointments" element={<Appointments />} />
           <Route path="appointments/:id" element={<AppointmentDetail />} />
-          <Route path="session/:id" element={<Session />} />
           <Route path="messages" element={<Messages />} />
           <Route path="messages/:id" element={<Messages />} />
           <Route path="files" element={<Files />} />

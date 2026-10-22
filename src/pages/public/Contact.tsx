@@ -8,7 +8,7 @@ const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'support@r3dconsultin
 
 export function Contact() {
   const [params] = useSearchParams();
-  const [form, setForm] = useState({ name: '', email: '', phone: '', topic: params.get('topic') ?? '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', topic: params.get('topic') ?? '', message: '' });
   const [sent, setSent] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -19,7 +19,7 @@ export function Contact() {
     setError(null);
     if (!supabase) {
       // No backend yet: hand off to the visitor's email app.
-      const body = `${form.message}\n\n${form.name}\n${form.email}\n${form.phone}`;
+      const body = `${form.message}\n\n${form.name}\n${form.email}`;
       window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(form.topic || 'Website inquiry')}&body=${encodeURIComponent(body)}`;
       return;
     }
@@ -46,7 +46,6 @@ export function Contact() {
               <Field label="Email"><input className="input" type="email" required value={form.email} onChange={set('email')} autoComplete="email" /></Field>
             </div>
             <div className="form-row">
-              <Field label="Phone (optional)"><input className="input" type="tel" value={form.phone} onChange={set('phone')} autoComplete="tel" /></Field>
               <Field label="Topic"><input className="input" value={form.topic} onChange={set('topic')} placeholder="Licensing, retainer, cultivation…" /></Field>
             </div>
             <Field label="Message"><textarea className="textarea" required maxLength={5000} value={form.message} onChange={set('message')} /></Field>
