@@ -1,0 +1,1319 @@
+{
+  "name": "Root3D Consulting",
+  "icon": "public/mark.png",
+  "roles": [
+    {
+      "key": "partner",
+      "name": "Root3D Partner",
+      "color": 13938538,
+      "hoist": true,
+      "mentionable": true,
+      "admin": true
+    },
+    {
+      "key": "client",
+      "name": "Client",
+      "color": 5030794,
+      "hoist": true,
+      "mentionable": false,
+      "admin": false
+    },
+    {
+      "key": "insider",
+      "name": "Insider",
+      "color": 10189823,
+      "hoist": true,
+      "mentionable": false,
+      "admin": false
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 START HERE",
+      "access": "public-read",
+      "channels": [
+        {
+          "key": "welcome",
+          "name": "welcome",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Hardening the Cannabis Supply Chain from Seed to Sale. Start here.",
+          "messages": [
+            "# Welcome to Root3D Consulting\n**Hardening the Cannabis Supply Chain from Seed to Sale.**\nAgriculture. Science. Technology. Business. Real-World Execution.\n\nRoot3D is a multidisciplinary agricultural, cannabis, technology, and business consulting firm. We combine scientific research, commercial cultivation, facility engineering, compliance, cybersecurity, automation, and commercialization under one roof.\n\nFour backgrounds. Four perspectives. One commitment to solving real problems.\n\n## Find your way around\n- {#rules}: house rules. Read these first.\n- {#how-to-search}: how to find any answer in seconds.\n- {#announcements}: news from the partners.\n- {#book-a-call}: free 15-minute discovery call, sessions, and retainers.\n- {#kb-index}: every Knowledge Base article in one list.\n- {#ask-root3d}: ask the partners a question.\n\n## Access levels\n- **Everyone**: Start Here, About Root3D, the full Knowledge Base, Tools & Reference, and Community.\n- **Insider**: subscriber channels with ongoing briefings and Q&A.\n- **Client**: client support and lounge, plus private client rooms.\n- **Root3D Partner**: Dusty, Danny, Joel, and Hunter. Partners run the server.\n\nWebsite: <https://r3dconsulting.com>\nEmail: support@r3dconsulting.com\nPeople  ✦  Plants  ✦  Solutions"
+          ],
+          "pin": true,
+          "deferred": true
+        },
+        {
+          "key": "rules",
+          "name": "rules",
+          "type": "text",
+          "access": "public-read",
+          "topic": "House rules. Read before posting.",
+          "messages": [
+            "# Server rules\n\n- **Be respectful.** No harassment, hate, or personal attacks.\n- **No phone numbers.** Do not post or ask for phone numbers. We meet on Zoom, Discord, or Signal usernames only.\n- **No buying, selling, or trading** cannabis, plants, seeds, or controlled products here.\n- **Protect privacy.** Never post client names, license numbers, addresses, lab reports, or files that are not yours to share. Share sensitive files in your client portal instead.\n- **Education, not legal advice.** Information here is educational. Confirm requirements with your regulator, and book a session for advice on your situation.\n- **Stay on topic.** Use the channel that fits. Questions go in {#ask-root3d}, so answers stay searchable.\n- **No spam or self-promotion** without a partner's OK.\n- **Follow Discord's Terms of Service and Community Guidelines.**\n\nPartners may remove posts or members that break these rules."
+          ],
+          "pin": true,
+          "deferred": true
+        },
+        {
+          "key": "how-to-search",
+          "name": "how-to-search",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Find any answer in seconds: search filters, tags, and where everything lives.",
+          "messages": [
+            "# How to find an answer fast\n\n## Search the whole server\nClick the search box (top right) or press **Ctrl+F** (**⌘F** on Mac) and type a few words, such as `total thc` or `metrc`.\n\nNarrow it down with filters:\n- `in: #knowledge-base vpd`: only Knowledge Base posts\n- `in: #sop-library sanitation`: only SOPs\n- `in: #faq cancel`: only FAQ answers\n- `from: Root3D`: only posts from a partner or the bot\n- `has: link`: only posts with links\n\n## Browse by tag\nForum channels have tags. Open {#knowledge-base} and click a tag (Compliance, Cultivation, Facility, Technology, Business) to see only those posts. Each forum also has its own search bar.\n\n## Where things live\n- **Knowledge Base articles**: {#knowledge-base} (index in {#kb-index})\n- **Service areas**: {#service-areas}\n- **FAQ**: {#faq}\n- **SOP templates**: {#sop-library}\n- **Regulators by state**: {#regulators-by-state}\n- **Plant problems**: {#plant-troubleshooter}\n- **Calculators**: {#calculators}\n- **Team bios**: {#meet-the-team}\n- **Prices and policies**: {#services-and-pricing} and {#policies}\n\nStill stuck? Ask in {#ask-root3d} and a partner will answer."
+          ],
+          "pin": true,
+          "deferred": true
+        },
+        {
+          "key": "announcements",
+          "name": "announcements",
+          "type": "announcement",
+          "access": "public-read",
+          "topic": "News from the Root3D partners. Click Follow to get these in your own server.",
+          "messages": [
+            "## About this channel\nOfficial news from Root3D: new services, events, and important updates.\n\n**How it works**\n- Partners post here. Members can react.\n- Click **Follow** to send these posts to a channel in your own server.\n\n-# Questions about an announcement? Ask in {#ask-root3d}."
+          ]
+        },
+        {
+          "key": "book-a-call",
+          "name": "book-a-call",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Free 15-minute discovery call, sessions, and retainers. Zoom, Discord, or Signal. No phone numbers.",
+          "messages": [
+            "# Book a call\n\n## Free 15-minute discovery call\nA peer conversation with a partner to see where you are and whether we fit. Book any open slot: <https://r3dconsulting.com/book?service=discovery>\n\n## How we meet\nYou choose **Zoom, Discord, or Signal** when you book. Your consultant posts the link in your client portal before the call. On-site visits are available for facility work. **We never ask for or share phone numbers.**\n\n## Sessions\n- **Discovery Call**: Free · 15 min. A free 15-minute peer conversation to see where you are and whether we fit.\n- **Standard Hour**: $100 · 60 min. No contract. Bring a single issue and leave with a plan.\n\n## Retainers (monthly)\n- **Tier 1**: $1,000/month · Response under 6 hr. A compliance safety net with predictable support.\n- **Tier 2**: $1,500/month · Response under 3 hr. For teams moving fast who need hands-on help.\n- **Priority**: $2,000/month · Response under 1 hr. Woven into your operation for teams that cannot wait.\n\nFull pricing: <https://r3dconsulting.com/pricing> · Book: <https://r3dconsulting.com/book> · Contact: <https://r3dconsulting.com/contact>\n-# Prices marked draft on the website are pending final approval. The price on your invoice at booking is the price you pay."
+          ],
+          "pin": true,
+          "deferred": true
+        }
+      ]
+    },
+    {
+      "name": "🏛️ ABOUT ROOT3D",
+      "access": "public-read",
+      "channels": [
+        {
+          "key": "about-us",
+          "name": "about-us",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Mission, philosophy, values, and who we work with.",
+          "messages": [
+            "# About Root3D\n\n**Hardening the Cannabis Supply Chain from Seed to Sale.**\nAgriculture. Science. Technology. Business. Real-World Execution.\n\n## Mission\nRoot3D is a multidisciplinary agricultural, cannabis, technology, and business consulting firm. We combine scientific research, commercial cultivation, facility engineering, compliance, cybersecurity, automation, and commercialization under one roof.\n\n## Philosophy\nWe are practical problem-solvers, not generic consultants selling templates. Our work is honest, accessible, and scientifically grounded. We diagnose the problem, implement the fix, document the result, and put safeguards in place so it does not happen again.\n\n## Why four disciplines\nOperational failures in regulated agriculture rarely stay in one department. A restriction in an irrigation line changes how the plant feeds. That shows up in the lab results, which shows up in the compliance report, which shows up in retail margins.\n\nRoot3D was built around that chain. Joel works the inputs and the chemistry, Danny works the canopy and the infrastructure, Dusty works the data, the documentation, and the storefront, and Hunter works the rules, the molds, and the devices. Together we cover seed to sale, and we talk to each other so you do not have to translate between specialists.",
+            "## What we value\n- **Honest answers.** If we are not the right fit, or the fix is cheap and simple, we will say so on the first call.\n- **Evidence before opinions.** We look at your data, your plants, and your paperwork before recommending anything.\n- **Teach, do not just tell.** Your team should understand why a change works, so they can run it without us.\n- **Write it down.** Every engagement ends with documentation you own: what we found, what we changed, and what to watch.\n- **No guarantees we cannot keep.** Regulators and plants make their own decisions. We promise diligence, not outcomes.\n- **Your information stays yours.** Client files are private, access is limited to your consultants, and we never sell data.\n\n## Who we work with\n- **Commercial operators.** Licensed cultivators, processors, and vertically integrated companies that need fixes before inspectors find problems.\n- **Dispensaries & retail.** Storefronts that need tighter inventory, better staff training, and cleaner reconciliation.\n- **New license holders.** Teams that just received a license and need SOPs, systems, and a build-out plan fast.\n- **Multi-state operators.** Companies expanding across state lines that need a clear view of what changes at the border.\n- **Small businesses.** Hemp producers, smoke shops, and suppliers who need practical help without enterprise pricing.\n\nMore: <https://r3dconsulting.com/about>"
+          ]
+        },
+        {
+          "key": "meet-the-team",
+          "name": "meet-the-team",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "One post per partner: background, specialties, and how to book them.",
+          "tags": [
+            "Joel",
+            "Danny",
+            "Dusty",
+            "Hunter"
+          ],
+          "posts": [
+            {
+              "title": "Joel Perkins · Executive Consultant · Supply Chain Architect",
+              "tags": [
+                "Joel"
+              ],
+              "messages": [
+                "# Joel Perkins\n**Agricultural Scientist, Formulation Specialist & Systems Architect**\nExecutive Consultant · Supply Chain Architect\n\nJoel bridges agricultural biochemistry and large-scale operations. He designs nutrient programs and input strategies, vets suppliers, and structures the distribution and margin side of the business so the science pays for itself.\n\n## Story\nJoel came to agriculture from an unusual direction. He started in the California entertainment industry as a concert promoter running multiple live events every week, and was the lead vocalist and lyricist for the thrash metal band Six Pack of Doom. Running shows taught him logistics, crowds, and cash flow long before he ran a facility.\n\nHe moved into medical cannabis as manager of the Sespe Creek Collective in California, growing it into one of the state’s leading medical hubs, serving more than 10,000 registered patients, including oncology patients and wounded combat veterans.\n\nConcern about agricultural contaminants like glyphosate pushed him into microbiology. He founded and ran a biological, fermentation-based fertilizer line that became a staple in the Humboldt market and was adopted by Driscoll’s growers for commercial berry production.\n\nAfter serving as Chief Operating Officer of Primordial Solutions, Joel spent six years as a Division Head at Wilbur-Ellis, where he formulated botanical fertilizer lines and traveled internationally as a keynote speaker on plant metabolism. In Nevada he managed 24-hour, high-volume retail operations at Oasis Cannabis and led the restructuring of Bofloral’s US division into Valley of Fire Distribution. He is the formulator of Cowbell Cow Mag, an acetate-based calcium and magnesium supplement.",
+                "Today Joel is Head of Operations at Lake Leaf Cultivation, the tribal cannabis enterprise of the Mille Lacs Band of Ojibwe in Minnesota: a vertically integrated, 50,000-square-foot cultivation, manufacturing, and processing operation opened in April 2024, with more than 100 team members, wholesale relationships, and dispensaries in Onamia, Hinckley, and Isle.\n\n## Background\n- Head of Operations, Lake Leaf Cultivation (Mille Lacs Band of Ojibwe, Minnesota)\n- Founder, Valley of Fire Distribution (restructured from Bofloral’s US division)\n- Division Head, Wilbur-Ellis (six years)\n- Chief Operating Officer, Primordial Solutions\n- Founder, biological fermentation fertilizer line (Humboldt; Driscoll’s berry growers)\n- Retail operations, Oasis Cannabis (Nevada)\n- Manager, Sespe Creek Collective (California, 10,000+ registered patients)\n- Formulator, Cowbell Cow Mag\n- Product development, Habitarium\n- International keynote speaker on plant metabolism",
+                "## Specialties\n- **Acetate-based nutrient strategies.** Joel pioneered commercial use of potassium and calcium acetate, which give the plant carbon in its most accessible form as a direct Acetyl-CoA precursor, to support metabolism, resin, and terpene production. We trial it on a test block and measure before rolling it out, because results depend on cultivar and environment.\n- **Biological fertilizers & fermentation.** Microbial and fermentation-based inputs, how to brew and apply them consistently, and how to keep them from becoming a contamination source.\n- **Low heavy-metal input sourcing.** Supplier vetting, certificate-of-analysis review, and input documentation that reduce the risk of failed heavy-metal panels.\n- **Genetics & supplier evaluation.** Sourcing cultivars and inputs from suppliers who can back up what they sell, and building relationships that hold up under scrutiny.\n- **Distribution, margins & liquidity.** Wholesale agreements, margin strategy, and cash-flow planning for businesses that cannot rely on ordinary banking. Joel calls the liquidity side \"Backpack Banking\": practical payment paths and cash procedures for restricted markets.\n- **Operational scaling.** Turning a working room into a working facility: staffing, throughput, procurement, and the controls that keep quality from slipping as volume grows.\n\n## Approach\nTreat every facility like a live lab. Change one variable, measure it honestly, and keep what works.\n\n## Focus\nInputs, chemistry, and margins\n\n## Practice areas\n- Agriculture & Formulation\n- Cultivation & Processing\n- Multi-State Consulting\n- Dispensary & Retail Operations\n\nProfile: <https://r3dconsulting.com/team/joel-perkins> · Book with Joel: <https://r3dconsulting.com/book?consultant=joel-perkins>"
+              ]
+            },
+            {
+              "title": "Danny Davis · Head Cultivator · Facility Engineer",
+              "tags": [
+                "Danny"
+              ],
+              "messages": [
+                "# Danny Davis\n**Master Cultivator, Facility Operator & Technical Systems Consultant**\nHead Cultivator · Facility Engineer\n\nDanny is the owner and head cultivator of Manna Holdings LLC (Farming Manna), a veteran-owned Mississippi operation. He combines field-medic discipline, network security training, and hands-on cultivation to keep plants healthy, systems running, and teams sharp.\n\n## Story\nDanny served as a U.S. Army combat medic and earned the Expert Field Medical Badge. He brings that background into the grow room as biosecurity: clean entry procedures, contamination control, and the habit of doing it right every time because shortcuts eventually show up in the plants.\n\nAfter the Army he moved into enterprise technology and earned Cisco CCNA Security. That is why his facility work includes the network: segmented systems, Cloudflare, isolated Linux virtual machines, proxies, and encrypted communications, so cultivation data and camera feeds are not left exposed.\n\nToday he owns and runs Farming Manna, a veteran-owned commercial operation in Mississippi with a clean inspection history. His genetics work has included a project in Barcelona documenting about 650 cultivars, and he designs custom cultivation hardware in Tinkercad when the off-the-shelf part does not fit.\n\nDanny believes cultivators should understand their operation, not just follow a checklist. He spends as much time on people as on plants, helping high-turnover crews shift from an employee mindset to an owner mindset, drawing on mentoring and focus techniques that include Hemi-Sync audio.",
+                "## Background\n- U.S. Army combat medic, Expert Field Medical Badge (EFMB)\n- Cisco CCNA Security\n- Owner and head cultivator, Manna Holdings LLC (Farming Manna), veteran-owned, Mississippi\n- Clean state inspection history at Farming Manna\n- Genetics project in Barcelona documenting about 650 cultivars\n- Linux, Cloudflare, and network security practice\n- 3D design and hardware prototyping in Tinkercad\n\n## Specialties\n- **Irrigation & the 45-degree rule.** Plumbing laid out to cut friction loss, for example swapping hard 90-degree elbows for pairs of 45s, so pressure stays even across the room and pumps are not overworked.\n- **Plant health & IPM.** Diagnosing deficiencies, pests, and pathogens from the plant and the environment together, then building an integrated pest management routine the crew can keep up.\n- **Tissue culture & micropropagation.** Clean-stock programs, lab layout, media prep, and training, so your genetics are preserved and your mother rooms stop being a liability.\n- **Environmental controls & facility troubleshooting.** HVAC, dehumidification, airflow, and lighting reviewed as one system, with practical adjustments when conditions shift.\n- **Facility security & operational privacy.** Network segmentation, secure remote access, and communication habits that protect cultivation data, camera systems, and your intellectual property.\n- **Team culture & training.** Floor training, strain documentation, and leadership coaching that builds a crew who owns the outcome.\n\n## Approach\nTeach growers to understand their room, not just follow instructions. The best fix is the one your team can run without me.\n\n## Focus\nCanopy, plumbing, and training\n\n## Practice areas\n- Commercial Facility Audits\n- Cultivation & Processing\n- Technology & Business Systems",
+                "Profile: <https://r3dconsulting.com/team/danny-davis> · Book with Danny: <https://r3dconsulting.com/book?consultant=danny-davis>"
+              ]
+            },
+            {
+              "title": "Dusty McLean · Systems Architect · Compliance & OSINT",
+              "tags": [
+                "Dusty"
+              ],
+              "messages": [
+                "# Dusty McLean\n**Technologist, OSINT Researcher & Business Systems Strategist**\nSystems Architect · Compliance & OSINT\n\nDusty translates complicated business, compliance, and technology problems into systems people can actually run. She builds the documentation, data pipelines, storefronts, and research that keep operators audit-ready without slowing them down.\n\n## Story\nDusty is an IT professional and researcher based in Mississippi, with an Associate of Science background in Information Technology Systems and Communication Systems. She is a commissioned Mississippi Notary Public and a USDA-licensed hemp producer, so the paperwork side of this industry is not abstract to her.\n\nShe founded Pixie’s Pantry and Pixie’s Distribution, and is managing partner of Ole Brook Web Services. That work spans WordPress and WooCommerce builds, B2B wholesale portals, structured CSV and JSON product data, and automation that keeps catalogs, orders, and records in sync.\n\nHer research background includes OSINT and cybersecurity. She is a course author for OnlySecurity, writing curriculum on investigative methodology, digital privacy, and image analysis. For clients, that becomes regulatory intelligence, competitive research, and due diligence on partners and suppliers.\n\nDusty also treats consumption and vaporization hardware with a Durable Medical Equipment mindset: material safety, airpath quality, and battery documentation rather than novelty marketing. She has built patient resource directories and product education for medical cannabis patients.\n\n## Background\n- A.S. background, Information Technology Systems and Communication Systems\n- Commissioned Mississippi Notary Public\n- USDA-licensed hemp producer\n- Managing partner, Ole Brook Web Services (OBWS)\n- Founder, Pixie’s Pantry and Pixie’s Distribution\n- Course author, OnlySecurity (OSINT, digital privacy, image analysis)",
+                "## Specialties\n- **Compliance documentation & SOPs.** Inspection-ready SOPs, records, and checklists written from the actual rules, with owners and review dates so they stay current.\n- **Total THC & lab-data review.** Batch monitoring against statutory limits using Total THC = (THCA × 0.877) + Δ9-THC, with alerts before a number drifts into trouble.\n- **E-commerce & B2B systems.** WordPress and WooCommerce storefronts, wholesale portals, and structured product feeds that stay accurate across thousands of SKUs.\n- **Automation & sensor alerts.** Connecting environmental sensors, spreadsheets, and business tools so the right person hears about a problem while it is still small.\n- **OSINT & regulatory intelligence.** Source-backed research on rules, competitors, partners, and suppliers, delivered with citations you can check.\n- **Hardware safety & product education.** Material, airpath, and battery documentation for consumption hardware, plus clear product education for customers and patients.\n\n## Approach\nIf it is not written down, it did not happen. Good systems make the right thing the easy thing.\n\n## Focus\nData, documentation, and storefronts\n\n## Practice areas\n- Technology & Business Systems\n- Dispensary & Retail Operations\n- Multi-State Consulting\n- Commercial Facility Audits\n\nProfile: <https://r3dconsulting.com/team/dusty-mclean> · Book with Dusty: <https://r3dconsulting.com/book?consultant=dusty-mclean>"
+              ]
+            },
+            {
+              "title": "Hunter Porter · Regulatory Analyst · Systems & Devices",
+              "tags": [
+                "Hunter"
+              ],
+              "messages": [
+                "# Hunter Porter\n**Regulatory Interpretation, Cultivation Methods & Device Systems**\nRegulatory Analyst · Systems & Devices\n\nHunter reads the rules the way an engineer reads a schematic. He studied electrical technology, and he brings that same precision to regulations, mold problems, growing methods, and the devices that run a facility. He notices what others miss and does not stop until he has the answer.\n\n## Story\nHunter studied electrical technology, and it shows in how he approaches every problem: understand the whole system first, then find the part that is failing. He studies systems he may never touch, and the ones he does touch, he speaks their language.\n\nOn the regulatory side, Hunter reads and interprets the law closely: what a rule actually requires, how it is applied, and what an operator has to do to follow it day to day. He is not an attorney; he helps clients understand and operationalize the rules, and works alongside counsel when legal advice is needed.\n\nIn the grow, he knows molds and contamination, and he is fluent across multiple cultivation methods. That combination matters, because many mold problems start as environment, equipment, or procedure problems that only someone who understands all three will catch.\n\nLike Dusty, Hunter can find the answer to almost anything. He is thorough, gives his full heart to every project, and is often the person who spots the detail everyone else walked past.\n\n## Background\n- Studied Electrical Technology\n- Regulatory reading and interpretation\n- Mold identification and contamination prevention\n- Experience across multiple growing methods\n- Electrical systems and cultivation devices",
+                "## Specialties\n- **Reading & interpreting the law.** Plain-language breakdowns of what a regulation requires, where it is ambiguous, and how to build procedures that follow it. Research and interpretation, not legal advice.\n- **Mold & contamination.** Finding where mold comes from, whether it is airflow, humidity, equipment, or handling, and putting prevention in place before it reaches a lab test.\n- **Growing methods.** Practical knowledge across multiple cultivation methods, so advice fits the system you actually run.\n- **Devices & electrical systems.** Controllers, sensors, lighting, and the electrical side of a facility, reviewed by someone trained in electrical technology.\n- **Research & root-cause analysis.** Thorough investigation that keeps going until it finds the real cause, with the evidence written down.\n\n## Approach\nUnderstand the whole system before you touch any part of it. The answer is usually in the detail nobody checked.\n\n## Focus\nLaw, molds, and devices\n\n## Practice areas\n- Commercial Facility Audits\n- Multi-State Consulting\n- Cultivation & Processing\n- Technology & Business Systems\n\nProfile: <https://r3dconsulting.com/team/hunter-porter> · Book with Hunter: <https://r3dconsulting.com/book?consultant=hunter-porter>"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "how-we-work",
+          "name": "how-we-work",
+          "type": "text",
+          "access": "public-read",
+          "topic": "The ten-stage engagement record and how the four partners combine.",
+          "messages": [
+            "# How an engagement runs\n\nEvery engagement moves through these stages and is documented as it goes. You own the final record.\n\n**1. Initial Problem**\nWhat is actually happening, in your words and in the data, before anyone assumes a cause.\n\n**2. Investigation**\nWalk-throughs, photos, logs, lab results, plumbing, and paperwork. We collect evidence first.\n\n**3. Idea**\nCandidate explanations, ranked by likelihood and by how cheaply each can be tested.\n\n**4. Proposed Fix**\nA specific change with an owner, a cost, and what we expect to see if it works.\n\n**5. Implementation**\nThe change is made, with your team, and every step is written down.\n\n**6. Validation**\nWe measure whether it worked against the expectation we set before we started.\n\n**7. Backup Plan**\nWhat we do if it did not work, or if conditions change next month.\n\n**8. Cross-Correlation**\nHow the finding touches agriculture, engineering, compliance, technology, and the business, so lessons travel.\n\n**9. Final Report**\nA written record you own: sources, decisions, results, and version history.\n\n**10. Follow-Up**\nA scheduled check-in to confirm the fix held and to catch the next issue early.\n\n# How the four of us combine\n\n## Cultivation & canopy\n- **Joel:** Designs the feed program and input chemistry, including acetate-based strategies.\n- **Danny:** Runs canopy management, irrigation dynamics, and the daily room routine.\n- **Dusty:** Builds batch logs, structured strain libraries, and the records inspectors ask for.\n- **Hunter:** Matches the approach to your growing method and watches for mold and contamination risk.",
+            "## Facility engineering\n- **Joel:** Reviews environmental chemistry and raw-input purity, including heavy-metal risk.\n- **Danny:** Re-engineers plumbing and irrigation, and prototypes hardware in 3D.\n- **Dusty:** Connects sensor data to alerts and automated workflows so problems surface early.\n- **Hunter:** Reviews controllers, sensors, lighting, and the electrical side of the build.\n\n## Commercialization & retail\n- **Joel:** Structures wholesale and distribution agreements and margin strategy.\n- **Danny:** Trains retail and floor staff on cultivar characteristics and product knowledge.\n- **Dusty:** Engineers storefronts, B2B portals, product feeds, and transaction records.\n- **Hunter:** Checks product, labeling, and sales procedures against what the rules actually say.\n\n## Compliance & risk\n- **Joel:** Vets suppliers and input documentation for contamination risk.\n- **Danny:** Brings biosecurity discipline and facility network and physical security practice.\n- **Dusty:** Researches the rules, writes the SOPs, and runs the Total THC and lab-data math.\n- **Hunter:** Reads and interprets the regulations line by line and turns them into procedures.\n\nExample engagements: {#case-studies}"
+          ],
+          "deferred": true
+        },
+        {
+          "key": "services-and-pricing",
+          "name": "services-and-pricing",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Services, practice areas, sessions, retainers, and fixed-fee projects.",
+          "messages": [
+            "# Services\n\n- **Licensing & applications.** We pick the license path that fits your plan, read the state rules line by line, and assemble an application reviewers can score quickly.\n- **Compliance systems & audits.** Rules become checklists, logs, and owners. We run mock inspections so the real one is routine.\n- **SOPs & operational readiness.** Intake, inventory, sanitation, security, and records written as procedures your staff will actually follow.\n- **Training & advisory.** Leadership and floor training, plus someone to call when a regulation or an inspector surprises you.\n- **Cultivation strategy.** Canopy planning and room SOPs from clone to cure, so every run behaves like the last good one.\n- **Fertigation & irrigation.** Feed programs tuned to your cultivars and environment, and plumbing designed to deliver them evenly.\n- **Nutrients & inputs.** Stage-specific nutrition, acetate-based uptake strategies, and low heavy-metal suppliers with paperwork to match.\n- **Genetics & tissue culture.** Cultivar selection, clean-stock programs, and tissue culture labs that protect your genetics.\n\n## Practice areas\n- **Commercial Facility Audits.** Pre-audit remediation: find and fix the failure points before an inspector does.\n- **Cultivation & Processing.** Canopy management, plant health, genetics, tissue culture, and post-harvest consistency.\n- **Dispensary & Retail Operations.** Inventory, staff training, product education, storefronts, and margins.\n- **Agriculture & Formulation.** Nutrient programs, biological fertilizers, input sourcing, and heavy-metal risk reduction.\n- **Technology & Business Systems.** Websites, e-commerce, automation, sensor alerts, security, OSINT, and documentation.\n- **Multi-State Consulting.** Regulatory gap analysis and expansion planning for operators crossing state lines.\nDetails for each: {#service-areas}",
+            "## Everything we cover\nCommercial cultivation and canopy management · Agricultural formulations · Biological fertilizers · Genetics and tissue culture · HVAC and environmental systems · Irrigation engineering · Microbial and heavy-metal risk reduction · Cultivation and processing audits · Inventory reconciliation · Metrc workflows · Dispensary operations · Facility security · Documentation and SOP development · Regulatory research · Multi-state expansion · Business systems · E-commerce · Automation · Technical OSINT · Distribution and commercialization\n\n# Pricing\n## Sessions\n- **Discovery Call**: Free · 15 min\n  A free 15-minute peer conversation to see where you are and whether we fit.\n  No cost, no pressure · Talk with an owner, not a sales rep · Leave with a clear next step\n- **Standard Hour**: $100 · 60 min\n  No contract. Bring a single issue and leave with a plan.\n  Licensing, compliance, or cultivation · Document and SOP review · Action plan with at least 3 steps\n\n## Retainers (monthly)\n- **Tier 1**: $1,000/month · Response under 6 hr\n  A compliance safety net with predictable support.\n  Monthly compliance check · Dedicated line · SOP maintenance as rules change · Renewal and deadline tracking\n- **Tier 2**: $1,500/month · Response under 3 hr\n  For teams moving fast who need hands-on help.\n  Bi-weekly audits · On-site help · Fertigation and nutrient planning · Priority task queue\n- **Priority**: $2,000/month · Response under 1 hr\n  Woven into your operation for teams that cannot wait.\n  Emergency escalation · Direct executive access · Ongoing monitoring · Specialist routing",
+            "## Fixed-fee projects (quoted in writing)\n- **MEP Diagnostics.** Mechanical, electrical, and plumbing review before inspectors find it.\n- **Tissue Culture Lab Build.** Lab design plus media-prep training for your team.\n- **Inventory Reconciliation.** Physical counts reconciled against Metrc or BioTrack.\n- **Multi-State Gap Analysis.** Cross-market compliance review for multi-state operators.\n\n-# Prices marked draft on the website are pending final approval. Current prices: <https://r3dconsulting.com/pricing>"
+          ],
+          "deferred": true
+        },
+        {
+          "key": "policies",
+          "name": "policies",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Payment, cancellation, and refund policies in plain language.",
+          "messages": [
+            "# Policies (summary)\n\n## Payment\n- Paid sessions create an invoice in your portal when you book.\n- Fixed-fee projects are quoted in writing and invoiced per the signed proposal or statement of work, which may include a deposit or milestones.\n- Retainers bill monthly on the day you choose (1st to 28th) and begin only after the agreement is signed.\n- Session extensions are $25 per additional 15 minutes.\n- Online card payment turns on only after our payment processor approves Root3D. **Until then, we will never ask for card details by email or message.**\n- Session invoices are due by the session date. Unpaid retainer invoices may pause retainer services.\n\n## Cancellation and rescheduling\n- Reschedule or cancel from your portal up to 24 hours before the start time at no charge.\n- Cancellations within 24 hours are late and may be charged in full. No-shows may be charged in full.\n- If we cancel or miss a session, you are not charged, and we help you rebook or refund what you paid.\n- Retainers are month to month. Cancel in writing before your next billing date.\n- Genuine emergencies: tell us, and we may waive late-cancellation charges.\n\n## Refunds\n- Cancelled more than 24 hours ahead, cancelled or missed by us, technical failure on our side, or duplicate charges: refunded or voided.\n- Late cancellations, no-shows, completed sessions (tell us within 7 days), fixed-fee projects, and partial retainer months are reviewed case by case.\n- Request one through a support ticket in your portal or <https://r3dconsulting.com/contact> with the invoice number.",
+            "Full text: <https://r3dconsulting.com/policies/payment> · <https://r3dconsulting.com/policies/cancellation> · <https://r3dconsulting.com/policies/refunds> · <https://r3dconsulting.com/privacy> · <https://r3dconsulting.com/terms> · <https://r3dconsulting.com/accessibility>\n-# Policies are plain-language drafts pending business and legal review."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "📚 KNOWLEDGE BASE",
+      "access": "public-read",
+      "channels": [
+        {
+          "key": "kb-index",
+          "name": "kb-index",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Every Knowledge Base article in one list, grouped by category.",
+          "deferred": true,
+          "pin": true
+        },
+        {
+          "key": "knowledge-base",
+          "name": "knowledge-base",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "The Compliance Vault: source-backed guides with review dates and citations. Filter by tag or search. Educational only, not legal advice.",
+          "tags": [
+            "Compliance",
+            "Cultivation",
+            "Facility",
+            "Technology",
+            "Business"
+          ],
+          "posts": [
+            {
+              "title": "Total THC: what it is and how to calculate it",
+              "tags": [
+                "Compliance"
+              ],
+              "messages": [
+                "# Total THC: what it is and how to calculate it\nWhy labs report THCA separately, where the 0.877 factor comes from, and how to check a certificate of analysis yourself.\n\n**Category:** Compliance · **Jurisdiction:** Federal & multi-state · **Reviewed:** 2026-10-21 · **Author:** Dusty McLean\n**Tags:** THC, THCA, lab results, hemp, COA, potency\n\n## The short version\n\nRaw plant material contains mostly THCA, the acid form of THC. Heat converts THCA into Δ9-THC by removing a carboxyl group, a process called decarboxylation. Total THC estimates how much Δ9-THC the material could contain once that happens.\n\nThe common formula is Total THC = (THCA × 0.877) + Δ9-THC.\n\n## Where 0.877 comes from\n\nWhen THCA loses its carboxyl group as carbon dioxide, the molecule gets lighter. The molar mass of Δ9-THC (about 314.5 g/mol) divided by the molar mass of THCA (about 358.5 g/mol) is about 0.877. So one milligram of THCA can become at most about 0.877 milligrams of THC.\n\n## Checking a certificate of analysis\n\n- Confirm the sample ID and batch number match your records.\n- Check that results are on the basis your rules require, usually dry weight for hemp.\n- Recalculate Total THC from the THCA and Δ9-THC lines and compare with the lab’s total.\n- Look for the lab’s measurement uncertainty. A result near a legal limit may be treated differently depending on how uncertainty is applied.\n- Keep the COA with the batch record for as long as your rules require.\n\n## Why it matters for hemp",
+                "Under the federal hemp rule, a hemp sample is tested for total THC on a dry-weight basis, and material above the acceptable level must be remediated or disposed of under the rule’s procedures. Federal legislation enacted in November 2025 also changes the statutory hemp definition to a total-THC basis and limits THC in finished products, with an effective date in November 2026. Confirm the current status with USDA and your state before relying on any threshold.\n\n## Try it\n\nUse the Total THC calculator in Resources to run the numbers from your own COA.",
+                "## Sources\n- USDA AMS: Hemp production program: <https://www.ams.usda.gov/rules-regulations/hemp>\n- eCFR: 7 CFR Part 990, Domestic Hemp Production Program: <https://www.ecfr.gov/current/title-7/subtitle-B/chapter-IX/part-990>\n- PubChem: Tetrahydrocannabinolic acid: <https://pubchem.ncbi.nlm.nih.gov/compound/Tetrahydrocannabinolic-acid>\n- PubChem: Dronabinol (Δ9-THC): <https://pubchem.ncbi.nlm.nih.gov/compound/Dronabinol>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/total-thc-explained>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Mississippi Medical Cannabis Program: who regulates what",
+              "tags": [
+                "Compliance"
+              ],
+              "messages": [
+                "# Mississippi Medical Cannabis Program: who regulates what\nA plain-language map of the agencies, license types, and tracking system behind Mississippi’s medical program.\n\n**Category:** Compliance · **Jurisdiction:** Mississippi · **Reviewed:** 2026-10-21 · **Author:** Dusty McLean\n**Tags:** Mississippi, MSDH, Department of Revenue, licensing, Metrc\n\n## The law\n\nMississippi’s medical program was created by the Mississippi Medical Cannabis Act, Senate Bill 2095, signed in February 2022.\n\n## Who regulates what\n\n- Mississippi State Department of Health (MSDH): patients and practitioners, plus cultivation, processing, testing, transportation, and disposal businesses.\n- Mississippi Department of Revenue (DOR): dispensaries.\n- Each agency publishes its own regulations, application requirements, and fee schedules. Read both if you are vertically integrated.\n\n## Seed-to-sale tracking\n\nThe program uses a state seed-to-sale tracking system. Licensees are expected to record plants, packages, transfers, testing, and sales in it, and physical inventory has to match.\n\n## Where operators get into trouble\n\n- SOPs that describe a process staff do not actually follow\n- Plant counts or package weights that drift from the tracking system\n- Visitor and access logs that are incomplete\n- Waste that is not rendered unusable, witnessed, and recorded as required\n- Advertising or labeling that does not match current rules\n\n## Before you rely on this\n\nRegulations and guidance are updated regularly. Always confirm requirements on the agency sites below, and get legal advice for licensing decisions.",
+                "## Sources\n- Mississippi Medical Cannabis Program (MSDH): <https://www.mmcp.ms.gov/>\n- Mississippi Department of Revenue: <https://www.dor.ms.gov/>\n- Mississippi Legislature bill status (search SB 2095, 2022 session): <https://billstatus.ls.state.ms.us/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/mississippi-medical-cannabis-overview>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Seed-to-sale tracking without the panic",
+              "tags": [
+                "Compliance"
+              ],
+              "messages": [
+                "# Seed-to-sale tracking without the panic\nHow systems like Metrc and BioTrack work, and the daily habits that keep physical inventory and the system in agreement.\n\n**Category:** Compliance · **Jurisdiction:** Multi-state · **Reviewed:** 2026-10-21 · **Author:** Dusty McLean\n**Tags:** Metrc, BioTrack, inventory, reconciliation, tags\n\n## What the system expects\n\nMost state tracking systems follow the same idea: every plant, batch, and package has an identity, and every change to it is recorded. Moves, weights, transfers, lab samples, waste, and sales all leave a record a regulator can audit.\n\n## Daily habits that prevent variances\n\n- Record changes when they happen, not at the end of the week.\n- Use one scale per station and log its calibration checks.\n- Reconcile a small cycle count every day instead of a full count once a quarter.\n- Investigate any variance the same day and write down what you found.\n- Restrict who can make adjustments, and require a reason for each one.\n\n## When numbers do not match\n\nDo not “fix” the system to match the shelf without a documented reason. Stop, count again with a second person, trace the last transactions on the item, and record the cause. Many rules require notifying the regulator of certain discrepancies within a set time, so know yours before you need it.",
+                "## Sources\n- Metrc: <https://www.metrc.com/>\n- Mississippi Medical Cannabis Program (MSDH): <https://www.mmcp.ms.gov/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/seed-to-sale-basics>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Hemp production: licensing, sampling, and what happens if a test is hot",
+              "tags": [
+                "Compliance"
+              ],
+              "messages": [
+                "# Hemp production: licensing, sampling, and what happens if a test is hot\nThe federal hemp program in plain language, from licensing to pre-harvest sampling to remediation.\n\n**Category:** Compliance · **Jurisdiction:** Federal · **Reviewed:** 2026-10-21 · **Author:** Dusty McLean\n**Tags:** hemp, USDA, sampling, remediation, FSA\n\n## Licensing\n\nHemp producers are licensed either by USDA directly or under a state or tribal plan that USDA has approved. Your license tells you which plan’s rules you follow.\n\n## Reporting\n\nProducers report planting information, including lot locations, to the USDA Farm Service Agency. Keep copies of everything you file.\n\n## Pre-harvest sampling\n\nA sample has to be collected by an authorized sampler and tested at a qualifying lab within the window set by the rule before harvest. Plan harvest dates around the sampling window, not the other way around.\n\n## If a lot tests above the limit\n\nThe rule provides for remediation, such as blending or removing and destroying flower material and retesting, or for disposal. Both have to be done and documented according to your plan. Talk to your licensing authority before you act.\n\n## Watch for federal changes\n\nFederal legislation enacted in November 2025 changes how hemp is defined, including counting THCA toward the limit and restricting THC in finished products, with an effective date in November 2026. Confirm how it applies to your crop and products.",
+                "## Sources\n- USDA AMS: Hemp production program: <https://www.ams.usda.gov/rules-regulations/hemp>\n- eCFR: 7 CFR Part 990: <https://www.ecfr.gov/current/title-7/subtitle-B/chapter-IX/part-990>\n- USDA Farm Service Agency: <https://www.fsa.usda.gov/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/hemp-production-basics>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Heavy metals: where they come from and how to keep them out",
+              "tags": [
+                "Cultivation"
+              ],
+              "messages": [
+                "# Heavy metals: where they come from and how to keep them out\nCannabis readily takes up metals from its environment. Here is how to find and reduce the sources.\n\n**Category:** Cultivation · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Joel Perkins\n**Tags:** heavy metals, lead, arsenic, cadmium, mercury, inputs, COA\n\n## Why cannabis is sensitive\n\nCannabis is efficient at pulling minerals, including metals, out of soil and water. It has even been studied for cleaning contaminated soil. That is a liability for a crop that will be consumed.\n\n## What labs usually test\n\nState panels commonly include arsenic, cadmium, lead, and mercury. Some states test more. Check your state’s panel and action limits.\n\n## Common sources\n\n- Native soil, fill, or amendments from unknown origin\n- Source water, especially well water\n- Mined mineral inputs and some phosphate fertilizers\n- Low-quality supplements and “organic” products without documentation\n- Equipment: galvanized or soldered metal in contact with nutrient solution\n\n## Reducing risk\n\n- Ask every input supplier for a recent certificate of analysis that includes heavy metals.\n- Test your source water and your media before the first run.\n- Keep a supplier file with lot numbers so a bad result can be traced.\n- Change one input at a time, so you can tell which one moved a result.",
+                "## Sources\n- Mississippi Medical Cannabis Program (MSDH): testing rules: <https://www.mmcp.ms.gov/>\n- U.S. EPA: Private drinking water wells: <https://www.epa.gov/privatewells>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/heavy-metals-risk>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Integrated pest management that a crew will actually follow",
+              "tags": [
+                "Cultivation"
+              ],
+              "messages": [
+                "# Integrated pest management that a crew will actually follow\nScouting, thresholds, identification, and the controls that keep you on the right side of your state’s pesticide list.\n\n**Category:** Cultivation · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Danny Davis\n**Tags:** IPM, pests, russet mites, spider mites, powdery mildew, scouting\n\n## Prevention first\n\n- Quarantine new plants and cuttings before they enter production.\n- Control entry: dedicated footwear, clean clothing, and room order from clean to dirty.\n- Keep environment in range. Many pathogens follow humidity and stagnant air.\n\n## Scout on a schedule\n\nAssign rooms and days. Check leaf undersides, new growth, and sticky traps, and log what you see even when it is nothing. A log of “clean” is what makes the first sighting meaningful.\n\n## Identify before you spray\n\nRusset and broad mites are too small to see clearly without magnification; a 60× loupe or a digital microscope helps. Twisted or glossy new growth with no visible pests is a reason to look closer, not a reason to guess. Get an identification before you choose a control.\n\n## Controls and compliance\n\nOnly use products your state allows for cannabis, and record every application with product, lot, rate, area, and applicator. Residue testing will find what the log does not mention.",
+                "## Sources\n- U.S. EPA: Introduction to Integrated Pest Management: <https://www.epa.gov/ipm/introduction-integrated-pest-management>\n- UC IPM: University of California Statewide IPM Program: <https://ipm.ucanr.edu/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Why your far emitters starve: friction loss and the 45-degree rule",
+              "tags": [
+                "Facility"
+              ],
+              "messages": [
+                "# Why your far emitters starve: friction loss and the 45-degree rule\nEvery fitting costs pressure. How to lay out irrigation so the last plant gets what the first one does.\n\n**Category:** Facility · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Danny Davis\n**Tags:** irrigation, plumbing, pressure, pumps, fittings, 45 degree\n\n## The problem\n\nWater loses pressure to friction as it moves through pipe and especially through fittings. Sharp turns cause turbulence. Add enough of them and the plants at the end of a line get less water and nutrient than the ones near the pump.\n\n## The 45-degree rule\n\nWhere a run needs to change direction, a long-sweep bend or a pair of 45-degree fittings usually loses less pressure than a single short-radius 90-degree elbow. Fewer abrupt turns means more even delivery and less work for the pump.\n\n## Other checks\n\n- Size main lines for your peak flow, not your average.\n- Loop or center-feed long runs so pressure is balanced.\n- Use pressure-compensating emitters where elevation or run length varies.\n- Measure: catch emitter output in cups across the room and compare volumes.\n- Install a pressure gauge after the filter, and log the reading.",
+                "## Sources\n- USDA NRCS National Engineering Handbook, Part 623: Irrigation: <https://directives.nrcs.usda.gov/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/irrigation-friction-loss>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Tissue culture basics for cannabis operators",
+              "tags": [
+                "Cultivation"
+              ],
+              "messages": [
+                "# Tissue culture basics for cannabis operators\nWhat a tissue culture program does, what a small lab needs, and why clean stock matters.\n\n**Category:** Cultivation · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Danny Davis\n**Tags:** tissue culture, micropropagation, clean stock, HLVd, genetics, lab\n\n## Why operators invest in it\n\nMother plants accumulate pests, pathogens, and viroids over time. Tissue culture lets you keep genetics in small sterile vessels, test them, and regenerate clean plants, which protects a library of cultivars in far less space.\n\n## The stages\n\n- Initiation: a small piece of clean tissue is placed on sterile media.\n- Multiplication: shoots are divided and grown on.\n- Rooting: shoots are moved to media that encourages roots.\n- Acclimatization: plantlets are hardened off for the grow room.\n\n## What a starter lab needs\n\n- A clean room with controlled entry\n- A laminar flow hood\n- A way to sterilize media and tools, such as an autoclave or pressure sterilizer\n- Media ingredients and a log for every batch\n- Shelving with controlled light and temperature\n- Training in aseptic technique, which matters more than any equipment\n\n## Testing\n\nPair the program with pathogen testing, such as for hop latent viroid, so the stock you preserve is actually clean.",
+                "## Sources\n- Murashige & Skoog (1962), Physiologia Plantarum: <https://doi.org/10.1111/j.1399-3054.1962.tb08052.x>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/tissue-culture-basics>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Vapor pressure deficit (VPD) in plain language",
+              "tags": [
+                "Cultivation"
+              ],
+              "messages": [
+                "# Vapor pressure deficit (VPD) in plain language\nTemperature and humidity together decide how hard a plant transpires. Here is how to read VPD.\n\n**Category:** Cultivation · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Danny Davis\n**Tags:** VPD, humidity, temperature, environment, HVAC\n\n## What it is\n\nVPD is the difference between how much moisture the air could hold at a given temperature and how much it actually holds. Higher VPD pulls water from leaves faster; lower VPD slows transpiration and can favor mold.\n\n## How it is calculated\n\nSaturation vapor pressure (kPa) ≈ 0.6108 × e^(17.27 × T ÷ (T + 237.3)), where T is in °C. VPD = saturation pressure × (1 − RH ÷ 100). Using leaf temperature instead of air temperature gives a better picture of what the plant feels.\n\n## Using it\n\nTargets vary by stage and cultivar. Watch the trend overnight as well as during the day; many problems start when lights go off and humidity spikes. The VPD calculator in Resources will run the numbers.",
+                "## Sources\n- FAO Irrigation and Drainage Paper 56, Chapter 3 (vapor pressure equations): <https://www.fao.org/4/x0490e/x0490e07.htm>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/vpd-basics>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Writing SOPs that survive an inspection and a shift change",
+              "tags": [
+                "Business"
+              ],
+              "messages": [
+                "# Writing SOPs that survive an inspection and a shift change\nThe parts every SOP needs, and how to keep procedures from going stale.\n\n**Category:** Business · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Dusty McLean\n**Tags:** SOP, documentation, training, records, inspection\n\n## The parts\n\n- Purpose: why the procedure exists\n- Scope: where and to whom it applies\n- Responsibilities: who does it and who checks it\n- Procedure: numbered steps in the order they happen\n- Records: what gets written down, where, and for how long\n- References: the rules it satisfies\n- Revision history: who changed what, and when\n\n## Make it real\n\n- Write it with the person who does the job.\n- Walk the floor with the draft and fix every step that does not match reality.\n- Train on it, and keep a signed training record.\n- Review it on a schedule and whenever a rule changes.\n\n## Start faster\n\nThe free SOP Generator in Resources builds an editable starting draft from your business type and state. Have it reviewed before you use it.",
+                "## Sources\n- Mississippi Medical Cannabis Program (MSDH): <https://www.mmcp.ms.gov/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/writing-sops-that-work>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Network security for cultivation facilities",
+              "tags": [
+                "Technology"
+              ],
+              "messages": [
+                "# Network security for cultivation facilities\nCameras, sensors, and controllers are computers. Simple steps to keep them from becoming the way in.\n\n**Category:** Technology · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Danny Davis\n**Tags:** security, network, cameras, IoT, MFA, VPN, Cloudflare\n\n## The usual weak spots\n\n- Cameras and controllers still using default passwords\n- Everything on one flat network with the office laptops\n- Remote access through ports opened on the router\n- Shared logins nobody can account for\n- No offline backup of surveillance and records\n\n## Practical fixes\n\n- Put cameras, sensors, and controllers on their own network segment.\n- Change every default password and keep an inventory of devices.\n- Use a VPN or a zero-trust tunnel for remote access instead of open ports.\n- Turn on multi-factor authentication for email, tracking systems, and banking.\n- Back up records and footage on a schedule, and test a restore.",
+                "## Sources\n- CISA: Cyber Essentials: <https://www.cisa.gov/resources-tools/resources/cyber-essentials>\n- NIST: Small Business Cybersecurity Corner: <https://www.nist.gov/itl/smallbusinesscyber>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/facility-network-security>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Dry and cure: protecting the harvest you already grew",
+              "tags": [
+                "Cultivation"
+              ],
+              "messages": [
+                "# Dry and cure: protecting the harvest you already grew\nWhere weight, potency, and terpenes get lost after harvest, and how to measure the process.\n\n**Category:** Cultivation · **Jurisdiction:** General · **Reviewed:** 2026-10-21 · **Author:** Danny Davis\n**Tags:** dry, cure, post-harvest, water activity, terpenes, mold\n\n## What goes wrong\n\nDrying too fast locks in harshness and drives off terpenes. Drying too slow or too wet invites mold and microbial failures. Both are common and both are preventable.\n\n## Measure it\n\n- Log room temperature and humidity throughout the dry.\n- Weigh sample branches daily to track moisture loss.\n- Use water activity, not just feel, to decide when product is ready. Some states set water-activity limits.\n- Record the conditions for every batch so you can repeat a good one.\n\n## Starting points\n\nMany growers start near 60°F and 60% relative humidity in the dry room and adjust from there. Treat that as a starting point, not a rule.",
+                "## Sources\n- Mississippi Medical Cannabis Program (MSDH): testing rules: <https://www.mmcp.ms.gov/>\n\nRead on the website: <https://r3dconsulting.com/knowledge-base/dry-and-cure>\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            }
+          ]
+        },
+        {
+          "key": "service-areas",
+          "name": "service-areas",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "Each practice area: problems we solve, deliverables, who leads it, and common questions.",
+          "posts": [
+            {
+              "title": "Commercial Facility Audits",
+              "messages": [
+                "# Commercial Facility Audits\nPre-audit remediation: find and fix the failure points before an inspector does.\n\nAn unannounced inspection should be routine. We walk your facility the way a regulator, an engineer, and an auditor would, document what we find, and help you fix it in priority order. Mechanical, electrical, plumbing, sanitation, security, records, and inventory are reviewed together because they fail together.\n\n## Problems we solve\n- An inspection is coming and you do not know what the inspector will find\n- Recurring mold, pests, or contamination you cannot trace\n- Plant counts or inventory that do not match your tracking system\n- Irrigation, HVAC, or electrical systems that are undersized or failing\n- SOPs that exist on paper but not on the floor\n- Camera, access-control, or network gaps\n\n## What you get\n- **MEP diagnostic report.** Mechanical, electrical, and plumbing review covering airflow, drainage, surface integrity, and system capacity, with photos and priorities.\n- **Mock inspection.** A walk-through against your state’s rules with a written findings list and the evidence an inspector would expect to see.\n- **Inventory reconciliation.** Physical counts reconciled against Metrc, BioTrack, or your system of record, with variances explained and corrected.\n- **Remediation plan.** Each finding gets an owner, a fix, a cost estimate, and a re-check date.\n\n## Related services\n- MEP Diagnostics (fixed fee, quoted)\n- Inventory Reconciliation (fixed fee, quoted)\n- Tier 2 ($1,500/month)\n\n## Who leads it\nDanny Davis, Dusty McLean, Hunter Porter, Joel Perkins\n\n## Questions\n**Do you guarantee we will pass?**\nNo one honest can. We find what we can, fix what you approve, and document it. The decision belongs to the regulator.",
+                "**Can you work around our production schedule?**\nYes. Most audits are planned around harvests and room turns, and some work can happen remotely from photos and records.\n\nMore: <https://r3dconsulting.com/services/facility-audits>"
+              ]
+            },
+            {
+              "title": "Cultivation & Processing",
+              "messages": [
+                "# Cultivation & Processing\nCanopy management, plant health, genetics, tissue culture, and post-harvest consistency.\n\nConsistent harvests come from consistent systems. We work in the canopy with your team: room layout, environment, irrigation, IPM, genetics, and the post-harvest steps where quality is most often lost. Every recommendation is tested on a small scale first and written into your SOPs once it works.\n\n## Problems we solve\n- Yields or quality that swing from run to run\n- Pest or pathogen pressure that keeps coming back\n- Mother stock that is tired, infected, or undocumented\n- Dry and cure problems that cost you potency, terpenes, or weight\n- A new room or facility build that needs a plan from day one\n- Staff turnover that resets your progress every few months\n\n## What you get\n- **Canopy & room plan.** Layout, plant counts, environment targets, and a run calendar from clone to cure.\n- **IPM program.** Scouting routine, thresholds, approved controls, and a log your crew will keep.\n- **Tissue culture lab build.** Lab design, sterile workflow, media-prep training, and a clean-stock program for your genetics.\n- **Cultivation SOPs & training.** Room-by-room procedures and hands-on training so the process survives staff changes.\n\n## Related services\n- Standard Hour ($100)\n- Tissue Culture Lab Build (fixed fee, quoted)\n- Tier 2 ($1,500/month)\n\n## Who leads it\nDanny Davis, Joel Perkins, Hunter Porter\n\n## Questions\n**Do you work with living soil and hydro?**\nBoth. Our consultants work across commercial hydroponics, coco, living soil, and organic or KNF-style programs.\n\n**Will you take over our grow?**\nNo. We advise, train, and help implement. Your team stays in control, and we make sure they understand why each change works.\n\nMore: <https://r3dconsulting.com/services/cultivation-processing>"
+              ]
+            },
+            {
+              "title": "Dispensary & Retail Operations",
+              "messages": [
+                "# Dispensary & Retail Operations\nInventory, staff training, product education, storefronts, and margins.\n\nRetail is where every upstream decision becomes revenue or loss. We tighten inventory and reconciliation, train staff to explain products honestly, review hardware and product safety, and build the online and in-store systems that keep pricing, catalogs, and records accurate.\n\n## Problems we solve\n- Shrink and variances between the shelf and the tracking system\n- Staff who cannot answer basic product or strain questions\n- Catalogs, prices, and menus that drift out of sync\n- Thin margins with no clear view of which products carry the store\n- Consumption hardware with no safety documentation\n\n## What you get\n- **Inventory & reconciliation workflow.** Receiving, counts, adjustments, and end-of-day procedures tied to your tracking system.\n- **Staff product training.** Cultivar characteristics, lab results, labeling, and honest product education.\n- **Storefront & data feeds.** Online menus, WooCommerce or B2B portals, and structured product data that stays accurate.\n- **Margin review.** Product mix, vendor terms, and pricing reviewed with your actual numbers.\n\n## Related services\n- Standard Hour ($100)\n- Inventory Reconciliation (fixed fee, quoted)\n- Tier 1 ($1,000/month)\n\n## Who leads it\nDusty McLean, Joel Perkins, Danny Davis\n\n## Questions\n**Which point-of-sale or tracking systems do you know?**\nWe work from your system of record, including Metrc and BioTrack integrations. If we have not used your tool, we will say so and learn it on our time, not yours.\n\nMore: <https://r3dconsulting.com/services/dispensary-retail>"
+              ]
+            },
+            {
+              "title": "Agriculture & Formulation",
+              "messages": [
+                "# Agriculture & Formulation\nNutrient programs, biological fertilizers, input sourcing, and heavy-metal risk reduction.\n\nWhat goes into the root zone ends up in the lab report. We design feed programs around your cultivars and environment, evaluate biological and mineral inputs, and vet suppliers so contamination risk is managed before it reaches a test panel. Product developers get help with formulation, documentation, and getting to market.\n\n## Problems we solve\n- Deficiencies or lockouts that do not respond to the usual fixes\n- Failed or borderline heavy-metal or microbial tests\n- Input costs climbing without a matching improvement in results\n- Suppliers who cannot document what is in the bag\n- A product idea that needs formulation and a path to market\n\n## What you get\n- **Feed program.** Stage-by-stage nutrition tuned to your cultivars, media, and water, with targets for EC, pH, and runoff.\n- **Input & supplier review.** Certificates of analysis, sourcing, and documentation checks for heavy-metal and microbial risk.\n- **Biological program.** Fermentation and microbial inputs that are brewed, applied, and logged consistently.\n- **Product development support.** Formulation, trial design, labeling review, and commercialization planning.\n\n## Related services\n- Standard Hour ($100)\n- Tier 1 ($1,000/month)\n- Tier 2 ($1,500/month)\n\n## Who leads it\nJoel Perkins, Danny Davis\n\n## Questions\n**Will a new feed program shorten my cycle?**\nSometimes, but we do not promise it. We trial changes on a test block, measure the result, and only scale what works in your facility.\n\nMore: <https://r3dconsulting.com/services/agriculture-formulation>"
+              ]
+            },
+            {
+              "title": "Technology & Business Systems",
+              "messages": [
+                "# Technology & Business Systems\nWebsites, e-commerce, automation, sensor alerts, security, OSINT, and documentation.\n\nMost operators run on a pile of spreadsheets, logins, and good intentions. We build the systems underneath: storefronts and B2B portals, structured product data, automations that move information where it needs to go, sensor alerts, secure networks, and research that is backed by sources you can check.\n\n## Problems we solve\n- Records spread across paper, spreadsheets, and someone’s phone\n- A website or store that does not sell, or does not stay updated\n- Environmental problems discovered the morning after\n- Cameras, sensors, and laptops on one flat, exposed network\n- Decisions about partners or suppliers made without real research\n\n## What you get\n- **Website & e-commerce build.** WordPress, WooCommerce, or custom storefronts, plus B2B ordering portals.\n- **Data & automation.** Structured CSV and JSON catalogs, integrations, and automations that remove double entry.\n- **Sensor alerts.** Environmental data connected to alerts so the right person knows within minutes.\n- **Security hardening.** Network segmentation, secure remote access, and practical operational privacy.\n- **OSINT & due diligence.** Source-backed research reports on partners, suppliers, competitors, and regulations.\n\n## Related services\n- Standard Hour ($100)\n- Tier 1 ($1,000/month)\n\n## Who leads it\nDusty McLean, Danny Davis, Hunter Porter\n\n## Questions\n**Do you only work with cannabis businesses?**\nNo. Our systems work applies to any small business, and many of our tools came from agriculture and wholesale distribution.\n\nMore: <https://r3dconsulting.com/services/technology-systems>"
+              ]
+            },
+            {
+              "title": "Multi-State Consulting",
+              "messages": [
+                "# Multi-State Consulting\nRegulatory gap analysis and expansion planning for operators crossing state lines.\n\nEvery state writes its own rules for licensing, testing, packaging, tracking, and advertising. We map what changes when you cross a border, compare it with how you operate today, and deliver a transition plan so a playbook that works in one market does not create violations in the next.\n\n## Problems we solve\n- Expanding into a new state without knowing what changes\n- Different tracking systems, testing panels, and label rules per market\n- SOPs written for one state being used in another\n- Distribution or supply agreements that need to work across markets\n\n## What you get\n- **Regulatory gap analysis.** A state-by-state matrix of rules that affect your operation, with citations and update dates.\n- **Transition plan.** What to change, in what order, with owners and timelines for each new market.\n- **SOP localization.** Your existing procedures adapted to each state’s requirements.\n- **Distribution strategy.** Supply, wholesale, and margin planning across markets.\n\n## Related services\n- Multi-State Gap Analysis (fixed fee, quoted)\n- Priority ($2,000/month)\n\n## Who leads it\nDusty McLean, Hunter Porter, Joel Perkins\n\n## Questions\n**Are you lawyers?**\nNo. We research and operationalize the rules. For legal opinions and filings that require an attorney, we work alongside your counsel.\n\nMore: <https://r3dconsulting.com/services/multi-state>"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "faq",
+          "name": "faq",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "Frequently asked questions, one post per question. Filter by tag or search.",
+          "tags": [
+            "Working with Root3D",
+            "Booking & sessions",
+            "Pricing & payment",
+            "Privacy & files",
+            "Free resources"
+          ],
+          "posts": [
+            {
+              "title": "Who are you?",
+              "tags": [
+                "Working with Root3D"
+              ],
+              "messages": [
+                "**Who are you?**\n\nRoot3D is four consultants: Joel Perkins (inputs, chemistry, and margins), Danny Davis (canopy, infrastructure, and training), Dusty McLean (data, documentation, and storefronts), and Hunter Porter (regulations, molds, and devices). You can hire one of us or the whole team.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Do you grow, sell, or transport cannabis?",
+              "tags": [
+                "Working with Root3D"
+              ],
+              "messages": [
+                "**Do you grow, sell, or transport cannabis?**\n\nNo. Root3D provides educational and advisory services. We do not handle cannabis for clients.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Do you work outside Mississippi?",
+              "tags": [
+                "Working with Root3D"
+              ],
+              "messages": [
+                "**Do you work outside Mississippi?**\n\nYes. Most of our work can be done remotely, and we travel for on-site audits and builds. State-specific guidance is researched for each engagement.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Do you guarantee results?",
+              "tags": [
+                "Working with Root3D"
+              ],
+              "messages": [
+                "**Do you guarantee results?**\n\nNo. We will not promise regulatory outcomes or yield numbers. We promise to diagnose carefully, recommend honestly, help you implement, and document everything.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Are you attorneys?",
+              "tags": [
+                "Working with Root3D"
+              ],
+              "messages": [
+                "**Are you attorneys?**\n\nNo. We research rules and turn them into operations. For legal opinions and filings that need an attorney, we work alongside your counsel.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Can I hire the whole team?",
+              "tags": [
+                "Working with Root3D"
+              ],
+              "messages": [
+                "**Can I hire the whole team?**\n\nYes. Combined engagements are common for facility audits, new builds, and multi-state work. Your history is shared, so no one asks you to repeat yourself.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "How do I start?",
+              "tags": [
+                "Booking & sessions"
+              ],
+              "messages": [
+                "**How do I start?**\n\nBook a free 15-minute discovery call. It is a peer conversation, not a sales pitch. If we are not the right fit, we will tell you.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "How do we meet?",
+              "tags": [
+                "Booking & sessions"
+              ],
+              "messages": [
+                "**How do we meet?**\n\nOn Zoom, Discord, or Signal, your choice when you book. Your consultant posts the link in your portal before the call. We never ask for or share phone numbers. Facility audits can also be done on site.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "How do I reschedule or cancel?",
+              "tags": [
+                "Booking & sessions"
+              ],
+              "messages": [
+                "**How do I reschedule or cancel?**\n\nFrom your portal, up to 24 hours before the session. See the cancellation policy for details.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "What happens after a session?",
+              "tags": [
+                "Booking & sessions"
+              ],
+              "messages": [
+                "**What happens after a session?**\n\nYour consultant writes an action plan with at least three concrete steps. It appears in your portal, and you can download it.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "What should I upload before a call?",
+              "tags": [
+                "Booking & sessions"
+              ],
+              "messages": [
+                "**What should I upload before a call?**\n\nSharp, well-lit photos and video, recent lab results, environmental logs, feed charts, schematics, and any SOPs you want reviewed.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Is pricing final?",
+              "tags": [
+                "Pricing & payment"
+              ],
+              "messages": [
+                "**Is pricing final?**\n\nNot yet. Prices marked as draft are pending final approval by the partners and may change.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "How do retainers work?",
+              "tags": [
+                "Pricing & payment"
+              ],
+              "messages": [
+                "**How do retainers work?**\n\nRetainers bill monthly on the date you choose and start once the agreement is signed. No contract, no service.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "How do I pay?",
+              "tags": [
+                "Pricing & payment"
+              ],
+              "messages": [
+                "**How do I pay?**\n\nInvoices appear in your portal with a payment link or instructions. Online card payment will be enabled once our payment processor has approved our account.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Do you offer refunds?",
+              "tags": [
+                "Pricing & payment"
+              ],
+              "messages": [
+                "**Do you offer refunds?**\n\nYes, under the refund policy. Sessions cancelled more than 24 hours ahead are not charged, and if we cancel or miss a session you are not charged.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Who can see my files?",
+              "tags": [
+                "Privacy & files"
+              ],
+              "messages": [
+                "**Who can see my files?**\n\nYou and the Root3D partners. Files are stored privately and opened through expiring links. The database enforces this on every request.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Will you share my information?",
+              "tags": [
+                "Privacy & files"
+              ],
+              "messages": [
+                "**Will you share my information?**\n\nNo. We never sell data, and we only share what a service provider needs to do its job, such as sending an email or hosting a call.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "Is the SOP Generator really free?",
+              "tags": [
+                "Free resources"
+              ],
+              "messages": [
+                "**Is the SOP Generator really free?**\n\nYes. It creates an editable starting draft. It is not legal advice and should be reviewed against current rules before use.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            },
+            {
+              "title": "How current is the Knowledge Base?",
+              "tags": [
+                "Free resources"
+              ],
+              "messages": [
+                "**How current is the Knowledge Base?**\n\nEach article shows its last review date and sources. Rules change often, so always confirm with the regulator linked in the article.\n\n-# From the FAQ: <https://r3dconsulting.com/faq>"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🧰 TOOLS & REFERENCE",
+      "access": "public-read",
+      "channels": [
+        {
+          "key": "calculators",
+          "name": "calculators",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Total THC and VPD formulas, worked examples, and links to the calculators.",
+          "messages": [
+            "# Calculators\n\n## Total THC\n**Total THC = (THCA × 0.877) + Δ9-THC**\nUse the THCA and Δ9-THC values from your certificate of analysis, both in percent. For mg/g, divide by 10 to get percent. Multiply percent by 10 for mg per gram.\n\nExample: THCA 0.25% and Δ9-THC 0.05% gives (0.25 × 0.877) + 0.05 = **0.269%**.\n0.3% is the federal hemp threshold. Use your own rule's limit.\nCalculator: <https://r3dconsulting.com/resources/total-thc>\n\n## VPD (vapor pressure deficit)\nSaturation vapor pressure, in kPa, at temperature T in °C: **SVP = 0.6108 × e^(17.27 × T ÷ (T + 237.3))**\n- Actual vapor pressure = SVP(air) × RH ÷ 100\n- Air VPD = SVP(air) − actual vapor pressure\n- Leaf VPD = SVP(leaf) − actual vapor pressure, where leaf temperature = air temperature + leaf offset (often around 2 °F cooler)\n\nGuide bands (leaf VPD): Propagation 0.4–0.8 kPa · Vegetative 0.8–1.2 kPa · Flower 1.2–1.6 kPa\nCalculator: <https://r3dconsulting.com/resources/vpd>\n\nBackground: {#knowledge-base} (search `total thc` or `vpd`)."
+          ],
+          "deferred": true
+        },
+        {
+          "key": "plant-troubleshooter",
+          "name": "plant-troubleshooter",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "Common leaf symptoms: possible causes, what to check first, and next steps. Educational, not a diagnosis.",
+          "tags": [
+            "Start here",
+            "Outcome"
+          ],
+          "posts": [
+            {
+              "title": "Start here: how to use the troubleshooter",
+              "tags": [
+                "Start here"
+              ],
+              "messages": [
+                "# Plant troubleshooter\n\nEach post below is one possible outcome of the decision tree on our website. Read the path at the top of each post to see the symptoms that lead there, or use the interactive version: <https://r3dconsulting.com/resources/troubleshooter>\n\n## The first question\nWhat are you seeing?\n- Yellowing or discolored leaves\n- Spots, burnt edges, or tips\n- Twisted, glossy, or stunted new growth\n- White powder or fuzzy growth\n- Tiny dots, webbing, or visible bugs\n- Drooping or clawing leaves\n\nThis narrows the possibilities. It does not diagnose. For a second opinion, book a free discovery call in {#book-a-call} and upload sharp photos to your client portal."
+              ]
+            },
+            {
+              "title": "Possible powdery mildew",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible powdery mildew\n\n**How you get here**\n- What are you seeing? → **White powder or fuzzy growth**\n\n## Possible causes\n- Powdery mildew\n\n## Check first\n- Overnight humidity and temperature swings\n- Airflow under the canopy\n\n## Next steps\n- Isolate affected plants\n- Correct environment before treating\n- Use only state-approved controls and log every application\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible nitrogen deficiency",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible nitrogen deficiency\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **Older, lower leaves**\n- What does the yellowing look like? → **Even yellowing of the whole leaf**\n\n## Possible causes\n- Nitrogen deficiency\n- Normal late-flower fade\n- pH out of range causing lockout\n\n## Check first\n- Input and runoff pH\n- Feed EC and runoff EC\n\n## Next steps\n- Correct pH before adding nutrients\n- Compare feed strength with your program\n- Photograph and log the progression\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible magnesium deficiency",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible magnesium deficiency\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **Older, lower leaves**\n- What does the yellowing look like? → **Yellow between the veins, veins stay green**\n\n## Possible causes\n- Magnesium deficiency\n- Calcium–magnesium imbalance\n- pH lockout\n\n## Check first\n- Root-zone pH\n- Whether you use RO or soft water\n\n## Next steps\n- Correct pH first\n- Review Ca:Mg in your feed\n- Watch whether new leaves stay clean\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible potassium issue",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible potassium issue\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **Older, lower leaves**\n- What does the yellowing look like? → **Yellow or brown edges that look scorched**\n\n## Possible causes\n- Potassium deficiency\n- Salt build-up\n- Heat stress\n\n## Check first\n- Runoff EC compared with feed EC\n- Leaf surface temperature\n\n## Next steps\n- Flush or adjust feed if runoff EC is high\n- Check canopy temperature\n- Log and compare over several days\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible iron or micronutrient lockout",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible iron or micronutrient lockout\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **New growth at the top**\n- What does the new growth look like? → **Pale or yellow between the veins**\n\n## Possible causes\n- Iron deficiency, often from high pH\n- Root-zone problems\n- Overwatering\n\n## Check first\n- Root-zone pH\n- Root health and smell\n\n## Next steps\n- Bring pH into range\n- Inspect roots\n- Avoid adding micronutrients until pH is corrected\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible calcium issue",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible calcium issue\n\n**How you get here**\n- What are you seeing? → **Spots, burnt edges, or tips**\n- What kind of spots? → **Rusty brown spots, often on middle leaves**\n\n## Possible causes\n- Calcium deficiency\n- pH lockout\n- Low transpiration from high humidity\n\n## Check first\n- pH\n- VPD in the room\n\n## Next steps\n- Correct pH and environment\n- Review calcium in your feed\n- Track whether new spots appear\n\nRead more: Vapor pressure deficit (VPD) in plain language <https://r3dconsulting.com/knowledge-base/vpd-basics>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible nutrient burn",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible nutrient burn\n\n**How you get here**\n- What are you seeing? → **Spots, burnt edges, or tips**\n- What kind of spots? → **Burnt tips that curl up**\n\n## Possible causes\n- Feed too strong\n- Salt build-up in media\n\n## Check first\n- Feed EC against your program\n- Runoff EC\n\n## Next steps\n- Reduce feed strength\n- Flush if runoff is far above feed\n- Watch new growth over the next week\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible fungal or bacterial leaf spot",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible fungal or bacterial leaf spot\n\n**How you get here**\n- What are you seeing? → **Spots, burnt edges, or tips**\n- What kind of spots? → **Spots with yellow halos, spreading**\n\n## Possible causes\n- Leaf spot pathogen\n- Septoria or similar\n\n## Check first\n- Humidity and leaf wetness\n- Whether spots are spreading\n\n## Next steps\n- Remove and bag affected leaves\n- Improve airflow and lower humidity\n- Get an identification before treating\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Look closer before you treat",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Look closer before you treat\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **New growth at the top**\n- What does the new growth look like? → **Twisted or deformed as well**\n- Do you see any pests with a 60× loupe? → **No pests visible, I have not used magnification**\n\n## Possible causes\n- Russet or broad mites\n- Herbicide or chemical exposure\n- Heat or light stress\n\n## Check first\n- Inspect new growth at 60× or under a microscope\n- Recent sprays or new inputs\n\n## Next steps\n- Get magnified photos into your pre-call inbox\n- Quarantine affected plants\n- Book a quick call before spraying anything\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible russet or broad mites",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible russet or broad mites\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **New growth at the top**\n- What does the new growth look like? → **Twisted or deformed as well**\n- Do you see any pests with a 60× loupe? → **Tiny pale or tan specks on new growth**\n\n## Possible causes\n- Hemp russet mite\n- Broad mite\n\n## Check first\n- Confirm under magnification\n- How many rooms are affected\n\n## Next steps\n- Isolate plants and control traffic between rooms\n- Use only state-approved controls\n- Plan a clean-stock reset if mothers are infested\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible environmental or genetic cause",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible environmental or genetic cause\n\n**How you get here**\n- What are you seeing? → **Yellowing or discolored leaves**\n- Where did it start? → **New growth at the top**\n- What does the new growth look like? → **Twisted or deformed as well**\n- Do you see any pests with a 60× loupe? → **Nothing, even with magnification**\n\n## Possible causes\n- Light or heat stress\n- Genetic mutation\n- Viroid infection such as HLVd\n\n## Check first\n- Light distance and intensity\n- Whether one cultivar or many are affected\n\n## Next steps\n- Adjust light and heat\n- Consider a viroid test on the mother\n- Book a session and upload photos\n\nRead more: Tissue culture basics for cannabis operators <https://r3dconsulting.com/knowledge-base/tissue-culture-basics>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible spider mites",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible spider mites\n\n**How you get here**\n- What are you seeing? → **Tiny dots, webbing, or visible bugs**\n- Which describes it best? → **Fine stippling and webbing under leaves**\n\n## Possible causes\n- Two-spotted spider mite\n\n## Check first\n- Leaf undersides\n- Low humidity and high heat\n\n## Next steps\n- Isolate and scout every room\n- Use only state-approved controls\n- Log location, count, and treatment\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible fungus gnats",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible fungus gnats\n\n**How you get here**\n- What are you seeing? → **Tiny dots, webbing, or visible bugs**\n- Which describes it best? → **Small flies around the media**\n\n## Possible causes\n- Fungus gnats\n\n## Check first\n- How wet the media stays between waterings\n\n## Next steps\n- Let the top of the media dry between waterings\n- Use sticky traps to monitor\n- Consider approved biological controls\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible thrips",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible thrips\n\n**How you get here**\n- What are you seeing? → **Tiny dots, webbing, or visible bugs**\n- Which describes it best? → **Silvery streaks and black specks**\n\n## Possible causes\n- Thrips\n\n## Check first\n- Blue or yellow sticky traps\n- Leaf undersides and flowers\n\n## Next steps\n- Isolate and scout\n- Use only state-approved controls\n- Log and track counts weekly\n\nRead more: Integrated pest management that a crew will actually follow <https://r3dconsulting.com/knowledge-base/ipm-fundamentals>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible nitrogen excess or overwatering",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible nitrogen excess or overwatering\n\n**How you get here**\n- What are you seeing? → **Drooping or clawing leaves**\n- How do the leaves look? → **Heavy, dark, curled down like a claw**\n\n## Possible causes\n- Too much nitrogen\n- Overwatering\n- Root-zone oxygen problems\n\n## Check first\n- Feed program in veg and early flower\n- Watering frequency\n\n## Next steps\n- Reduce nitrogen\n- Let media dry back\n- Check drainage\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible overwatering",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible overwatering\n\n**How you get here**\n- What are you seeing? → **Drooping or clawing leaves**\n- How do the leaves look? → **Limp and soft, media is wet**\n\n## Possible causes\n- Overwatering\n- Poor drainage\n- Root rot starting\n\n## Check first\n- Pot weight before watering\n- Root color and smell\n\n## Next steps\n- Water by weight, not by schedule\n- Improve drainage and airflow\n- Inspect roots\n\nRead more: Why your far emitters starve: friction loss and the 45-degree rule <https://r3dconsulting.com/knowledge-base/irrigation-friction-loss>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            },
+            {
+              "title": "Possible underwatering or uneven irrigation",
+              "tags": [
+                "Outcome"
+              ],
+              "messages": [
+                "# Possible underwatering or uneven irrigation\n\n**How you get here**\n- What are you seeing? → **Drooping or clawing leaves**\n- How do the leaves look? → **Limp and thin, media is dry**\n\n## Possible causes\n- Underwatering\n- Emitters delivering unevenly\n\n## Check first\n- Catch-cup test across emitters\n- Pressure at the end of the line\n\n## Next steps\n- Balance irrigation pressure\n- Adjust volume per event\n- Log and compare\n\nRead more: Why your far emitters starve: friction loss and the 45-degree rule <https://r3dconsulting.com/knowledge-base/irrigation-friction-loss>\n\n-# Educational only. This narrows the possibilities; it does not diagnose."
+              ]
+            }
+          ]
+        },
+        {
+          "key": "sop-library",
+          "name": "sop-library",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "SOP templates by business type. Replace [bracketed] placeholders with your details.",
+          "tags": [
+            "Start here",
+            "Cannabis cultivation",
+            "Processing / manufacturing",
+            "Dispensary / retail",
+            "Hemp producer"
+          ],
+          "posts": [
+            {
+              "title": "Start here: how to use the SOP library",
+              "tags": [
+                "Start here"
+              ],
+              "messages": [
+                "# SOP library\n\nEvery SOP template from our free SOP Generator, one post per procedure. Words in [brackets] are placeholders to replace with your own details, such as your company name, tracking system, and record-retention period.\n\nTo build a complete, formatted SOP for your business type and state, with Word and PDF download, use the generator: <https://r3dconsulting.com/resources/sop-generator>\n\nBusiness types: Cannabis cultivation, Processing / manufacturing, Dispensary / retail, Hemp producer. Filter by tag to see the procedures for yours. State regulators and tracking systems: {#regulators-by-state}\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Sanitation & Cleaning",
+              "tags": [
+                "Cannabis cultivation",
+                "Processing / manufacturing",
+                "Dispensary / retail",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Sanitation & Cleaning\n**Applies to:** Cannabis cultivation, Processing / manufacturing, Dispensary / retail, Hemp producer\n\n## Purpose\nKeep work areas, equipment, and surfaces clean to prevent contamination of plants and product.\n\n## Scope\nAll rooms, equipment, and surfaces at [Facility].\n\n## Responsibilities\n- [Owner] maintains the cleaning schedule and verifies completion.\n- Every employee cleans their work area at the end of each task and shift.\n\n## Procedure\n1. Post the cleaning schedule in each room listing surfaces, frequency, method, and approved cleaning agents.\n2. Before cleaning, put on the required protective equipment and remove product from the area.\n3. Remove debris, then clean surfaces with detergent and water before sanitizing.\n4. Apply the approved sanitizer at the label concentration and contact time.\n5. Clean tools and equipment between rooms or batches to prevent cross-contamination.\n6. Record the date, time, area, agent used, and initials on the cleaning log.\n7. Report any damage, pests, mold, or leaks to [Owner] immediately.\n\n## Records to keep\n- Cleaning log\n- Safety data sheets for every chemical used\n- Corrective-action notes\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Facility Access & Visitor Log",
+              "tags": [
+                "Cannabis cultivation",
+                "Processing / manufacturing",
+                "Dispensary / retail",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Facility Access & Visitor Log\n**Applies to:** Cannabis cultivation, Processing / manufacturing, Dispensary / retail, Hemp producer\n\n## Purpose\nControl who enters restricted areas and keep a complete record of every visitor.\n\n## Scope\nAll entrances and restricted areas at [Facility].\n\n## Responsibilities\n- [Owner] approves visitors and audits the log weekly.\n- Employees escort visitors at all times.\n\n## Procedure\n1. Restricted areas are marked and accessible only to authorized employees.\n2. Visitors check in at the designated entrance and present valid government-issued photo ID.\n3. Record the visitor’s name, organization, purpose, ID verification, escort, and times in and out.\n4. Issue a visitor badge that is visible at all times and collected at check-out.\n5. An authorized employee escorts the visitor for the entire visit.\n6. Regulators and inspectors are admitted according to the rules, and [Owner] is notified immediately.\n7. Keep visitor logs for [Record retention].\n\n## Records to keep\n- Visitor log\n- Badge issue and return record\n- Access-control reports\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Security & Surveillance",
+              "tags": [
+                "Cannabis cultivation",
+                "Processing / manufacturing",
+                "Dispensary / retail",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Security & Surveillance\n**Applies to:** Cannabis cultivation, Processing / manufacturing, Dispensary / retail, Hemp producer\n\n## Purpose\nProtect people, product, and records, and keep surveillance working and retained.\n\n## Scope\nAlarm, camera, lock, and network systems at [Facility].\n\n## Responsibilities\n- [Owner] is responsible for security systems and incident reporting.\n- Every employee reports suspicious activity immediately.\n\n## Procedure\n1. Check that all cameras are recording and time-stamped correctly at the start of each day.\n2. Keep surveillance footage for [Camera retention], stored securely with access limited to authorized staff.\n3. Test the alarm system on the schedule set by the manufacturer and the rules, and log each test.\n4. Change default passwords on all cameras, recorders, and controllers, and keep them on a separate network segment.\n5. Limit keys, codes, and badges to authorized staff, and revoke them the same day someone leaves.\n6. Report any theft, loss, breach, or system outage to [Owner] at once and to the regulator within the required time.\n\n## Records to keep\n- Daily camera check log\n- Alarm test log\n- Key and badge register\n- Incident reports\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Inventory & Seed-to-Sale Tracking",
+              "tags": [
+                "Cannabis cultivation",
+                "Processing / manufacturing",
+                "Dispensary / retail"
+              ],
+              "messages": [
+                "# Inventory & Seed-to-Sale Tracking\n**Applies to:** Cannabis cultivation, Processing / manufacturing, Dispensary / retail\n\n## Purpose\nKeep physical inventory and [Tracking system] in agreement at all times.\n\n## Scope\nAll plants, batches, and packages handled at [Facility].\n\n## Responsibilities\n- [Owner] reviews variances daily.\n- Only trained employees with their own logins record transactions in [Tracking system].\n\n## Procedure\n1. Record every plant, batch, package, transfer, sample, waste event, and sale in [Tracking system] when it happens.\n2. Use calibrated scales, verify calibration daily, and record the check.\n3. Run a daily cycle count on a rotating set of items and a full count on the schedule the rules require.\n4. Investigate any variance the same day with a second employee. Do not adjust [Tracking system] without a documented reason.\n5. Record the cause, the correction, and the employees involved for every adjustment.\n6. Notify the regulator of discrepancies, theft, or loss within the required time.\n\n## Records to keep\n- Cycle count sheets\n- Scale calibration log\n- Adjustment log with reasons\n- [Tracking system] reports\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Waste Disposal",
+              "tags": [
+                "Cannabis cultivation",
+                "Processing / manufacturing",
+                "Dispensary / retail",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Waste Disposal\n**Applies to:** Cannabis cultivation, Processing / manufacturing, Dispensary / retail, Hemp producer\n\n## Purpose\nDispose of plant material and product waste so it is unusable, witnessed, and recorded.\n\n## Scope\nAll cannabis or hemp waste generated at [Facility].\n\n## Responsibilities\n- [Owner] schedules and supervises waste events.\n- Two employees witness each event.\n\n## Procedure\n1. Store waste in a secured, labeled area until disposal.\n2. Weigh waste and record it in [Tracking system] before rendering it unusable.\n3. Render waste unusable using the method allowed by the rules, such as grinding and mixing with other waste.\n4. Two employees witness and sign the waste record.\n5. Dispose of the mixture through the approved channel and keep receipts.\n6. Keep waste records for [Record retention].\n\n## Records to keep\n- Waste log with weights and witnesses\n- Disposal receipts\n- Surveillance of waste events\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Employee Training",
+              "tags": [
+                "Cannabis cultivation",
+                "Processing / manufacturing",
+                "Dispensary / retail",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Employee Training\n**Applies to:** Cannabis cultivation, Processing / manufacturing, Dispensary / retail, Hemp producer\n\n## Purpose\nMake sure every employee is trained on the procedures they perform before they perform them.\n\n## Scope\nAll employees and contractors at [Company].\n\n## Responsibilities\n- [Owner] maintains the training plan and records.\n- Employees complete training before working unsupervised.\n\n## Procedure\n1. Assign each role the SOPs it must be trained on.\n2. Train new employees on safety, security, and their role’s SOPs before their first unsupervised shift.\n3. Use a demonstration and a check-off for hands-on tasks.\n4. Retrain whenever an SOP changes and at least once a year.\n5. Record the date, trainer, topic, and employee signature for each session.\n\n## Records to keep\n- Training matrix by role\n- Signed training records\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Integrated Pest Management",
+              "tags": [
+                "Cannabis cultivation",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Integrated Pest Management\n**Applies to:** Cannabis cultivation, Hemp producer\n\n## Purpose\nPrevent, detect, and control pests and pathogens using only allowed methods and products.\n\n## Scope\nAll growing areas at [Facility].\n\n## Responsibilities\n- [Owner] maintains the IPM plan and the list of approved products.\n- Assigned staff scout on schedule.\n\n## Procedure\n1. Quarantine incoming plants and cuttings before they enter production.\n2. Scout each room on its assigned day, including leaf undersides and new growth, using magnification.\n3. Check and replace sticky traps weekly and log counts.\n4. Identify the pest or pathogen before choosing a control.\n5. Use only products allowed for cannabis or hemp in this jurisdiction, at label rates.\n6. Record each application: product, lot, rate, area, applicator, date, and re-entry interval.\n\n## Records to keep\n- Scouting log\n- Trap count log\n- Pesticide application records\n- Approved product list\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Harvest & Batch Tracking",
+              "tags": [
+                "Cannabis cultivation",
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Harvest & Batch Tracking\n**Applies to:** Cannabis cultivation, Hemp producer\n\n## Purpose\nHarvest, weigh, and track each batch so it can be traced from plant to package.\n\n## Scope\nAll harvests at [Facility].\n\n## Responsibilities\n- [Owner] approves harvest dates.\n- Harvest crew records weights and identifiers.\n\n## Procedure\n1. Confirm the harvest date fits any required testing or sampling window.\n2. Assign a batch identifier and record plants harvested in [Tracking system].\n3. Record wet weight by batch on a calibrated scale.\n4. Dry and cure in a monitored room, logging temperature and humidity.\n5. Record dry weight and any waste, then move to packaging or storage.\n\n## Records to keep\n- Harvest log\n- Dry room environment log\n- Batch records\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Pre-Harvest Sampling",
+              "tags": [
+                "Hemp producer"
+              ],
+              "messages": [
+                "# Pre-Harvest Sampling\n**Applies to:** Hemp producer\n\n## Purpose\nCoordinate official pre-harvest sampling and testing within the required window.\n\n## Scope\nEvery lot grown by [Company].\n\n## Responsibilities\n- [Owner] schedules sampling and keeps lab results.\n\n## Procedure\n1. Request sampling from an authorized sampler within the window required by your plan.\n2. Make every lot accessible and clearly identified for the sampler.\n3. Do not harvest before the sample is collected, and harvest within the required time after sampling.\n4. Keep lab results with the lot records.\n5. If a lot does not meet the limit, follow your plan’s remediation or disposal procedure and record each step.\n\n## Records to keep\n- Sampling requests and confirmations\n- Certificates of analysis\n- Remediation or disposal records\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Receiving & Transfers",
+              "tags": [
+                "Processing / manufacturing",
+                "Dispensary / retail"
+              ],
+              "messages": [
+                "# Receiving & Transfers\n**Applies to:** Processing / manufacturing, Dispensary / retail\n\n## Purpose\nVerify every incoming transfer against its manifest before accepting it.\n\n## Scope\nAll incoming and outgoing transfers at [Facility].\n\n## Responsibilities\n- [Owner] or a designated receiver accepts transfers.\n\n## Procedure\n1. Receive transfers only in the designated area under camera coverage.\n2. Compare packages, labels, and weights to the manifest in [Tracking system].\n3. Reject or note any discrepancy before accepting.\n4. Accept the transfer in [Tracking system] at the time of receipt.\n5. Move product to secure storage immediately.\n\n## Records to keep\n- Signed manifests\n- Receiving discrepancies log\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Product Hold & Recall",
+              "tags": [
+                "Processing / manufacturing",
+                "Dispensary / retail"
+              ],
+              "messages": [
+                "# Product Hold & Recall\n**Applies to:** Processing / manufacturing, Dispensary / retail\n\n## Purpose\nQuickly hold, trace, and recall affected product when a problem is found.\n\n## Scope\nAll products sold or transferred by [Company].\n\n## Responsibilities\n- [Owner] leads holds and recalls and communicates with the regulator.\n\n## Procedure\n1. Place affected product on hold in [Tracking system] and physically separate it.\n2. Identify every package and customer affected using batch records.\n3. Notify the regulator as required and follow its instructions.\n4. Notify affected customers and partners.\n5. Document the root cause and the corrective action.\n\n## Records to keep\n- Hold and recall log\n- Customer notifications\n- Root-cause report\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Point of Sale & ID Verification",
+              "tags": [
+                "Dispensary / retail"
+              ],
+              "messages": [
+                "# Point of Sale & ID Verification\n**Applies to:** Dispensary / retail\n\n## Purpose\nVerify every customer’s eligibility before a sale and record the sale correctly.\n\n## Scope\nAll sales at [Facility].\n\n## Responsibilities\n- Sales staff verify identification and eligibility.\n- [Owner] audits sales records.\n\n## Procedure\n1. Verify valid identification and any required patient or caregiver credential for every customer.\n2. Confirm the purchase is within allowed limits before completing the sale.\n3. Record the sale so it appears in [Tracking system] as required.\n4. Refuse any sale that cannot be verified, and record the refusal.\n\n## Records to keep\n- Sales records\n- Refusal log\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            },
+            {
+              "title": "Extraction Safety",
+              "tags": [
+                "Processing / manufacturing"
+              ],
+              "messages": [
+                "# Extraction Safety\n**Applies to:** Processing / manufacturing\n\n## Purpose\nOperate extraction equipment safely and keep each run documented.\n\n## Scope\nExtraction rooms and equipment at [Facility].\n\n## Responsibilities\n- [Owner] authorizes operators and maintains equipment certifications.\n\n## Procedure\n1. Only trained, authorized operators run extraction equipment.\n2. Inspect equipment, ventilation, and gas detection before each run.\n3. Follow the manufacturer’s operating procedure and the facility’s fire and building code requirements.\n4. Record inputs, solvents, settings, yields, and operator for each run.\n5. Shut down and report any leak, alarm, or malfunction immediately.\n\n## Records to keep\n- Run logs\n- Equipment inspection log\n- Certifications\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+              ]
+            }
+          ]
+        },
+        {
+          "key": "regulators-by-state",
+          "name": "regulators-by-state",
+          "type": "text",
+          "access": "public-read",
+          "topic": "Regulators, official links, and seed-to-sale tracking systems by jurisdiction.",
+          "messages": [
+            "# Regulators and tracking systems by jurisdiction\n\nThe agencies our SOP Generator cites for each jurisdiction, with official links. Always confirm against the current rules.\n\n## Mississippi\n- Mississippi State Department of Health, Medical Cannabis Program: <https://www.mmcp.ms.gov/>\n- Mississippi Department of Revenue (dispensaries): <https://www.dor.ms.gov/>\n**Tracking:** Metrc\n\n## Minnesota\n- Minnesota Office of Cannabis Management: <https://mn.gov/ocm/>\n**Tracking:** Metrc\n\n## Nevada\n- Nevada Cannabis Compliance Board: <https://ccb.nv.gov/>\n**Tracking:** Metrc\n\n## California\n- California Department of Cannabis Control: <https://cannabis.ca.gov/>\n**Tracking:** Metrc\n\n## Federal hemp (USDA plan)\n- USDA Agricultural Marketing Service, Hemp Production Program: <https://www.ams.usda.gov/rules-regulations/hemp>\n**Tracking:** your recordkeeping system\n\n## Another state\n\n**Tracking:** your state’s tracking system\n\n-# Educational information only. Not legal advice. Rules change often; confirm requirements with your regulator, and get professional review for compliance-sensitive decisions."
+          ]
+        },
+        {
+          "key": "case-studies",
+          "name": "case-studies",
+          "type": "forum",
+          "access": "public-read",
+          "topic": "Illustrative engagements from first symptom to follow-up. Not client results.",
+          "posts": [
+            {
+              "title": "Read first: these are illustrative examples",
+              "messages": [
+                "# Case studies\n\nThese scenarios show how an engagement runs from the first symptom to the follow-up. **They are illustrative, not client results.** Real case studies will replace them once clients approve publication in writing.\n\nWebsite: <https://r3dconsulting.com/case-studies>"
+              ]
+            },
+            {
+              "title": "A new cultivation licensee six weeks from its first inspection",
+              "messages": [
+                "# A new cultivation licensee six weeks from its first inspection\n**Client type:** Newly licensed indoor cultivator\n**Team:** Dusty McLean, Danny Davis\n**Areas:** Commercial Facility Audits, Technology & Business Systems\n\n## Initial Problem\nThe team had a license, a building, and a binder of template SOPs, but no one had walked the facility against the rules.\n\n## Investigation\nMock inspection of every room, review of each SOP against the current regulations, and a test of the visitor log, camera coverage, and waste process.\n\n## Idea\nMost gaps were procedural, not physical. A few were physical: camera blind spots and a drain without a backflow device.\n\n## Proposed Fix\nRewrite SOPs with the staff who do the work, add two cameras, fix the drain, and set up a daily log routine.\n\n## Implementation\nSOPs drafted, walked, and signed off room by room. Training recorded for every employee.\n\n## Validation\nA second mock inspection two weeks later with a fresh findings list.\n\n## Backup Plan\nItems that could not be fixed in time were documented with a corrective-action plan and dates.\n\n## Cross-Correlation\nThe drain finding fed into the irrigation review; the camera gaps fed into the network security plan.\n\n## Final Report\nFindings, fixes, photos, signed training records, and revision history delivered to the client portal.\n\n## Follow-Up\nMonthly compliance check under a Tier 1 retainer.\n\n-# Illustrative scenario, not a client result."
+              ]
+            },
+            {
+              "title": "Plants at the far end of every row underperforming",
+              "messages": [
+                "# Plants at the far end of every row underperforming\n**Client type:** Commercial indoor cultivator\n**Team:** Danny Davis, Joel Perkins, Dusty McLean\n**Areas:** Cultivation & Processing, Commercial Facility Audits\n\n## Initial Problem\nThe last third of each row ran smaller and showed deficiency symptoms, even though every plant was on the same feed.\n\n## Investigation\nCatch-cup tests at every emitter, pressure readings along each line, feed and runoff EC and pH logs, and a look at the plumbing layout.\n\n## Idea\nPressure loss from a long run with many sharp elbows meant far emitters delivered less volume.\n\n## Proposed Fix\nRe-plumb with 45-degree fittings and a center feed, add a pressure gauge after the filter, and keep the feed recipe unchanged so the effect could be isolated.\n\n## Implementation\nOne room re-plumbed first as a test, with the crew trained on the new layout.\n\n## Validation\nEmitter volumes compared before and after, plus plant measurements over the next run.\n\n## Backup Plan\nPressure-compensating emitters if re-plumbing alone did not balance the room.\n\n## Cross-Correlation\nOnce delivery was even, the feed program could be tuned; sensor alerts were added for pressure drops.\n\n## Final Report\nBefore-and-after data, the new plumbing diagram, and an updated irrigation SOP.\n\n## Follow-Up\nRoll-out to the remaining rooms on the client’s schedule.\n\n-# Illustrative scenario, not a client result."
+              ]
+            },
+            {
+              "title": "A hemp producer worried about pre-harvest testing",
+              "messages": [
+                "# A hemp producer worried about pre-harvest testing\n**Client type:** Licensed hemp producer\n**Team:** Dusty McLean, Joel Perkins\n**Areas:** Agriculture & Formulation, Technology & Business Systems\n\n## Initial Problem\nIn-house test results were creeping toward the limit as harvest approached, and the official sampling window was close.\n\n## Investigation\nReview of COAs and the lab’s reporting basis, recalculation of Total THC, cultivar history, and the planned harvest date.\n\n## Idea\nResults were trending up with maturity. Harvest timing and sampling date were the controllable variables.\n\n## Proposed Fix\nSchedule sampling and harvest together, track Total THC weekly on a shared dashboard, and prepare a documented remediation plan in advance.\n\n## Implementation\nWeekly testing schedule, Total THC tracking, and a written remediation SOP ready before sampling.\n\n## Validation\nOfficial results compared with in-house trend data.\n\n## Backup Plan\nIf a lot tested high, follow the pre-approved remediation or disposal procedure and document every step.\n\n## Cross-Correlation\nCultivar selection for the next season was informed by the THC trend data.\n\n## Final Report\nTesting timeline, calculations, the remediation SOP, and recommendations for next season.\n\n## Follow-Up\nPre-season planning call before the next planting.\n\n-# Illustrative scenario, not a client result."
+              ]
+            },
+            {
+              "title": "A dispensary with recurring inventory variances",
+              "messages": [
+                "# A dispensary with recurring inventory variances\n**Client type:** Single-location dispensary\n**Team:** Dusty McLean, Danny Davis\n**Areas:** Dispensary & Retail Operations, Technology & Business Systems\n\n## Initial Problem\nMonth-end counts never matched the tracking system, and staff were adjusting numbers to make them agree.\n\n## Investigation\nTransaction review, observation of receiving and sales, scale checks, and interviews with each shift.\n\n## Idea\nReceiving was recorded late, and one scale drifted. Adjustments were hiding the root causes.\n\n## Proposed Fix\nRecord receiving at the dock, calibrate and log scales daily, require a reason for every adjustment, and add daily cycle counts.\n\n## Implementation\nNew receiving and adjustment SOPs, staff training, and a simple daily count sheet.\n\n## Validation\nVariance tracked weekly for two months.\n\n## Backup Plan\nEscalation procedure for any unexplained variance, including when to notify the regulator.\n\n## Cross-Correlation\nProduct training for staff was added after the review showed frequent mis-rings between similar products.\n\n## Final Report\nVariance trend, SOPs, training records, and a dashboard for the manager.\n\n## Follow-Up\nQuarterly reconciliation check.\n\n-# Illustrative scenario, not a client result."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "💬 COMMUNITY",
+      "access": "public-chat",
+      "channels": [
+        {
+          "key": "introductions",
+          "name": "introductions",
+          "type": "text",
+          "access": "public-chat",
+          "topic": "Say hello: who you are, what you run, and what you are working on.",
+          "messages": [
+            "## About this channel\nIntroduce yourself to the community.\n\n**How it works**\n- Share your name or handle, your type of operation, and your state.\n- Do not post phone numbers, license numbers, or addresses.\n\n-# Welcome aboard."
+          ]
+        },
+        {
+          "key": "general",
+          "name": "general",
+          "type": "text",
+          "access": "public-chat",
+          "topic": "General conversation about cultivation, compliance, technology, and business.",
+          "messages": [
+            "## About this channel\nOpen conversation for everyone.\n\n**How it works**\n- Keep it friendly and on topic.\n- Questions for the partners go in {#ask-root3d} so answers stay searchable.\n\n-# Rules: {#rules}"
+          ]
+        },
+        {
+          "key": "ask-root3d",
+          "name": "ask-root3d",
+          "type": "forum",
+          "access": "public-forum",
+          "topic": "Ask the Root3D partners a question. One post per question. Search first: your answer may already be in the Knowledge Base or FAQ.",
+          "tags": [
+            "Compliance",
+            "Cultivation",
+            "Facility",
+            "Technology",
+            "Business",
+            "Answered"
+          ],
+          "posts": [
+            {
+              "title": "How to ask a good question",
+              "tags": [],
+              "messages": [
+                "# How to ask a good question\n\n- Search first (see {#how-to-search}). Your answer may already be here.\n- One question per post, with a clear title.\n- Pick a tag: Compliance, Cultivation, Facility, Technology, or Business.\n- Say your state and type of operation. Rules differ by state.\n- Never post phone numbers, license numbers, addresses, or confidential lab reports.\n\nA partner will answer and tag the post **Answered**. For advice on your exact situation, book a call in {#book-a-call}."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "💎 INSIDER",
+      "access": "insider-read",
+      "channels": [
+        {
+          "key": "insider-start-here",
+          "name": "insider-start-here",
+          "type": "text",
+          "access": "public-read",
+          "topic": "What Insider access includes and how to get it.",
+          "messages": [
+            "# Insider access\n\nInsider channels carry ongoing briefings from the partners: regulatory changes as they happen, cultivation and facility notes from the field, systems and data tips, and market observations, plus a Q&A forum where Insiders ask the partners directly.\n\n## How to get access\nInsider is a paid subscription. Ask a partner in {#ask-root3d} or email support@r3dconsulting.com. Once your subscription is active, a partner gives you the **Insider** role and these channels appear. Every active **Client** gets Insider access too.\n\n## Where to look\n- {#regulatory-watch}: rule changes, deadlines, and what they mean\n- {#cultivation-notes}: cultivation, inputs, and facility notes\n- {#systems-and-data}: tracking systems, automation, and data\n- {#market-and-business}: licensing, retail, and commercialization\n- {#insider-qa}: ask the partners\n- {#insider-lounge}: talk with other Insiders\n\n-# Insider posts are educational, not legal advice. Do not share Insider content outside this server."
+          ],
+          "pin": true,
+          "deferred": true
+        },
+        {
+          "key": "regulatory-watch",
+          "name": "regulatory-watch",
+          "type": "text",
+          "access": "insider-read",
+          "topic": "Rule changes, deadlines, and what they mean for operators. Dated and sourced.",
+          "messages": [
+            "## About this channel\nRegulatory changes and deadlines as they happen, with what they mean for your operation.\n\n**How it works**\n- Each post: **headline**, jurisdiction, effective date, source link, and what to do.\n- Partners post here. Members can react.\n\n-# Educational, not legal advice."
+          ]
+        },
+        {
+          "key": "cultivation-notes",
+          "name": "cultivation-notes",
+          "type": "text",
+          "access": "insider-read",
+          "topic": "Cultivation, inputs, and facility notes from the field.",
+          "messages": [
+            "## About this channel\nField notes on cultivation, nutrients and inputs, irrigation, environment, and facility engineering.\n\n**How it works**\n- Each post: **headline**, what we saw, what we changed, and how we measured it.\n- Partners post here. Members can react.\n\n-# No client names or identifying details."
+          ]
+        },
+        {
+          "key": "systems-and-data",
+          "name": "systems-and-data",
+          "type": "text",
+          "access": "insider-read",
+          "topic": "Seed-to-sale tracking, automation, cybersecurity, and data.",
+          "messages": [
+            "## About this channel\nTracking systems, automation, security, and data practice.\n\n**How it works**\n- Each post: **headline**, the system it applies to, and step-by-step detail.\n- Partners post here. Members can react.\n\n-# Never post credentials or API keys."
+          ]
+        },
+        {
+          "key": "market-and-business",
+          "name": "market-and-business",
+          "type": "text",
+          "access": "insider-read",
+          "topic": "Licensing, retail, wholesale, and commercialization.",
+          "messages": [
+            "## About this channel\nLicensing, retail, distribution, and commercialization.\n\n**How it works**\n- Each post: **headline**, market or state, and the source.\n- Partners post here. Members can react.\n\n-# Educational, not financial or legal advice."
+          ]
+        },
+        {
+          "key": "insider-qa",
+          "name": "insider-qa",
+          "type": "forum",
+          "access": "insider-forum",
+          "topic": "Insiders ask the partners directly. One post per question.",
+          "tags": [
+            "Compliance",
+            "Cultivation",
+            "Facility",
+            "Technology",
+            "Business",
+            "Answered"
+          ],
+          "posts": [
+            {
+              "title": "How Insider Q&A works",
+              "tags": [],
+              "messages": [
+                "# Insider Q&A\n\n- One question per post, with your state and type of operation.\n- A partner answers, usually within one business day, and tags it **Answered**.\n- For work on your exact situation, book a session in {#book-a-call}."
+              ]
+            }
+          ]
+        },
+        {
+          "key": "insider-lounge",
+          "name": "insider-lounge",
+          "type": "text",
+          "access": "insider-chat",
+          "topic": "Conversation for Insiders and clients.",
+          "messages": [
+            "## About this channel\nOpen conversation for Insiders and clients.\n\n**How it works**\n- Keep Insider content inside this server.\n\n-# Rules: {#rules}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🤝 CLIENTS",
+      "access": "client-chat",
+      "channels": [
+        {
+          "key": "client-start-here",
+          "name": "client-start-here",
+          "type": "text",
+          "access": "client-chat",
+          "topic": "How your client portal and these channels work.",
+          "messages": [
+            "# Client hub\n\nWelcome. Your client portal at <https://r3dconsulting.com/portal> is where your private work lives:\n- **Appointments**: book, reschedule, or cancel (free up to 24 hours ahead)\n- **Pre-call inbox**: upload photos, lab results, logs, and schematics before a session\n- **Meeting links**: your consultant posts your Zoom, Discord, or Signal link on the appointment\n- **Messages**: private threads with your consultants\n- **Files and action plans**: deliverables and written plans with at least three steps\n- **Invoices and agreements**\n\n## Here on Discord\n- {#client-support}: open a post for a question. A partner replies, and the answer stays searchable for you.\n- {#client-lounge}: talk with other clients.\n- **Private room**: ask a partner for a private channel for your team.\n- **Call rooms**: Consult Room 1 and 2 are for scheduled Discord calls.\n\n-# Keep confidential files and lab reports in your portal or your private room, not in shared channels."
+          ],
+          "pin": true,
+          "deferred": true
+        },
+        {
+          "key": "client-support",
+          "name": "client-support",
+          "type": "forum",
+          "access": "client-forum",
+          "topic": "Open a post for a question or request. A partner replies.",
+          "tags": [
+            "Question",
+            "Scheduling",
+            "Billing",
+            "Files",
+            "Answered"
+          ],
+          "posts": [
+            {
+              "title": "How client support works",
+              "tags": [],
+              "messages": [
+                "# Client support\n\n- Open one post per request and pick a tag.\n- A partner replies and tags it **Answered**.\n- Billing: include the invoice number from your portal. We never ask for card details here.\n- Confidential files go in your portal, not here."
+              ]
+            }
+          ]
+        },
+        {
+          "key": "client-lounge",
+          "name": "client-lounge",
+          "type": "text",
+          "access": "client-chat",
+          "topic": "Conversation between Root3D clients.",
+          "messages": [
+            "## About this channel\nOpen conversation for clients.\n\n**How it works**\n- Be mindful of confidential details about your operation.\n\n-# Rules: {#rules}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🎙️ CALL ROOMS",
+      "access": "voice-public",
+      "channels": [
+        {
+          "key": "waiting-room",
+          "name": "Waiting Room",
+          "type": "voice",
+          "access": "voice-public"
+        },
+        {
+          "key": "discovery-room",
+          "name": "Discovery Room",
+          "type": "voice",
+          "access": "voice-public",
+          "userLimit": 2
+        },
+        {
+          "key": "consult-1",
+          "name": "Consult Room 1",
+          "type": "voice",
+          "access": "voice-client",
+          "userLimit": 8
+        },
+        {
+          "key": "consult-2",
+          "name": "Consult Room 2",
+          "type": "voice",
+          "access": "voice-client",
+          "userLimit": 8
+        }
+      ]
+    },
+    {
+      "name": "🔒 ROOT3D TEAM",
+      "access": "team",
+      "channels": [
+        {
+          "key": "team-start-here",
+          "name": "partner-guide",
+          "type": "text",
+          "access": "team",
+          "topic": "How to run this server: roles, private rooms, briefings, and calls.",
+          "messages": [
+            "# Partner guide\n\nEveryone with the **Root3D Partner** role (Dusty, Danny, Joel, and Hunter) is a server admin and can edit channels, post anywhere, pin, and manage roles.\n\n## Give someone access\nRight-click their name → **Roles** → add **Client** or **Insider**. Remove the role to take access away.\n- **Insider**: paid subscribers. Grant after their subscription invoice is paid in the portal.\n- **Client**: active consulting clients. Clients also see Insider channels.\n\n## Make a private client room\nRight-click the **CLIENTS** category → **Create Channel** → name it `client-<company>` → turn on **Private Channel** → add the client and the partners on the account.\n\n## Post a briefing\nPost in the Insider channel that fits, start with a one-line bold headline, and add the date and your sources. Draft in {#content-drafts} first if you want a second set of eyes. Use **Publish** in {#announcements} to push news to followers.\n\n## Add to the Knowledge Base\nThe public library mirrors <https://r3dconsulting.com/knowledge-base>. Add new articles on the website first, then run the Discord builder again (see the handbook). It only adds what is missing.\n\n## Calls\nClients choose Zoom, Discord, or Signal when they book. For Zoom, use the saved Manna Zoom room link in the portal (it is shared and open 24 hours, so check no one else is using it). For Discord, use Consult Room 1 or 2. No phone numbers.\n\n## Moderation\nDelete rule-breaking posts, and time out or ban repeat offenders (right-click the user). Discord system notices go to {#mod-log}."
+          ],
+          "pin": true,
+          "deferred": true
+        },
+        {
+          "key": "team-chat",
+          "name": "team-chat",
+          "type": "text",
+          "access": "team",
+          "topic": "Partners only."
+        },
+        {
+          "key": "leads-and-bookings",
+          "name": "leads-and-bookings",
+          "type": "text",
+          "access": "team",
+          "topic": "New inquiries, bookings, and who is taking each one."
+        },
+        {
+          "key": "content-drafts",
+          "name": "content-drafts",
+          "type": "text",
+          "access": "team",
+          "topic": "Draft Insider briefings and Knowledge Base updates for review before posting."
+        },
+        {
+          "key": "handbook",
+          "name": "handbook",
+          "type": "text",
+          "access": "team",
+          "topic": "The Root3D team handbook and where to find it."
+        },
+        {
+          "key": "mod-log",
+          "name": "mod-log",
+          "type": "text",
+          "access": "team",
+          "topic": "Discord system notices and moderation notes."
+        },
+        {
+          "key": "partner-room",
+          "name": "Partner Room",
+          "type": "voice",
+          "access": "voice-team"
+        }
+      ]
+    }
+  ],
+  "kbIndex": [
+    {
+      "heading": "Compliance",
+      "titles": [
+        "Total THC: what it is and how to calculate it",
+        "Mississippi Medical Cannabis Program: who regulates what",
+        "Seed-to-sale tracking without the panic",
+        "Hemp production: licensing, sampling, and what happens if a test is hot"
+      ]
+    },
+    {
+      "heading": "Cultivation",
+      "titles": [
+        "Heavy metals: where they come from and how to keep them out",
+        "Integrated pest management that a crew will actually follow",
+        "Tissue culture basics for cannabis operators",
+        "Vapor pressure deficit (VPD) in plain language",
+        "Dry and cure: protecting the harvest you already grew"
+      ]
+    },
+    {
+      "heading": "Facility",
+      "titles": [
+        "Why your far emitters starve: friction loss and the 45-degree rule"
+      ]
+    },
+    {
+      "heading": "Technology",
+      "titles": [
+        "Network security for cultivation facilities"
+      ]
+    },
+    {
+      "heading": "Business",
+      "titles": [
+        "Writing SOPs that survive an inspection and a shift change"
+      ]
+    }
+  ]
+}
