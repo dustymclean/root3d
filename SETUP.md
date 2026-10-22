@@ -21,6 +21,8 @@ Everything below is free to start. No secret keys ever go in this repository.
    | support@r3dconsulting.com | (admin only) |
    | dustjackmcl@gmail.com, dusty_mclean@icloud.com, joel@ / danny@ / sleepy@pixies-pantry.com | (admin only) |
 
+8. Paste all of `supabase/migrations/0007_backfill_profiles.sql` into a new query and **Run**. It creates profiles for any account made before the database was set up, and locks down internal functions.
+
    If you already ran earlier files, just run the ones you have not run yet. Every file is safe to run more than once.
 
 That's the only account setup. Whoever signs up with one of those emails becomes an admin. Everyone else who signs up is a standard client. You can change the list later under **Portal → Users & admins**.
