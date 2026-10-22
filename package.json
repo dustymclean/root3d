@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "discord:generate": "esbuild discord/generate.ts --bundle --platform=node --format=esm --define:import.meta.env={} --log-level=warning --outfile=node_modules/.cache/discord-generate.mjs && node node_modules/.cache/discord-generate.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
