@@ -38,7 +38,7 @@ export function Services() {
                 <div className="icon-chip" style={{ flex: 'none' }}><Leaf size={20} /></div>
                 <div>
                   <h3>Grow Coach Connection</h3>
-                  <p>Live video coaching for home growers, hobbyists, and commercial cultivators.</p>
+                  <p>Live coaching for home growers, hobbyists, and commercial cultivators.</p>
                   <span className="more">Find a coach <ArrowRight size={14} /></span>
                 </div>
               </Link>

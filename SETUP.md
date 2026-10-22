@@ -23,6 +23,8 @@ Everything below is free to start. No secret keys ever go in this repository.
 
 8. Paste all of `supabase/migrations/0007_backfill_profiles.sql` into a new query and **Run**. It creates profiles for any account made before the database was set up, and locks down internal functions.
 
+9. Paste all of `supabase/migrations/0008_contact_methods.sql` into a new query and **Run**. It switches bookings to Zoom, Discord, Signal, or on-site, removes stored phone numbers, and adds the saved meeting links table.
+
    If you already ran earlier files, just run the ones you have not run yet. Every file is safe to run more than once.
 
 That's the only account setup. Whoever signs up with one of those emails becomes an admin. Everyone else who signs up is a standard client. You can change the list later under **Portal → Users & admins**.
@@ -74,6 +76,6 @@ Each partner opens the site, clicks **Sign in → Create an account**, and uses 
 
 ## Optional
 
-- **Video.** Sessions use the public `meet.jit.si` server by default, which limits embedded calls to 5 minutes for anonymous users. For real sessions, either self-host Jitsi (set `VITE_JITSI_DOMAIN` to your server) or use 8x8 JaaS (set `VITE_JITSI_DOMAIN=8x8.vc` and `VITE_JITSI_ROOM_PREFIX=<your app id>/`).
+- **Calls.** Clients choose Zoom, Discord, or Signal when they book (or on-site for facility work). No phone numbers are collected. Before the call, the consultant opens the booking in the portal and picks a saved link (like the Manna Zoom room) or pastes one; only that client sees it. Save shared links once in the database: `insert into public.meeting_links (label, method, url) values ('Manna Zoom room', 'zoom', 'https://zoom.us/j/...');` Keep links with passcodes out of this repo.
 - **Email sender.** Supabase's built-in email is rate-limited. For production, add your own SMTP under **Authentication → Emails → SMTP Settings**.
 - **Card payments.** Once a processor approves Root3D, create invoices with its hosted payment links (Billing → Pay link). Never add processor secret keys to this repo; a server-side integration belongs in a Supabase Edge Function using Supabase secrets.

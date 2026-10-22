@@ -17,7 +17,7 @@ export async function fetchConsultants(): Promise<Consultant[]> {
     return team.map((t, i) => ({
       slug: t.slug, profile_id: null, name: t.name, title: t.title, photo: t.photo, specialties: t.specialties.map((x) => x.title),
       timezone: 'America/Chicago', buffer_minutes: 15, min_notice_hours: 12, is_available_today: false,
-      expertise: growCoachExpertise[t.slug] ?? [], verified: true, modes: ['virtual', 'phone', 'onsite'], active: true, sort: i,
+      expertise: growCoachExpertise[t.slug] ?? [], verified: true, modes: ['zoom', 'discord', 'signal', 'onsite'], active: true, sort: i,
     }));
   }
   return q(supabase.from('consultants').select('*').order('sort'));

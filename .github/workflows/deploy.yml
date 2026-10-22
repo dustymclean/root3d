@@ -32,8 +32,6 @@ jobs:
           BASE_PATH: ${{ vars.BASE_PATH || '/' }}
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
-          VITE_JITSI_DOMAIN: ${{ vars.VITE_JITSI_DOMAIN }}
-          VITE_JITSI_ROOM_PREFIX: ${{ vars.VITE_JITSI_ROOM_PREFIX }}
           VITE_CONTACT_EMAIL: ${{ vars.VITE_CONTACT_EMAIL }}
       - if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3

@@ -209,7 +209,7 @@ const intakeQuestions = [
 export function ProfilePage() {
   const { profile, refresh } = useAuth();
   const p = profile!;
-  const [form, setForm] = useState({ full_name: p.full_name, phone: p.phone, company: p.company, license_type: p.license_type, state: p.state });
+  const [form, setForm] = useState({ full_name: p.full_name, company: p.company, license_type: p.license_type, state: p.state });
   const [intake, setIntake] = useState<Record<string, string>>(p.intake ?? {});
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -231,7 +231,6 @@ export function ProfilePage() {
       <h2>Profile & intake</h2>
       <div className="form-row">
         <Field label="Full name"><input className="input" value={form.full_name} onChange={set('full_name')} /></Field>
-        <Field label="Phone (for text alerts)"><input className="input" type="tel" value={form.phone} onChange={set('phone')} /></Field>
       </div>
       <div className="form-row">
         <Field label="Company"><input className="input" value={form.company} onChange={set('company')} /></Field>

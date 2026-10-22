@@ -81,7 +81,7 @@ export function ClientDetail() {
           <div>
             <h2 style={{ margin: 0 }}>{p.full_name || p.email}</h2>
             <p className="muted" style={{ margin: 0 }}>{[p.company, p.license_type, p.state].filter(Boolean).join(' · ')}</p>
-            <p className="small" style={{ margin: 0 }}><a href={`mailto:${p.email}`}>{p.email}</a>{p.phone && <> · <a href={`tel:${p.phone}`}>{p.phone}</a></>}</p>
+            <p className="small" style={{ margin: 0 }}><a href={`mailto:${p.email}`}>{p.email}</a></p>
           </div>
           <button className="btn btn-ghost btn-sm" onClick={() => void startThread()}><MessageSquarePlus size={16} /> Message</button>
         </div>
