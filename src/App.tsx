@@ -6,6 +6,7 @@ import { Book } from './pages/Book';
 import { About } from './pages/public/About';
 import { Contact } from './pages/public/Contact';
 import { ArticlePage, CaseStudies, Faq, KnowledgeBase } from './pages/public/Knowledge';
+import { News } from './pages/public/News';
 import { Resources, SopGenerator, ThcCalculator, Troubleshooter, VpdCalculator } from './pages/public/Tools';
 import { Home } from './pages/public/Home';
 import { Accessibility, CancellationPolicy, NotFound, PaymentPolicy, Privacy, RefundPolicy, Terms } from './pages/public/Legal';
@@ -45,6 +46,7 @@ export function App() {
         <Route path="resources/vpd" element={<VpdCalculator />} />
         <Route path="resources/troubleshooter" element={<Troubleshooter />} />
         <Route path="knowledge-base" element={<KnowledgeBase />} />
+        <Route path="news" element={<News />} />
         <Route path="knowledge-base/:slug" element={<ArticlePage />} />
         <Route path="faq" element={<Faq />} />
         <Route path="accessibility" element={<Accessibility />} />

@@ -49,7 +49,7 @@ export function KnowledgeBase() {
         <div className="container">
           <PageHead eyebrow="Knowledge Base · Compliance Vault" title="Source-backed answers for cultivators and operators">
             Practical guides with citations and review dates. Ask a question in plain words and we will match it to guides and
-            answers.
+            answers. For what changed this week, see <Link to="/news">Industry Watch</Link>, updated every morning from official sources.
           </PageHead>
           <form className="kb-search" onSubmit={(e) => e.preventDefault()}>
             <Search size={20} />

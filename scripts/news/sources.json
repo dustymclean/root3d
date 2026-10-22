@@ -1,0 +1,20 @@
+{
+  "note": "Official sources only. Each item is published with its own title, date, official summary, and link, never rewritten. A source that fails is skipped and logged; the rest still publish.",
+  "federalRegister": [
+    { "term": "cannabis", "category": "Regulation" },
+    { "term": "marijuana", "category": "Regulation" },
+    { "term": "tetrahydrocannabinol", "category": "Regulation" },
+    { "term": "cannabidiol", "category": "Food & drug safety" },
+    { "term": "hemp", "category": "Hemp" },
+    { "term": "pesticide tolerances", "category": "Pesticides", "agency": "environmental-protection-agency", "types": ["RULE", "PRORULE"] },
+    { "term": "plant pest", "category": "Pests & plant health", "agency": "animal-and-plant-health-inspection-service" },
+    { "term": "mycotoxin", "category": "Molds & contaminants" },
+    { "term": "aflatoxin", "category": "Molds & contaminants" }
+  ],
+  "rss": [
+    { "name": "FDA press releases", "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml", "category": "Food & drug safety", "match": "cannabis|cannabidiol|\\bcbd\\b|hemp|marijuana|thc|delta-8|kratom|vape|pesticide" },
+    { "name": "EPA news releases", "url": "https://www.epa.gov/newsreleases/search/rss", "category": "Pesticides", "match": "pesticide|herbicide|fungicide|insecticide|fifra|cannabis|hemp" },
+    { "name": "DEA press releases", "url": "https://www.dea.gov/press-releases/rss", "category": "Enforcement", "match": "marijuana|cannabis|hemp|thc|schedul" },
+    { "name": "USDA AMS news", "url": "https://www.ams.usda.gov/rss/news.xml", "category": "Hemp", "match": "hemp" }
+  ]
+}
