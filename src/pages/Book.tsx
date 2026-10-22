@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarCheck, Download, Upload, Zap } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Download, Lightbulb, Plus, Upload, Zap } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { ErrorText, Field, Loading, Notice, PageHead, Success } from '../components/ui';
@@ -6,6 +6,7 @@ import { asset, useConsultants, useServices } from '../lib/data';
 import { dateTime, icsFor, money, timeOnly } from '../lib/format';
 import { q, supabase } from '../lib/supabase';
 import { openSlots, todayIn, weekdayOf } from '../lib/time';
+import { consultantPrompts, fallbackPrompts, servicePrompts } from '../data/prompts';
 import { contactModes, handleField, looksLikePhone, modeBlurbs, modeIcons, modeLabels } from '../lib/contact';
 import type { AppointmentMode, Availability, Booking } from '../lib/types';
 
@@ -231,6 +232,18 @@ export function Book() {
             {time && (
               <div className="booking-step">
                 <h3><span className="step-num">5</span> Anything we should know?</h3>
+                <p className="muted small row"><Lightbulb size={14} /> Not sure what to ask? Tap any idea to add it to your notes.</p>
+                <div className="chips" style={{ marginBottom: '0.75rem' }}>
+                  {[...(consultant ? consultantPrompts[consultant.slug] ?? [] : []), ...(service ? servicePrompts[service.id] ?? fallbackPrompts : fallbackPrompts)].map((idea) => {
+                    const added = notes.includes(idea);
+                    return (
+                      <button key={idea} type="button" className="chip" aria-pressed={added} disabled={added}
+                        onClick={() => setNotes((n) => (n.trim() ? `${n.trimEnd()}\n- ${idea}` : `- ${idea}`))}>
+                        {!added && <Plus size={12} />} {idea}
+                      </button>
+                    );
+                  })}
+                </div>
                 <Field label="Notes for your consultant (optional)">
                   <textarea className="textarea" value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Facility type, license status, what's going wrong…" />
                 </Field>

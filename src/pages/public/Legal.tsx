@@ -130,6 +130,8 @@ export function CancellationPolicy() {
         <li>Cancellations within 24 hours are recorded as late and may be charged in full.</li>
         <li>If you miss a session without notice, it is recorded as a no-show and may be charged in full.</li>
         <li>If you are running late, message your consultant. Sessions end at the scheduled time unless you add an extension.</li>
+        <li>Root3D may end a call at any time, including for abusive or unsafe conduct, requests for illegal activity, or a session that runs past its booked time. If we end a call early for reasons that are not your conduct, we will rebook the remaining time or refund it.</li>
+        <li>Direct Discord and Signal contact with a consultant opens only after a paid session, and we never share phone numbers.</li>
       </ul>
       <h2>If we cancel</h2>
       <p>If a consultant has to cancel or misses a session, you will not be charged and we will help you rebook at the next available time, or refund anything you paid.</p>

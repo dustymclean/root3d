@@ -26,6 +26,7 @@ Everything below is free to start. No secret keys ever go in this repository.
 9. Paste all of `supabase/migrations/0008_contact_methods.sql` into a new query and **Run**. It switches bookings to Zoom, Discord, Signal, or on-site, removes stored phone numbers, and adds the saved meeting links table.
 
 10. Paste all of `supabase/migrations/0009_remove_grow_coach.sql` into a new query and **Run**. It hides the Grow Coach services, which now belong to their own site.
+11. Paste all of `supabase/migrations/0010_paid_contact.sql` into a new query and **Run**. Meeting links and each partner's Discord and Signal details become visible to a client only after their session is paid.
 
    If you already ran earlier files, just run the ones you have not run yet. Every file is safe to run more than once.
 

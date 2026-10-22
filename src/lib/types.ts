@@ -71,8 +71,6 @@ export type Booking = {
   mode: AppointmentMode;
   /** Facility address for on-site visits, or the client's Discord/Signal username. */
   location: string;
-  /** The Zoom, Discord, or Signal link the consultant shares for this booking. */
-  meeting_link: string;
   created_at: string;
 };
 
@@ -218,6 +216,17 @@ export type Milestone = {
   due_date: string | null;
   done_at: string | null;
   created_at: string;
+};
+
+/** The Zoom, Discord, or Signal link for one booking. Clients can read it only once the booking is paid. */
+export type BookingLink = { booking_id: string; url: string; updated_at: string };
+export type ConsultantContact = {
+  consultant_slug: string;
+  discord_username: string;
+  discord_link: string;
+  signal_username: string;
+  signal_link: string;
+  updated_at: string;
 };
 
 export type MeetingLink = { id: string; label: string; method: 'zoom' | 'discord' | 'signal'; url: string; sort: number };

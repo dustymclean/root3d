@@ -2,6 +2,7 @@ import { ArrowLeft, CalendarCheck, CheckCircle2, Clock, Quote } from 'lucide-rea
 import type { ReactNode } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { CtaBand } from '../../components/blocks';
+import { DirectContact } from '../../components/DirectContact';
 import { Reveal } from '../../components/Reveal';
 import { Notice, PageHead } from '../../components/ui';
 import { findArea } from '../../data/areas';
@@ -101,6 +102,7 @@ export function TeamProfile() {
                   <Link to={`/book?consultant=${c.slug}`} className="btn btn-ghost">All session types</Link>
                   <Link to={`/contact?topic=${encodeURIComponent('Question for ' + c.name)}`} className="btn btn-ghost">Ask a question</Link>
                 </div>
+                <div className="mt"><DirectContact slug={c.slug} first={c.first} /></div>
               </div>
               {c.video && (
                 <figure className="profile-video">

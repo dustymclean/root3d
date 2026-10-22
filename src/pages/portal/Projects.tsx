@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Flag, KanbanSquare, Plus, Save, Trash2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Circle, FileText, Flag, KanbanSquare, Plus, Save, Trash2 } from 'lucide-react';
 import { useState, type DragEvent, type FormEvent } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Empty, ErrorText, Field, Loading, StatusPill, Success } from '../../components/ui';
@@ -132,7 +132,10 @@ export function ProjectDetail() {
 
   return (
     <div className="stack">
-      <Link to="/portal/projects" className="row small"><ArrowLeft size={16} /> All projects</Link>
+      <div className="row between">
+        <Link to="/portal/projects" className="row small"><ArrowLeft size={16} /> All projects</Link>
+        <Link to={`/portal/projects/${p.id}/report`} className="btn btn-ghost btn-sm"><FileText size={16} /> Project report</Link>
+      </div>
       <div className="card">
         <div className="row between" style={{ flexWrap: 'wrap' }}>
           <div>

@@ -19,6 +19,7 @@ import { Messages } from './pages/portal/Messages';
 import { Overview } from './pages/portal/Overview';
 import { PortalLayout } from './pages/portal/PortalLayout';
 import { ProjectDetail, Projects } from './pages/portal/Projects';
+import { ProjectReport, SessionReport } from './pages/portal/Reports';
 import { ClientDetail, Clients } from './pages/portal/admin/Clients';
 import { AuditAdmin, Billing, InboxAdmin, Schedule, ServicesAdmin, TimeTracking, UsersAdmin } from './pages/portal/admin/Manage';
 import { AdminOverview } from './pages/portal/admin/Overview';
@@ -64,11 +65,13 @@ export function App() {
           <Route index element={<Overview />} />
           <Route path="appointments" element={<Appointments />} />
           <Route path="appointments/:id" element={<AppointmentDetail />} />
+          <Route path="appointments/:id/report" element={<SessionReport />} />
           <Route path="messages" element={<Messages />} />
           <Route path="messages/:id" element={<Messages />} />
           <Route path="files" element={<Files />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projects/:id" element={<ProjectDetail />} />
+          <Route path="projects/:id/report" element={<ProjectReport />} />
           <Route path="plans" element={<Plans />} />
           <Route path="invoices" element={<Invoices />} />
           <Route path="invoices/:id" element={<InvoiceDetail />} />

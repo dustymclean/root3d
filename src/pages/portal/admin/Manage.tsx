@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Empty, ErrorText, Field, Loading, StatusPill, Success } from '../../../components/ui';
 import { dateOnly, dateTime, money } from '../../../lib/format';
 import { db, q } from '../../../lib/supabase';
-import type { AuditRow, Availability, Consultant, ContactRequest, Invoice, Retainer, Service, TimeEntry, TimeOff } from '../../../lib/types';
+import type { AuditRow, ConsultantContact, Availability, Consultant, ContactRequest, Invoice, Retainer, Service, TimeEntry, TimeOff } from '../../../lib/types';
 import { useAsync } from '../../../lib/useAsync';
 import { useAuth } from '../../../store/auth';
 import { personName, useLookups } from '../lookups';
@@ -29,9 +29,54 @@ export function Schedule() {
         </select>
       </div>
       {c && <ConsultantSettings key={c.slug} c={c} onSaved={() => void look.reload()} />}
+      {c && <ContactSettings key={'c' + c.slug} c={c} />}
       {c && <WeeklyHours key={'h' + c.slug} slug={c.slug} />}
       {c && <TimeOffPanel key={'t' + c.slug} slug={c.slug} />}
     </div>
+  );
+}
+
+/** Each consultant's Discord and Signal details. Clients see them only after paying for a session with that consultant. */
+function ContactSettings({ c }: { c: Consultant }) {
+  const empty = { discord_username: '', discord_link: '', signal_username: '', signal_link: '' };
+  const row = useAsync(() => q<ConsultantContact | null>(db().from('consultant_contacts').select('*').eq('consultant_slug', c.slug).maybeSingle()), [c.slug]);
+  const [f, setF] = useState<typeof empty | null>(null);
+  const [msg, setMsg] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  if (row.loading) return <Loading />;
+  const v = f ?? { ...empty, ...(row.data ? { discord_username: row.data.discord_username, discord_link: row.data.discord_link, signal_username: row.data.signal_username, signal_link: row.data.signal_link } : {}) };
+  const set = (k: keyof typeof empty) => (e: { target: { value: string } }) => setF({ ...v, [k]: e.target.value });
+  const phone = /\d{3}\D{0,3}\d{3}\D{0,3}\d{4}/;
+
+  async function save(e: FormEvent) {
+    e.preventDefault();
+    setMsg(null);
+    setError(null);
+    if (phone.test(v.discord_username) || phone.test(v.signal_username)) return setError('Use usernames, not phone numbers.');
+    if ([v.discord_link, v.signal_link].some((l) => l && !/^https:\/\//.test(l))) return setError('Links must start with https://');
+    const { error } = await db().from('consultant_contacts').upsert({ consultant_slug: c.slug, ...v, updated_at: new Date().toISOString() });
+    if (error) setError(error.message);
+    else setMsg('Saved. Clients who have paid for a session with ' + c.name.split(' ')[0] + ' can now see these.');
+  }
+
+  return (
+    <form className="card form" onSubmit={save}>
+      <h3>{c.name}: direct contact (paid clients only)</h3>
+      <p className="muted small" style={{ marginTop: 0 }}>
+        Shown on {c.name.split(' ')[0]}'s profile and appointment pages, only to clients with a paid session. Usernames and links only, never a phone number.
+      </p>
+      <div className="form-row">
+        <Field label="Discord username" hint="Discord → your profile picture → Username."><input className="input" value={v.discord_username} onChange={set('discord_username')} /></Field>
+        <Field label="Discord invite or profile link" hint="Server → Invite People → Edit invite link → Never expire. Starts with https://discord.gg/"><input className="input" value={v.discord_link} onChange={set('discord_link')} placeholder="https://discord.gg/…" /></Field>
+      </div>
+      <div className="form-row">
+        <Field label="Signal username" hint="Signal → Settings → Profile → Username (ends in two numbers, like name.42)."><input className="input" value={v.signal_username} onChange={set('signal_username')} /></Field>
+        <Field label="Signal username link" hint="Signal → Settings → Profile → Username → QR code or link → Copy link. Starts with https://signal.me/"><input className="input" value={v.signal_link} onChange={set('signal_link')} placeholder="https://signal.me/#eu/…" /></Field>
+      </div>
+      <ErrorText error={error} />
+      {msg && <Success>{msg}</Success>}
+      <div><button className="btn btn-primary btn-sm"><Save size={16} /> Save contact details</button></div>
+    </form>
   );
 }
 
