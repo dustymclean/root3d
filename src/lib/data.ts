@@ -1,5 +1,4 @@
 import { fallbackServices } from '../data/services';
-import { growCoachExpertise } from '../data/growcoach';
 import { team } from '../data/team';
 import { q, supabase } from './supabase';
 import type { Consultant, Profile, Service } from './types';
@@ -17,7 +16,7 @@ export async function fetchConsultants(): Promise<Consultant[]> {
     return team.map((t, i) => ({
       slug: t.slug, profile_id: null, name: t.name, title: t.title, photo: t.photo, specialties: t.specialties.map((x) => x.title),
       timezone: 'America/Chicago', buffer_minutes: 15, min_notice_hours: 12, is_available_today: false,
-      expertise: growCoachExpertise[t.slug] ?? [], verified: true, modes: ['zoom', 'discord', 'signal', 'onsite'], active: true, sort: i,
+      expertise: [], verified: true, modes: ['zoom', 'discord', 'signal', 'onsite'], active: true, sort: i,
     }));
   }
   return q(supabase.from('consultants').select('*').order('sort'));

@@ -1,12 +1,11 @@
 import {
-  ArrowLeft, ArrowRight, BookOpen, Calculator, ClipboardList, Copy, Download, FileText, Leaf, Printer, RotateCcw, Stethoscope, Thermometer,
+  ArrowLeft, ArrowRight, BookOpen, Calculator, ClipboardList, Copy, Download, FileText, Printer, RotateCcw, Stethoscope, Thermometer,
 } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, CtaBand, Disclaimer, LeadCapture } from '../../components/blocks';
 import { Field, Notice, PageHead, Success } from '../../components/ui';
 import { findNode, type Node } from '../../data/diagnose';
-import { gearLocker } from '../../data/growcoach';
 import { findArticle } from '../../data/knowledge';
 import { businessTypes, buildSop, jurisdictions, topics, type Answers, type BusinessType } from '../../data/sop';
 
@@ -16,7 +15,6 @@ const tools = [
   { to: '/resources/vpd', icon: Thermometer, title: 'VPD calculator', text: 'Air and leaf vapor pressure deficit from temperature and humidity.' },
   { to: '/resources/troubleshooter', icon: Stethoscope, title: 'Plant troubleshooter', text: 'A decision tree for common leaf symptoms that tells you what to check first.' },
   { to: '/knowledge-base', icon: BookOpen, title: 'Knowledge Base', text: 'The Compliance Vault: source-backed guides with review dates and citations.' },
-  { to: '/grow-coach#gear-locker', icon: Leaf, title: 'Gear Locker', text: 'The inspection, measurement, and clean-room basics our coaches ask growers to have.' },
   { to: '/case-studies', icon: FileText, title: 'Case studies', text: 'How an engagement runs from the first symptom to the follow-up.' },
 ];
 
@@ -42,16 +40,7 @@ export function Resources() {
         </div>
       </section>
       <section className="section soft">
-        <div className="container grid grid-2">
-          <div className="card">
-            <h3>Gear Locker preview</h3>
-            <ul className="gear">
-              {gearLocker[0].items.concat(gearLocker[1].items.slice(0, 2)).map((i) => (
-                <li key={i.name}><strong>{i.name}</strong><span className="small muted">{i.why}</span></li>
-              ))}
-            </ul>
-            <Link to="/grow-coach#gear-locker" className="small">See the full Gear Locker</Link>
-          </div>
+        <div className="container" style={{ maxWidth: 760 }}>
           <LeadCapture source="resources" />
         </div>
       </section>
@@ -423,10 +412,9 @@ export function Troubleshooter() {
                   <div><h3>Next steps</h3><ul>{node.next.map((x) => <li key={x}>{x}</li>)}</ul></div>
                 </div>
                 {article && <p>Read more: <Link to={`/knowledge-base/${article.slug}`}>{article.title}</Link></p>}
-                <Success>Want a cultivator to confirm? Upload sharp photos to your pre-call inbox and book a 15-minute quick call.</Success>
+                <Success>Want a cultivator to confirm? Book a free 15-minute discovery call and upload sharp photos to your pre-call inbox.</Success>
                 <div className="btn-row mt">
-                  <Link to="/book?service=home-grow" className="btn btn-primary">Book a quick call</Link>
-                  <Link to="/grow-coach" className="btn btn-ghost">Find a Grow Coach</Link>
+                  <Link to="/book?service=discovery" className="btn btn-primary">Book a free call</Link>
                 </div>
               </div>
             )}

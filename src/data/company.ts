@@ -81,7 +81,6 @@ export const audiences = [
   { title: 'New license holders', text: 'Teams that just received a license and need SOPs, systems, and a build-out plan fast.' },
   { title: 'Multi-state operators', text: 'Companies expanding across state lines that need a clear view of what changes at the border.' },
   { title: 'Small businesses', text: 'Hemp producers, smoke shops, and suppliers who need practical help without enterprise pricing.' },
-  { title: 'Home growers', text: 'Hobbyists who want a real cultivator to look at their plants and give a straight answer.' },
 ];
 
 export const contactEmail = (import.meta.env.VITE_CONTACT_EMAIL as string | undefined) || 'support@r3dconsulting.com';

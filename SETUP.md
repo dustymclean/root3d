@@ -25,6 +25,8 @@ Everything below is free to start. No secret keys ever go in this repository.
 
 9. Paste all of `supabase/migrations/0008_contact_methods.sql` into a new query and **Run**. It switches bookings to Zoom, Discord, Signal, or on-site, removes stored phone numbers, and adds the saved meeting links table.
 
+10. Paste all of `supabase/migrations/0009_remove_grow_coach.sql` into a new query and **Run**. It hides the Grow Coach services, which now belong to their own site.
+
    If you already ran earlier files, just run the ones you have not run yet. Every file is safe to run more than once.
 
 That's the only account setup. Whoever signs up with one of those emails becomes an admin. Everyone else who signs up is a standard client. You can change the list later under **Portal → Users & admins**.

@@ -67,7 +67,7 @@ export const areas: Area[] = [
     packages: ['standard', 'tc-lab', 'tier-2'],
     leads: ['danny-davis', 'joel-perkins', 'hunter-porter'],
     faqs: [
-      { q: 'Do you work with living soil and hydro?', a: 'Both. Our coaches work across commercial hydroponics, coco, living soil, and organic or KNF-style programs.' },
+      { q: 'Do you work with living soil and hydro?', a: 'Both. Our consultants work across commercial hydroponics, coco, living soil, and organic or KNF-style programs.' },
       { q: 'Will you take over our grow?', a: 'No. We advise, train, and help implement. Your team stays in control, and we make sure they understand why each change works.' },
     ],
   },

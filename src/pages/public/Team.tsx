@@ -159,8 +159,6 @@ export function TeamProfile() {
                   const area = findArea(a);
                   return area ? (
                     <Link className="chip" key={a} to={`/services/${a}`}>{area.title}</Link>
-                  ) : a === 'grow-coach' ? (
-                    <Link className="chip" key={a} to="/grow-coach">Grow Coach Connection</Link>
                   ) : null;
                 })}
               </div>
