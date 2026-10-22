@@ -8,17 +8,18 @@ Everything below is free to start. No secret keys ever go in this repository.
 2. Open **SQL Editor → New query**, paste all of `supabase/migrations/0001_init.sql`, and click **Run**.
 3. Paste all of `supabase/migrations/0002_seed.sql` into a new query and **Run**.
 4. Paste all of `supabase/migrations/0003_v2.sql` into a new query and **Run**. This adds Hunter, video/phone/on-site appointments, Grow Coach expertise tags, project boards with milestones, and read/unread messages.
-5. Paste all of `supabase/migrations/0004_team_logins.sql` into a new query and **Run**. This sets the admin logins:
+5. Paste all of `supabase/migrations/0004_team_logins.sql` into a new query and **Run**.
+6. Paste all of `supabase/migrations/0005_team_verified.sql` into a new query and **Run**. This shows the verified badge on all four coaches.
+7. Paste all of `supabase/migrations/0006_r3d_emails.sql` into a new query and **Run**. This sets the admin logins:
 
    | Email | Linked calendar |
    | --- | --- |
-   | dustjackmcl@gmail.com | Dusty |
-   | dusty_mclean@icloud.com | (admin only) |
-   | joel@pixies-pantry.com | Joel |
-   | danny@pixies-pantry.com | Danny |
-   | sleepy@pixies-pantry.com | Hunter |
-
-6. Paste all of `supabase/migrations/0005_team_verified.sql` into a new query and **Run**. This shows the verified badge on all four coaches.
+   | dusty@r3dconsulting.com | Dusty |
+   | joel@r3dconsulting.com | Joel |
+   | danny@r3dconsulting.com | Danny |
+   | hunter@r3dconsulting.com | Hunter |
+   | support@r3dconsulting.com | (admin only) |
+   | dustjackmcl@gmail.com, dusty_mclean@icloud.com, joel@ / danny@ / sleepy@pixies-pantry.com | (admin only) |
 
    If you already ran earlier files, just run the ones you have not run yet. Every file is safe to run more than once.
 
@@ -41,7 +42,7 @@ In GitHub, go to the repo's **Settings → Secrets and variables → Actions →
 | --- | --- |
 | `VITE_SUPABASE_URL` | your Project URL |
 | `VITE_SUPABASE_ANON_KEY` | your anon public key |
-| `VITE_CONTACT_EMAIL` | optional, defaults to `contact@r3dconsulting.com` |
+| `VITE_CONTACT_EMAIL` | optional, defaults to `support@r3dconsulting.com` |
 
 ## 4. Turn on GitHub Pages at r3dconsulting.com
 

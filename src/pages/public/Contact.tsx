@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { ErrorText, Field, PageHead, Success } from '../../components/ui';
 import { supabase } from '../../lib/supabase';
 
-const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'contact@r3dconsulting.com';
+const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || 'support@r3dconsulting.com';
 
 export function Contact() {
   const [params] = useSearchParams();
