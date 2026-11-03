@@ -5,6 +5,7 @@ import { areas } from '../data/areas';
 import { pillars, tagline } from '../data/company';
 import { team } from '../data/team';
 import { asset } from '../lib/data';
+import { Seo } from './Seo';
 import { useAuth } from '../store/auth';
 
 type NavItem = { to: string; label: string; children?: { to: string; label: string; note?: string }[] };
@@ -80,6 +81,7 @@ export function Layout() {
 
   return (
     <>
+      <Seo />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -135,7 +137,7 @@ export function Layout() {
 function Footer() {
   const col = (title: string, items: { to: string; label: string }[]) => (
     <div>
-      <h4>{title}</h4>
+      <h3>{title}</h3>
       <ul>{items.map((i) => <li key={i.to}><Link to={i.to}>{i.label}</Link></li>)}</ul>
     </div>
   );
