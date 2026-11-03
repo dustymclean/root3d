@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /portal
+Disallow: /portal/
+Disallow: /login
+Disallow: /signup
+Disallow: /reset-password
+
+Sitemap: https://r3dconsulting.com/sitemap.xml

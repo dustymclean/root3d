@@ -958,7 +958,7 @@ a.card:hover,
     grid-template-columns: 1fr 1fr;
   }
 }
-.footer-grid h4 {
+.footer-grid h3 {
   font: 600 0.8rem var(--font-body);
   letter-spacing: 0.12em;
   text-transform: uppercase;

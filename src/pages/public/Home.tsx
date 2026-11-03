@@ -36,7 +36,7 @@ export function Home() {
         <div className="hero-aura" aria-hidden="true" />
         <div className="container hero-stage">
           <Reveal>
-            <h1 className="hero-mark">
+            <div className="hero-mark">
               <img
                 className="logo-art"
                 src={asset('logo-full.jpg')}
@@ -45,13 +45,13 @@ export function Home() {
                 height={900}
                 fetchPriority="high"
               />
-            </h1>
+            </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="hero-statement">
-              Cultivation science, facility engineering, compliance, and technology, from four specialists who
+            <h1 className="hero-statement">
+              Mississippi cannabis consulting for cultivation science, facility engineering, compliance, and technology — four specialists who
               work <em>the same problem together.</em>
-            </p>
+            </h1>
             <div className="btn-row center">
               <Link to="/book?service=discovery" className="btn btn-primary btn-lg">
                 Book a free discovery call <ArrowRight size={18} />
@@ -118,7 +118,7 @@ export function Home() {
         <div className="container">
           <div className="section-head">
             <p className="eyebrow">What we do</p>
-            <h2>Seven practice areas, one team</h2>
+            <h2>Six practice areas, one team</h2>
             <p className="lede">Hire us for one problem or the whole operation. Each area has a lead, and every engagement draws on the whole team when it needs to.</p>
           </div>
           <div className="grid grid-3">
@@ -259,6 +259,34 @@ export function Home() {
                 <p className="muted small">{a.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Root3D: problem-first search landing pages */}
+      <section className="section soft" aria-label="Mississippi cannabis and hemp consulting">
+        <div className="container">
+          <div className="section-head">
+            <p className="eyebrow">Mississippi consulting</p>
+            <h2>Get help with cannabis, hemp, and the systems behind them</h2>
+            <p className="lede">Find a specific solution for cultivation, facility readiness, inventory, compliance workflows, and technical systems.</p>
+          </div>
+          <div className="grid grid-3">
+            <a className="card hover area-card" href="/mississippi-cannabis-consulting/">
+              <h3>Mississippi cannabis consulting</h3>
+              <p className="muted small">Facility audits, cultivation, dispensary operations, SOPs, and technology.</p>
+              <span className="more">Explore cannabis support</span>
+            </a>
+            <a className="card hover area-card" href="/mississippi-hemp-consulting/">
+              <h3>Mississippi hemp consulting</h3>
+              <p className="muted small">Production systems, agricultural inputs, documentation, and technical workflows.</p>
+              <span className="more">Explore hemp support</span>
+            </a>
+            <a className="card hover area-card" href="/what-we-solve/">
+              <h3>What problem can we help solve?</h3>
+              <p className="muted small">Practical answers for inspection readiness, plant health, missing inventory, and more.</p>
+              <span className="more">Find your issue</span>
+            </a>
           </div>
         </div>
       </section>
