@@ -1,6 +1,26 @@
 {
- "updated": "2026-11-12T18:54:11.635Z",
+ "updated": "2026-11-13T18:30:32.048Z",
  "items": [
+  {
+   "id": "fr-2026-23120",
+   "title": "Ethephon; Pesticide Tolerances",
+   "url": "https://www.federalregister.gov/documents/2026/11/13/2026-23120/ethephon-pesticide-tolerances",
+   "source": "Federal Register · Environmental Protection Agency",
+   "kind": "Rule",
+   "category": "Pesticides",
+   "published": "2026-11-13",
+   "summary": "This regulation establishes tolerances for residues of ethephon in or on fig. Under the Federal Food, Drug, and Cosmetic Act (FFDCA), Interregional Research Project Number 4 (IR-4) submitted a petition to EPA requesting that EPA establish a maximum permissible level for residues of this pesticide in or on the identified commodity."
+  },
+  {
+   "id": "fr-2026-23115",
+   "title": "Isocycloseram; Pesticide Tolerance for Emergency Exemption",
+   "url": "https://www.federalregister.gov/documents/2026/11/13/2026-23115/isocycloseram-pesticide-tolerance-for-emergency-exemption",
+   "source": "Federal Register · Environmental Protection Agency",
+   "kind": "Rule",
+   "category": "Pesticides",
+   "published": "2026-11-13",
+   "summary": "This regulation establishes a time-limited tolerance for residues of isocycloseram, including its metabolites and degradates, in or on sunflowers. This action is in response to EPA's authorization of a specific exemption under the Federal Insecticide, Fungicide, and Rodenticide Act (FIFRA) authorizing use of the pesticide on sunflowers. This regulation establishes a maximum permissible level for residues of isocycloseram in or on sunflower, seed at 0.4 parts per million. The time-limited tolerance expires on December 31, 2029."
+  },
   {
    "id": "fr-2026-23015",
    "title": "Mozza Foods, Inc.: Availability of a Petition for a Determination of Nonregulated Status and Draft Plant Pest Risk Assessment for MF1786-1 Soybean (Glycine max) Expressing Casein Proteins",
