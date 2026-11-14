@@ -90,7 +90,7 @@ export function Layout() {
           <Link to="/" className="brand" aria-label="Root3D Consulting home">
             <img className="brand-mark" src={asset('mark.png')} alt="" width={40} height={40} />
             <span className="brand-word">
-              <span className="brand-name">ROOT3D</span>
+              <span className="brand-name">Root<em>3D</em></span>
               <span className="brand-sub">Consulting</span>
             </span>
           </Link>
@@ -150,7 +150,7 @@ function Footer() {
             <Link to="/" className="brand footer-brand" aria-label="Root3D Consulting home">
               <img className="brand-mark" src={asset('mark.png')} alt="" width={56} height={56} />
               <span className="brand-word">
-                <span className="brand-name">ROOT3D</span>
+                <span className="brand-name">Root<em>3D</em></span>
                 <span className="brand-sub">Consulting</span>
               </span>
             </Link>
