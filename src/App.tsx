@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { RequireAuth } from './components/Guards';
 import { Layout } from './components/Layout';
+import { NewsletterPopup } from './components/NewsletterPopup';
 import { Book } from './pages/Book';
 import { About } from './pages/public/About';
 import { Brand } from './pages/public/Brand';
@@ -25,6 +26,7 @@ import { ProjectReport, SessionReport } from './pages/portal/Reports';
 import { ClientDetail, Clients } from './pages/portal/admin/Clients';
 import { AuditAdmin, Billing, InboxAdmin, Schedule, ServicesAdmin, TimeTracking, UsersAdmin } from './pages/portal/admin/Manage';
 import { AdminOverview } from './pages/portal/admin/Overview';
+import { NewsletterAdmin } from './pages/portal/admin/Newsletter';
 import { useAuth } from './store/auth';
 
 export function App() {
@@ -34,6 +36,8 @@ export function App() {
   const admin = (el: JSX.Element) => <RequireAuth admin>{el}</RequireAuth>;
 
   return (
+    <>
+      <NewsletterPopup />
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
@@ -65,6 +69,7 @@ export function App() {
         <Route path="reset-password" element={<ResetPassword />} />
         <Route path="privacy" element={<Privacy />} />
         <Route path="terms" element={<Terms />} />
+        <Route path="admin" element={<Navigate to="/portal/admin" replace />} />
         <Route path="portal" element={<RequireAuth><PortalLayout /></RequireAuth>}>
           <Route index element={<Overview />} />
           <Route path="appointments" element={<Appointments />} />
@@ -89,11 +94,13 @@ export function App() {
           <Route path="admin/billing" element={admin(<Billing />)} />
           <Route path="admin/time" element={admin(<TimeTracking />)} />
           <Route path="admin/inbox" element={admin(<InboxAdmin />)} />
+          <Route path="admin/newsletter" element={admin(<NewsletterAdmin />)} />
           <Route path="admin/users" element={admin(<UsersAdmin />)} />
           <Route path="admin/audit" element={admin(<AuditAdmin />)} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
+    </>
   );
 }

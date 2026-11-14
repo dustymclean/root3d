@@ -1,6 +1,6 @@
 import {
   BarChart3, CalendarDays, ClipboardCheck, Clock, FileSignature, FolderOpen, Inbox, KanbanSquare, LayoutDashboard, LogOut, MessagesSquare,
-  Receipt, ScrollText, Settings2, Tag, UserCircle, Users,
+  Receipt, ScrollText, Settings2, Tag, UserCircle, Users, Mail,
 } from 'lucide-react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { db, q } from '../../lib/supabase';
@@ -27,6 +27,7 @@ const adminLinks = [
   { to: '/portal/admin/billing', label: 'Billing & retainers', icon: Receipt },
   { to: '/portal/admin/time', label: 'Time tracking', icon: Clock },
   { to: '/portal/admin/inbox', label: 'Website inquiries', icon: Inbox },
+  { to: '/portal/admin/newsletter', label: 'Newsletter Sign Ups', icon: Mail },
   { to: '/portal/admin/users', label: 'Users & admins', icon: Users },
   { to: '/portal/admin/audit', label: 'Audit log', icon: ScrollText },
 ];
