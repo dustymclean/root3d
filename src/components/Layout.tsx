@@ -188,7 +188,7 @@ function Footer() {
           ])}
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Root3D Consulting</span>
+          <span>© {new Date().getFullYear()} Root3D Consulting · <a href="https://www.linkedin.com/company/root3d-consulting/" target="_blank" rel="noopener">LinkedIn</a></span>
           <span>Educational and advisory services. We do not grow, sell, or transport cannabis, and nothing here is legal advice.</span>
         </div>
       </div>
