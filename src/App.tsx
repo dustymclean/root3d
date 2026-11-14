@@ -4,6 +4,7 @@ import { RequireAuth } from './components/Guards';
 import { Layout } from './components/Layout';
 import { Book } from './pages/Book';
 import { About } from './pages/public/About';
+import { Brand } from './pages/public/Brand';
 import { Contact } from './pages/public/Contact';
 import { ArticlePage, CaseStudies, Faq, KnowledgeBase } from './pages/public/Knowledge';
 import { News } from './pages/public/News';
@@ -56,6 +57,7 @@ export function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="team" element={<Team />} />
         <Route path="team/:slug" element={<TeamProfile />} />
+        <Route path="brand" element={<Brand />} />
         <Route path="contact" element={<Contact />} />
         <Route path="book" element={<Book />} />
         <Route path="login" element={<Login />} />

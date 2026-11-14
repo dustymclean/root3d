@@ -166,6 +166,7 @@ function Footer() {
             { to: '/team', label: 'Meet the Consultants' },
             { to: '/case-studies', label: 'Case Studies' },
             { to: '/contact', label: 'Contact' },
+            { to: '/brand', label: 'Brand & assets' },
             { to: '/book', label: 'Book a consultation' },
             { to: '/portal', label: 'Client login' },
           ])}
